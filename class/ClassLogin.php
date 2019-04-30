@@ -21,8 +21,8 @@ class ClassLogin {
     }
 
     public function Login($objLogin) {
-        require_once('class/ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbbiblioteca");
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass("localhost", "root", "root", "dbaprendizagem");
 
         $email = $objLogin->getEmail();
         $senha = $objLogin->getSenha();
@@ -30,7 +30,7 @@ class ClassLogin {
             $tableLogin = $objConexao->selecionarDados("SELECT * FROM Func WHERE emailFunc = '$email' AND senhaFunc = '$senha'");
 
             if($tableLogin === "ERRO") {          
-                return "User not exists";             
+                return 'Incorrect login';             
             }
             else {
                 return $tableLogin;
