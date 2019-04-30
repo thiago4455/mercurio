@@ -12,8 +12,7 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Fontes -->
     <link rel="stylesheet" href="fonts/fontes.css">
@@ -31,9 +30,8 @@
 <body>
 
     <?php
-		session_start();
-        session_destroy();
-	?>
+        session_start();
+    ?>
 
 
     <!-- Loading Page -->
@@ -59,8 +57,8 @@
 
     <div id="main">
         <div id="section-login">
-            <form action="" method="POST" id="form_login">
-                <h1 id="form-title">Biblioteca</h1>
+            <form action="" id="form_login">
+                <h1 id="form-title">Login</h1>
                 <input name="ipt_email" id="ipt_email" type="email" class="input-login" placeholder="Digite seu email"
                     require>
                 <input name="ipt_senha" id="ipt_senha" type="password" class="input-login"
@@ -71,49 +69,18 @@
                     </button>
                     <p id="error-msg"></p>
                 </div>
-                <button name="btn_login" class="btn" id="btn-login" type="submit">Logar</button>
+                <button name="btn_login" class="btn" id="btn-login">Logar</button>
             </form>
         </div>
     </div>
 
-    <?php
-		session_start();
-		if(isset($_POST['btn_login'])) {
-			$email = ($_POST['ipt_email']);
-			$senha = ($_POST['ipt_senha']);
-
-			if(($email == "") || ($senha == "")) {
-				echo "<script> document.getElementById('alert-error').style.display = 'flex'; document.getElementById('error-msg').innerHTML = 'Preencha todos os campos' </script>";
-			} else {
-				require_once('class/ClassLogin.php');
-				$objLogin = new ClassLogin();
-				$objLogin->setEmail($email);
-				$objLogin->setSenha($senha);
-				$queryResp = $objLogin->Login($objLogin);
-
-				if ($queryResp == "User not exists") {
-					echo "<script> document.getElementById('alert-error').style.display = 'flex'; document.getElementById('error-msg').innerHTML = 'Usuário ou senha incorretos' </script>";
-				}
-				else if ($queryResp == "Problem System") {
-					echo "<script> document.getElementById('alert-error').style.display = 'flex'; document.getElementById('error-msg').innerHTML = 'Erro no sistema. Tente novamente mais tarde' </script>";
-				}
-				else {
-                    $_SESSION['idLog'] = $queryResp[0]['idFunc'];
-                    $_SESSION['nomeLog'] = $queryResp[0]['nomeFunc'];
-					header('Location: home.php');
-				}
-			}
-		}
-	?>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+    
+    <script
+        src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
@@ -130,7 +97,6 @@
     })
 
     $(document).ready(() => {
-
         $('#nav-logo').click(() => {
             window.location.href = 'index.php'
         })
@@ -142,7 +108,37 @@
         })
 
         $('#btn-login').click(() => {
-            $('#btn-login').text('Logando...')
+            btnLogin = document.getElementById('btn-login')
+            $('#btn-login').text('Logando...');
+            btnLogin.setAttribute('disabled', true)
+            $.ajax({
+                    url: './models/login.php',
+                    data: {
+                        'ipt_email': $('#ipt_email').val(),
+                        'ipt_senha': $('#ipt_senha').val(),
+                    },
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function(msg) {
+                        console.log(msg[0].idFunc)
+                        $('#btn-login').text('Logar');
+                        $('#btn-login').removeAttr('disabled');
+
+                        if(msg == 'Fill all inputs') {
+                            document.getElementById('alert-error').style.display = 'flex'; document.getElementById('error-msg').innerHTML = 'Preencha todos os campos'
+                        } else if(msg == 'Incorrect login') {
+                            document.getElementById('alert-error').style.display = 'flex'; document.getElementById('error-msg').innerHTML = 'Usuário ou senha incorretos'
+                        } else if(msg == 'Problem System') {
+                            document.getElementById('alert-error').style.display = 'flex'; document.getElementById('error-msg').innerHTML = 'Problema no servidor. Contate o administrador'
+                        } else if(msg == 'Success') {
+                            window.location.href = 'home.php'
+                        }
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    }
+
+                });
         })
     })
     </script>
