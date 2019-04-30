@@ -1,0 +1,24 @@
+@font-face {
+     font-family: Mont-Bold;
+     src: url('Montserrat-Bold.ttf');
+}
+
+@font-face {
+     font-family: Mont-Reg;
+     src: url('Montserrat-Regular.ttf');
+}
+
+@font-face {
+     font-family: Google-Bold;
+     src: url('GoogleSans-Bold.ttf');
+}
+
+@font-face {
+     font-family: Google-Medium;
+     src: url('GoogleSans-Medium.ttf');
+}
+
+@font-face {
+     font-family: Google-Reg;
+     src: url('GoogleSans-Regular.ttf');
+}

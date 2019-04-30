@@ -1,0 +1,118 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    font-family: 'Google-Reg';
+}
+
+#main {
+    width: 100%;
+    flex: 1;
+    background: #eee;
+    height: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0 0;
+}
+
+#section-login {
+    max-width: 500px;
+    width: 500px;
+    height: unset;
+    background: #fff;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+}
+
+#form_login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-title {
+    margin: 10px 0 20px;
+    color: #D85252;
+    font-family: 'Google-Bold';
+    font-size: 2rem;
+    text-align: center;
+}
+
+.input-login {
+    width: 100%;
+    height: 50px;
+    background: #f7f7f7;
+    border: none;
+    border-radius: 7px;
+    padding: 0 20px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    outline-color: #D85252;
+}
+
+#btn-login {
+    width: 100%;
+    height: 45px;
+    background: #D85252;
+    border: none;
+    border-radius: 7px;
+    color: #fff;
+    font-family: 'Google-Reg';
+    outline: none;
+    margin: 10px 0;
+}
+
+#btn-login:hover {
+    opacity: .7;
+    transition: .3s;
+}
+
+#alert-error {
+    width: 100%;
+    display: none;
+}
+
+#error-msg {
+    margin: 0;
+}
+
+#btn-criarconta {
+    margin: 10px 0;
+    color: #D85252;
+    text-decoration: underline;
+}
+
+#btn-criarconta:hover {
+    color: #333;
+}
+
+@media(max-width: 600px) {
+    #section-login {
+        width: 90%;
+        padding: 10px 30px;
+    }
+
+    .input-login {
+        margin: 5px 0;
+    }
+    
+    #btn-logar {
+        width: 100%;
+        height: 50px;
+        background: #D85252;
+        border: none;
+        border-radius: 7px;
+        color: #fff;
+        font-family: 'Google-Reg';
+        outline: none;
+        margin: 10px 0;
+    }
+}
