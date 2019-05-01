@@ -20,3 +20,6 @@ create table Alunos (
     nomeAluno varchar(60) not null,
     emailAluno varchar(60) not null
 ) CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
+INSERT INTO `func` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`) VALUES ('00000001', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00')
