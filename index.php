@@ -57,20 +57,18 @@
 
     <div id="main">
         <div id="section-login">
-            <form action="" id="form_login">
-                <h1 id="form-title">Login</h1>
-                <input name="ipt_email" id="ipt_email" type="email" class="input-login" placeholder="Digite seu email"
-                    require>
-                <input name="ipt_senha" id="ipt_senha" type="password" class="input-login"
-                    placeholder="Digite sua senha" require>
-                <div id="alert-error" class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <p id="error-msg"></p>
-                </div>
-                <button name="btn_login" class="btn" id="btn-login">Logar</button>
-            </form>
+            <h1 id="form-title">Login</h1>
+            <input name="ipt_email" id="ipt_email" type="email" class="input-login" placeholder="Digite seu email"
+                require>
+            <input name="ipt_senha" id="ipt_senha" type="password" class="input-login"
+                placeholder="Digite sua senha" require>
+            <div id="alert-error" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <p id="error-msg"></p>
+            </div>
+            <button name="btn_login" class="btn" id="btn-login">Logar</button>
         </div>
     </div>
 
