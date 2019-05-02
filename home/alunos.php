@@ -25,9 +25,63 @@
 
 <body>
 
-    <div id="main">
-        <h1>Alunos</h1>
-    </div>
+    <table>
+        <tr>
+            <td>RA</td>
+            <td>Nome</td>
+            <td>Idade</td>
+            <td>Sexo</td>
+            <td>Email</td>
+            <td>Cidade</td>
+            <td>CPF</td>
+            <td>Telefone</td>
+            <td>Status</td>
+        </tr>
+        <tr>
+            <td>1234567890</td>
+            <td>Thiago Buenos Aires Mattos</td>
+            <td>16</td>
+            <td>M</td>
+            <td>thiagobuenosairesmattos@gmail.com</td>
+            <td>Belo Horizonte</td>
+            <td>111.222.333-44</td>
+            <td>(31) 98367-9954</td>
+            <td>MATRICULADO</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
 
 
     <!-- Optional JavaScript -->
