@@ -1,4 +1,4 @@
-CREATE schema dbaprendizagem;
+CREATE DATABASE dbaprendizagem;
 USE dbaprendizagem;
 
 CREATE TABLE Func (
@@ -39,4 +39,4 @@ CREATE TABLE Alunos(
     PRIMARY KEY(Ra)
 );
 
-INSERT INTO `func` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`) VALUES ('00000001', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00')
+INSERT INTO `Func` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`) VALUES ('00000001', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00')
