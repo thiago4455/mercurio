@@ -38,3 +38,5 @@ CREATE TABLE Alunos(
     Status VARCHAR(30),
     PRIMARY KEY(Ra)
 );
+
+INSERT INTO `func` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`) VALUES ('00000001', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00')
