@@ -106,7 +106,7 @@
 
         $('#log-info-nome').click(function() {
             <?php
-                session_destroy(); 
+                //session_destroy(); 
             ?>
             window.location.href = 'index.php';
         })
