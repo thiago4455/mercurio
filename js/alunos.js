@@ -19,7 +19,7 @@ $(document).ready(() => {
                         td.appendChild(document.createTextNode(msg[i][colunas[j]]));
                         tr.appendChild(td)
                     }
-                    tr.innerHTML+="<td class='btnR' id='btnRow"+i+"'><button>X</button></td>"
+                    tr.innerHTML+="<td class='btnR' id='btnRow"+i+"'><button><i class='fas fa-edit'></i></button></td>"
                     table.appendChild(tr);
                 }
             },
@@ -28,7 +28,7 @@ $(document).ready(() => {
             }
     });
 
-    $('#inputSearch').keypress(() => {
+    $('#inputSearch').keyup(function() {
         $.ajax({
             url: '../models/buscarAlunos.php',
             dataType: 'json',
@@ -42,7 +42,7 @@ $(document).ready(() => {
                     table.innerHTML = 'Nenhum resultado encontrado.'
                 }
                 else{
-                    table.innerHTML = '<tr><td>RA</td><td>Nome</td><td>Idade</td><td>Sexo</td><td>Email</td><td>Cidade</td><td>CPF</td><td>Telefone</td><td>Status</td></tr>';
+                    table.innerHTML = '<tr id="tr-title"><td>RA</td><td>Nome</td><td>Idade</td><td>Sexo</td><td>Email</td><td>Cidade</td><td>CPF</td><td>Telefone</td><td>Status</td><td>Editar</td></tr>';
                     for (i = 0; i < msg.length; i++) {
                         var tr = document.createElement('tr');
                         for (j = 0; j < colunas.length; j++) {

@@ -3,7 +3,6 @@
 
 <head>
     <title>Senai - Sistema FIEMG</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="assets/icons/favicon.ico" />
@@ -18,43 +17,17 @@
     <!-- Fontes -->
     <link rel="stylesheet" href="../fonts/fontes.css">
 
-    <!-- Alunos.css -->
-    <link rel="stylesheet" href="css/alunos.css"> 
+    <!-- Ciclos.css -->
+    <link rel="stylesheet" href="css/ciclos.css"> 
 
 </head>
 
 <body>
-    
-    <div id="fast-search">
-        <h1>Buscar Alunos</h1>
-        <div id="busca">
-            <input type="text" id="inputSearch" placeholder="Pesquise por RA, Nome, Email ou CPF" autocomplete="off">
-            <div id="search-avanced" class="btn">Busca Avançada</div>
-        </div>
-        <div id="busca-avancada">
 
-        </div>
+    <div id="main">
+        <h1 id="title-main">Iniciar novo Ciclo</h1>
     </div>
 
-    <table id='tableBody'>
-        <tr id="tr-title">
-            <td></td>
-            <td>RA</td>
-            <td>Nome</td>
-            <td>Idade</td>
-            <td>Sexo</td>
-            <td>Email</td>
-            <td>Cidade</td>
-            <td>CPF</td>
-            <td>Telefone</td>
-            <td>Status</td>
-            <td>Editar</td>
-        </tr>
-    </table>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
         src="https://code.jquery.com/jquery-3.4.0.min.js"
         integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
@@ -62,8 +35,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-
-    <script src="../js/alunos.js"></script>
 
 </body>
 
