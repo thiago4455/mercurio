@@ -5,3 +5,11 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+tr .btnR{
+    display: none;
+}
+
+tr:hover .btnR{
+    display: table-row;
+}
