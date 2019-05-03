@@ -27,7 +27,6 @@
 
 <body>
 
-
     <?php
         session_start();
         if($_SESSION['idLog'] == "") {
@@ -44,6 +43,16 @@
             <h1>Logado como: </h1>
             <h2 id="log-info-nome"><?php echo $_SESSION['nomeLog'] ?></h2>
         </div>
+        <div class="dropdown">
+            <button id="btn-drop" class="btn dropdown-toggle" type="button" id="btn-drop" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btn-drop">
+                <a class="dropdown-item" href="#">Meu Perfil</a>
+                <a class="dropdown-item" id="sair" href="signout.php">Sair</a>
+            </div>
+        </div>
+        
     </div>
 
     <!-- --------------------------- -->
@@ -73,8 +82,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
-    <script src="js/navbar.js"></script>
-
     <script>
     $(window).on('load', () => {
         pageHide = () => {
@@ -102,13 +109,6 @@
 
         $('#nav-logo').click(() => {
             window.location.href = 'index.php'
-        })
-
-        $('#log-info-nome').click(function() {
-            <?php
-                //session_destroy(); 
-            ?>
-            window.location.href = 'index.php';
         })
 
     })

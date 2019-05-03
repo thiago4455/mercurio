@@ -59,11 +59,27 @@
         margin: 0 0 1px 0;
         font-size: 1.2rem;
         font-family: 'Google-Bold';
-        cursor: pointer;
+        cursor: default;
     }
 
     #log-info-nome:hover {
-        text-decoration: underline;
         color: #D85252;
     }
     
+    .dropdown-menu {
+        left: -70px !important;
+        top: 10px !important;
+    }
+
+    #btn-drop {
+        color: #D85252; 
+        outline: none;
+    }
+
+    #btn-drop:focus {
+        box-shadow: none;
+    }
+
+    .dropdown-item.active, .dropdown-item:active {
+        background-color: #d85252;
+    }
