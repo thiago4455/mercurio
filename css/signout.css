@@ -1,0 +1,28 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #eee;
+    font-family: 'Google-Reg';
+}
+
+#main {
+    width: 600px;
+    background: #fff;
+    height: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 5px;
+    color: #333;
+    font-family: 'Google-Bold';
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+    #main h1 {
+        font-size: 2rem;
+    }
