@@ -59,13 +59,14 @@
     <div id="main">
         <div id="nav-lateral">
             <div id="title-navlat">Opções</div>
-            <div id="nav-alugar" class="item-nav item-nav-active"><i class="fas fa-clipboard-list"></i><p>Alugar</p></div>
-            <div id="nav-livros" class="item-nav"><i class="fas fa-book"></i><p>Livros</p></div>
+            <div id="nav-ciclos" class="item-nav item-nav-active"><i class="fas fa-redo"></i><p>Novo Ciclo</p></div>
             <div id="nav-alunos" class="item-nav"><i class="fas fa-users"></i><p>Alunos</p></div>
+            <div id="nav-empresas" class="item-nav"><i class="fas fa-building"></i><p>Empresas</p></div>
+            <div id="nav-relatorios" class="item-nav"><i class="fas fa-list-alt"></i><p>Relatórios</p></div>
         </div>
 
         <div id="center">
-            <iframe src="home/alugar.php" frameborder="0" id="iframe-home"></iframe>
+            <iframe src="home/empresas.php" frameborder="0" id="iframe-home"></iframe>
         </div>
 
     </div>
@@ -98,12 +99,15 @@
             id = $(this).attr("id");
             $('#'+id).addClass('item-nav-active')
 
-            if(id == 'nav-alugar') {
-                $('#iframe-home').attr('src', 'home/alugar.php'); 
-            } else if (id == 'nav-livros') {
-                $('#iframe-home').attr('src', 'home/livros.php'); 
+            if(id == 'nav-ciclos') {
+                $('#iframe-home').attr('src', 'home/ciclos.php'); 
             } else if (id == 'nav-alunos') {
                 $('#iframe-home').attr('src', 'home/alunos.php'); 
+            } else if (id == 'nav-empresas') {
+                $('#iframe-home').attr('src', 'home/empresas.php'); 
+            } else if(id == 'nav-relatorios') {
+                $('#iframe-home').attr('src', 'home/relatorios.php'); 
+
             }
         })
 

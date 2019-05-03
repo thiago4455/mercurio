@@ -1,11 +1,10 @@
 body {
     width: 100%;
     min-height: 100vh;
-    overflow-y: scroll;
+    background: #eee;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #eee;
     font-family: 'Google-Reg';
 }
 
@@ -16,16 +15,16 @@ body {
     display: flex;
     flex-direction: column;
     background: #fff;
-    margin: 20px 0;
-    box-shadow: 0 0 3px rgba(0,0,0,.2);
+    margin: 30px 0;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
     border-radius: 5px;
 }
 
-#fast-search h1 {
+#title-search {
     font-family: 'Google-Bold';
     font-size: 2rem;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #busca {
@@ -62,57 +61,4 @@ body {
 #search-avanced:hover {
     opacity: .7;
     transition: .3s;
-}
-
-#tableBody {
-    width: 95%;
-    padding: 30px;
-    border-radius: 5px;
-    background: #fff;
-    box-shadow: 0 0 3px rgba(0,0,0,.2);
-}
-
-tr .btnR{
-    display: flex;
-    opacity: 0;
-}
-
-tr:hover .btnR{
-    opacity: 1;
-    align-items: center;
-    justify-content: center;
-}
-
-#tr-title {
-    border-top-left-radius: 5px;
-    border-top-rigth-radius: 5px;
-    background: #D85252;
-
-}
-
-#tr-title td {
-    height: 50px;
-    padding: 10px;
-    color: #fff;
-    font-size: .9rem;
-    font-family: 'Google-Bold';
-}    
-
-tr td {
-    height: 45px;
-    font-size: .7rem;
-    padding: 0 15px;
-}
-
-tr:hover {
-    background: #ddd;
-}
-
-td button {
-    border: none;
-    background: #D85252;
-    color: #fff;
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
 }
