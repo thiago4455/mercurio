@@ -25,9 +25,9 @@
 
 <body>
 
-    <button id='buscar'></button>
+    <input type="text" id="inputSearch">
 
-    <table>
+    <table id='tableBody'>
         <tr>
             <td>RA</td>
             <td>Nome</td>
@@ -39,7 +39,7 @@
             <td>Telefone</td>
             <td>Status</td>
         </tr>
-        <tr>
+        <!--tr>
             <td>1234567890</td>
             <td>Thiago Buenos Aires Mattos</td>
             <td>16</td>
@@ -48,40 +48,7 @@
             <td>Belo Horizonte</td>
             <td>111.222.333-44</td>
             <td>(31) 98367-9954</td>
-            <td>MATRICULADO</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>MATRICULADO</td!-->
         </tr>
     </table>
 
@@ -96,25 +63,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
-
-<script>
-    $(window).on('load', () => {
-      
-    })
-
-    $(document).ready(() => {
-        $.ajax({
-                url: '../models/listarAlunos.php',
-                dataType: 'json',
-                success: function(msg) {
-                    console.log(msg)
-                },
-                error: function(err) {
-                    console.log(err);
-                }
-            });
-})
-</script>
+    <script src="../js/alunos.js"></script>
 
 </body>
 
