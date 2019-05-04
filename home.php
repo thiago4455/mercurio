@@ -66,7 +66,7 @@
         </div>
 
         <div id="center">
-            <iframe src="home/alunos.php" frameborder="0" id="iframe-home"></iframe>
+            <iframe src="home/ciclos.php" frameborder="0" id="iframe-home"></iframe>
         </div>
 
     </div>

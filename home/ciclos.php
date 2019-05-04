@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../fonts/fontes.css">
 
     <!-- Ciclos.css -->
-    <link rel="stylesheet" href="css/ciclos.css"> 
+    <link rel="stylesheet" href="css/ciclos.css">
 
 </head>
 
@@ -26,6 +26,19 @@
 
     <div id="main">
         <h1 id="title-main">Iniciar novo Ciclo</h1>
+        <h2>
+            Para iniciar um novo ciclo, anexe abaixo uma planilha do Excel (xlsx, xls ou xml). Automaticamente os dados serão adicionados ao banco de dados e
+            estarão disponíveis para o encaminhamento as devidas empresas.
+        </h2>
+        <div class="input-group mb-3 col-md-8 input-file">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Upload</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                <label class="custom-file-label" for="inputGroupFile01">Escolha o arquivo</label>
+            </div>
+        </div>
     </div>
 
     <script
