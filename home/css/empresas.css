@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     background: #fff;
-    margin: 30px 0;
+    margin: 20px 0 0;
     box-shadow: 0 0 5px rgba(0,0,0,.2);
     border-radius: 5px;
 }
@@ -61,4 +61,22 @@ body {
 #search-avanced:hover {
     opacity: .7;
     transition: .3s;
+}
+
+#fast-actions {
+    width: 95%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#btn-cadastrar {
+    margin: 0 0 0 auto;
+    height: 50px;
+}
+
+.form-control {
+    height: 50px;
+    background: #f7f7f7;
 }

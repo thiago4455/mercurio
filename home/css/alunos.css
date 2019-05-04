@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     background: #fff;
-    margin: 20px 0;
+    margin: 20px 0 0;
     box-shadow: 0 0 3px rgba(0,0,0,.2);
     border-radius: 5px;
 }
@@ -64,12 +64,49 @@ body {
     transition: .3s;
 }
 
+#fast-actions {
+    width: 95%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    border-color: #fff;
+    background-color: #D85252;
+}
+
+#btn-encaminhar {
+    margin: 0 0 0 auto;
+    height: 50px;
+}
+
+#div-not-found {
+    display: none;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+}
+
+#div-not-found h1 {
+    font-family: 'Google-Bold';
+    font-size: 3.8rem;
+    margin: 0;
+}
+
+#div-not-found i {
+    font-size: 3rem;
+    margin: 0 30px 0 0;
+}
+
 #tableBody {
     width: 95%;
-    padding: 30px;
     border-radius: 5px;
     background: #fff;
     box-shadow: 0 0 3px rgba(0,0,0,.2);
+    margin-bottom: 30px;
 }
 
 tr .btnR{
@@ -85,7 +122,7 @@ tr:hover .btnR{
 
 #tr-title {
     border-top-left-radius: 5px;
-    border-top-rigth-radius: 5px;
+    border-top-right-radius: 5px;
     background: #D85252;
 
 }

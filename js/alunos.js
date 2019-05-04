@@ -2,7 +2,7 @@ $(window).on('load', () => {
       
 })
 
-const colunas = ['Ra','Nome','Idade','Sexo','Email','Cidade','Cpf','Telefone1','Status'];
+const colunas = ['Select','Ra','Nome','Idade','Sexo','Email','Cidade','Cpf','Telefone1','Status'];
 
 $(document).ready(() => {
     let table = document.getElementById('tableBody');
@@ -39,10 +39,15 @@ $(document).ready(() => {
             success: function(msg) {
                 console.log(msg)
                 if(msg=='Not found'){
-                    table.innerHTML = 'Nenhum resultado encontrado.'
+                    $('#fast-actions').css('display', 'none');
+                    $('#tableBody').css('display', 'none');
+                    $('#div-not-found').css('display', 'flex');
                 }
                 else{
-                    table.innerHTML = '<tr id="tr-title"><td>RA</td><td>Nome</td><td>Idade</td><td>Sexo</td><td>Email</td><td>Cidade</td><td>CPF</td><td>Telefone</td><td>Status</td><td>Editar</td></tr>';
+                    $('#fast-actions').css('display', 'flex');
+                    $('#tableBody').css('display', 'table');
+                    $('#div-not-found').css('display', 'none');
+                    table.innerHTML = '<tr id="tr-title"><td></td><td>RA</td><td>Nome</td><td>Idade</td><td>Sexo</td><td>Email</td><td>Cidade</td><td>CPF</td><td>Telefone</td><td>Status</td><td>Editar</td></tr>';
                     for (i = 0; i < msg.length; i++) {
                         var tr = document.createElement('tr');
                         for (j = 0; j < colunas.length; j++) {
@@ -50,7 +55,7 @@ $(document).ready(() => {
                             td.appendChild(document.createTextNode(msg[i][colunas[j]]));
                             tr.appendChild(td)
                         }
-                        tr.innerHTML+="<td class='btnR' id='btnRow"+i+"'><button>X</button></td>"
+                        tr.innerHTML+="<td class='btnR' id='btnRow"+i+"'><button><i class='fas fa-edit'></i></td>"
                         table.appendChild(tr);
                     }
                 }
