@@ -24,12 +24,40 @@
 
 <body>
 
+    <!-- Modal Cadastrar -->
+    <div class="modal fade modal-cadastrar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cadastrar Empresa</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group col-12 col-md-12">
+                            <label for="ipt-razaoSocial">Razão Social</label>
+                            <input type="text" class="form-control" id="ipt-razaoSocial" placeholder="Digite a Razão Social da Empresa" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success">Concluir Cadastro</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+
     <div id="fast-search">
         <h1 id="title-search">Buscar Empresas</h1>
         <div id="busca">
-            <input type="text" id="inputSearch" placeholder="Pesquise por RA, Nome, Email ou CPF" autocomplete="off">
+            <input type="text" id="inputSearch" placeholder="Pesquise Código, Razão Social ou Representante" autocomplete="off">
             <div id="search-avanced" class="btn">Busca Avançada</div>
         </div>
+    </div>
+
+    <div id="fast-actions">
+        <button id="btn-cadastrar" type="button" class="btn btn-success" data-toggle="modal" data-target=".modal-cadastrar">Cadastrar Nova Empresa</button>
     </div>
 
     <script

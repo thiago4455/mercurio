@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    
+        
     <div id="fast-search">
         <h1>Buscar Alunos</h1>
         <div id="busca">
@@ -34,6 +34,14 @@
         <div id="busca-avancada">
 
         </div>
+    </div>
+
+    <div id="fast-actions">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Selecionar Todos</label>
+        </div>
+        <button id="btn-encaminhar" type="button" class="btn btn-success" href="#">Encaminhar Selecionados</button>
     </div>
 
     <table id='tableBody'>
@@ -51,6 +59,11 @@
             <td>Editar</td>
         </tr>
     </table>
+
+    <div id="div-not-found">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h1>Aluno não Encontrado</h1>
+    </div>
 
 
     <!-- Optional JavaScript -->
