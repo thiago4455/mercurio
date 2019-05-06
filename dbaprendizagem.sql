@@ -1,4 +1,5 @@
-CREATE DATABASE dbaprendizagem;
+CREATE DATABASE dbaprendizagem CHARACTER SET UTF8mb4 COLLATE utf8mb4_bin;
+
 USE dbaprendizagem;
 
 CREATE TABLE Func (
@@ -9,7 +10,7 @@ CREATE TABLE Func (
     cpfFunc VARCHAR(14) NOT NULL
 );
 
-CREATE TABLE Alunos(
+CREATE TABLE Aluno(
     Ra VARCHAR(10),
     Nome VARCHAR(100),
     DataNasc VARCHAR(10),
