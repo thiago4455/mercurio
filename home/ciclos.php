@@ -48,11 +48,59 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 
     <script>
+    let X = XLSX;
+    let csvTable = '';
+
+        function to_csv(workbook) {
+            var result = [];
+            workbook.SheetNames.forEach(function(sheetName) {
+                var csv = X.utils.sheet_to_csv(workbook.Sheets[sheetName]);
+                if(csv.length){
+                    result.push(csv);
+                }
+            });
+            return result.join("\n");
+        };
+
         $(window).on('load', function(){
             $('#loading').css('display', 'none');
-        })
+        });
+
+        let inputFile = document.getElementById('inputGroupFile01');
+        
+
+        inputFile.addEventListener('change', function(e){
+            if(inputFile.files.length != 0) {
+                $('.custom-file-label').text('Enviando...');
+
+                var files = e.target.files, f = files[0];
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var data = new Uint8Array(e.target.result);
+                    var workbook = XLSX.read(data, {type: 'array'});
+
+                    csvTable = to_csv(workbook);
+                    $.ajax({
+                        url: '../models/importarExcel.php',
+                        type: 'POST',
+                        data: {
+                            'csv': csvTable
+                        },
+                        success: function(data) {
+                            console.log(data);                    
+                        },
+                        error: function(err) {
+                            alert('deu ruim')
+                            console.log(err)
+                        }
+                    });
+                };
+                reader.readAsArrayBuffer(f);
+            } 
+        });
     </script>
 
 </body>
