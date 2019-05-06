@@ -10,7 +10,7 @@ CREATE TABLE Func (
     cpfFunc VARCHAR(14) NOT NULL
 );
 
-CREATE TABLE Aluno(
+CREATE TABLE Alunos(
     Ra VARCHAR(10),
     Nome VARCHAR(100),
     DataNasc VARCHAR(10),
