@@ -1,4 +1,4 @@
-CREATE DATABASE dbaprendizagem CHARACTER SET UTF8mb4 COLLATE utf8mb4_bin;
+CREATE DATABASE dbaprendizagem CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 USE dbaprendizagem;
 
@@ -8,7 +8,7 @@ CREATE TABLE Func (
     emailFunc VARCHAR(60) NOT NULL,
     senhaFunc VARCHAR(20) NOT NULL,
     cpfFunc VARCHAR(14) NOT NULL
-);
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE Alunos(
     Ra VARCHAR(10),
@@ -38,6 +38,6 @@ CREATE TABLE Alunos(
     CodTurma VARCHAR(20),
     Status VARCHAR(30),
     PRIMARY KEY(Ra)
-);
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 INSERT INTO `Func` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`) VALUES ('00000001', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00')
