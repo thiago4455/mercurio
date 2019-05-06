@@ -128,6 +128,11 @@ class ClassAlunos {
     public function RetAlunos() {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbaprendizagem");
+                # MySQL UTF-8
+                $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+                $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+                $objConexao->executarComandoSQL('SET character_set_client=utf8');
+                $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
             $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos");
 
@@ -146,6 +151,11 @@ class ClassAlunos {
     public function BuscaAlunos($busca) {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbaprendizagem");
+                # MySQL UTF-8
+                $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+                $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+                $objConexao->executarComandoSQL('SET character_set_client=utf8');
+                $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
             $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE (Nome LIKE '%$busca%') OR (Ra LIKE '%$busca%') OR (Cpf LIKE '%$busca%') OR (Telefone1 LIKE '%$busca%') OR (Telefone2 LIKE '%$busca%')");
 
@@ -164,6 +174,11 @@ class ClassAlunos {
     public function BuscaAvancada($objAlunos) {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbaprendizagem");
+                # MySQL UTF-8
+                $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+                $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+                $objConexao->executarComandoSQL('SET character_set_client=utf8');
+                $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
 
             $busca = "SELECT * FROM Alunos WHERE (Nome != NULL) ";
