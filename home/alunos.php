@@ -24,6 +24,13 @@
 </head>
 
 <body>
+
+    <div id="loading">
+        <div id="loading-main">
+            <h1>Carregando</h1>
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      </div>
+    </div>
         
     <div id="fast-search">
         <h1>Buscar Alunos</h1>
@@ -77,6 +84,12 @@
     </script>
 
     <script src="../js/alunos.js"></script>
+
+    <script>
+        $(window).on('load', function(){
+            $('#loading').css('display', 'none');
+        })
+    </script>
 
 </body>
 

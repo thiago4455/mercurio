@@ -107,4 +107,8 @@ body {
         outline: none;
         margin: 10px 0;
     }
+
+    #error-msg {
+        font-size: .9rem;
+    }
 }
