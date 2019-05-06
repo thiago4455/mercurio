@@ -68,6 +68,12 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
+    <script>
+        $(window).on('load', function(){
+            $('#loading').css('display', 'none');
+        })
+    </script>
+
 </body>
 
 </html>

@@ -36,6 +36,9 @@
 
     <!-- Navbars -->
     <div id="nav">
+        <div id="nav-menu-cel">
+            <i class="fas fa-bars"></i>
+        </div>
         <div id="nav-logo">
             <img src="assets/img/logo_grande.jpg" alt="Logo Senai">
         </div>
@@ -52,7 +55,6 @@
                 <a class="dropdown-item" id="sair" href="signout.php">Sair</a>
             </div>
         </div>
-        
     </div>
 
     <!-- --------------------------- -->
@@ -66,7 +68,7 @@
         </div>
 
         <div id="center">
-            <iframe src="home/ciclos.php" frameborder="0" id="iframe-home"></iframe>
+            <iframe src="home/alunos.php" frameborder="0" id="iframe-home"></iframe>
         </div>
 
     </div>
@@ -95,6 +97,7 @@
     $(document).ready(() => {
 
         $('.item-nav').click(function() {
+            $('#nav-lateral').removeClass('nav-lat-active');
             $('.item-nav').removeClass('item-nav-active')
             id = $(this).attr("id");
             $('#'+id).addClass('item-nav-active')
@@ -113,6 +116,10 @@
 
         $('#nav-logo').click(() => {
             window.location.href = 'index.php'
+        })
+
+        $('#nav-menu-cel').click(()=>{
+            $('#nav-lateral').toggleClass('nav-lat-active');
         })
 
     })
