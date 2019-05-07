@@ -45,26 +45,13 @@
 
     <div id="fast-actions">
         <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1">Selecionar Todos</label>
+            <input type="checkbox" class="custom-control-input" id="check-todos">
+            <label class="custom-control-label" for="check-todos">Selecionar Todos</label>
         </div>
         <button id="btn-encaminhar" type="button" class="btn btn-success" href="#">Encaminhar Selecionados</button>
     </div>
 
-    <table id='tableBody'>
-        <tr id="tr-title">
-            <td></td>
-            <td>RA</td>
-            <td>Nome</td>
-            <td>Idade</td>
-            <td>Sexo</td>
-            <td>Email</td>
-            <td>Cidade</td>
-            <td>CPF</td>
-            <td>Telefone</td>
-            <td>Status</td>
-            <td>Editar</td>
-        </tr>
+    <table id='tableBody' class="table">
     </table>
 
     <div id="div-not-found">
