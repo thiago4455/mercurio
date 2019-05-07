@@ -42,7 +42,18 @@ $(document).ready(() => {
             url: '../models/listarAlunos.php',
             dataType: 'json',
             success: function(msg) {
-               ListarItens(msg)
+                if(msg=='Not found'){
+                    $('#fast-actions').css('display', 'none');
+                    $('#tableBody').css('display', 'none');
+                    $('#div-not-found').css('display', 'flex');
+                    $('#msg-notFound').text('Nenhum aluno cadastrado');
+                }
+                else{
+                    $('#fast-actions').css('display', 'flex');
+                    $('#tableBody').css('display', 'table');
+                    $('#div-not-found').css('display', 'none');
+                    ListarItens(msg);
+                }
             },
             error: function(err) {
                 console.log(err);
@@ -62,6 +73,7 @@ $(document).ready(() => {
                     $('#fast-actions').css('display', 'none');
                     $('#tableBody').css('display', 'none');
                     $('#div-not-found').css('display', 'flex');
+                    $('#msg-notFound').text('Aluno não encontrado');
                 }
                 else{
                     $('#fast-actions').css('display', 'flex');

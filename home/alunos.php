@@ -56,7 +56,7 @@
 
     <div id="div-not-found">
         <i class="fas fa-exclamation-triangle"></i>
-        <h1>Aluno não Encontrado</h1>
+        <h1 id="msg-notFound">Aluno não Encontrado</h1>
     </div>
 
 
