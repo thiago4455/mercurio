@@ -40,6 +40,17 @@ CREATE TABLE Alunos(
     PRIMARY KEY(Ra)
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
+CREATE TABLE Empresas(
+    codEmpresa VARCHAR(6) PRIMARY KEY,
+    cnpj CHAR(18) NOT NULL,
+    nomeFantasia VARCHAR(100) NOT NULL,
+    razaoSocial VARCHAR(100) NOT NULL,
+    endereco VARCHAR(150) NOT NULL,
+    telefone VARCHAR(15) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    responsavel VARCHAR(100) NOT NULL
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
 INSERT INTO `Func` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`) VALUES ('00000001', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00');
 
 INSERT INTO `Alunos` (`Ra`, `Nome`, `DataNasc`, `Idade`, `Sexo`, `GrauInstrucao`, `Rua`, `Numero`, `Complemento`, `Bairro`, `Estado`, `Cidade`, `Cep`, `Telefone1`, `Telefone2`, `Identidade`, `Cpf`, `Email`, `CarteiraTrabalho`, `NomePai`, `TelefonePai`, `NomeMae`, `TelefoneMae`, `NomeCurso`, `CodTurma`, `Status`) VALUES
