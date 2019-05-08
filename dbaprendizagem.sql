@@ -37,6 +37,7 @@ CREATE TABLE Alunos(
     NomeCurso VARCHAR(50),
     CodTurma VARCHAR(20),
     Status VARCHAR(30),
+    Semestre CHAR(5),
     PRIMARY KEY(Ra)
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
