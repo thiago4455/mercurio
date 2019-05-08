@@ -22,7 +22,7 @@ class ClassLogin {
 
     public function Login($objLogin) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbaprendizagem");
+        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
 
         $email = $objLogin->getEmail();
         $senha = $objLogin->getSenha();

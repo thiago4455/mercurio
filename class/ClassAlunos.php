@@ -127,7 +127,7 @@ class ClassAlunos {
 
     public function RetAlunos() {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbaprendizagem");
+        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
@@ -150,7 +150,7 @@ class ClassAlunos {
 
     public function BuscaAlunos($busca) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbaprendizagem");
+        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
@@ -173,7 +173,7 @@ class ClassAlunos {
 
     public function BuscaAvancada($objAlunos) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbaprendizagem");
+        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
