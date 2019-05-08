@@ -1,2 +1,5 @@
 # Ignorar todos os arquivos .csv
 *.csv
+
+#Exceto o arquivo example.csv
+!example.csv
