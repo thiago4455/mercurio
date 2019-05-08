@@ -3,7 +3,7 @@ CREATE DATABASE dbmercurio CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE dbmercurio;
 
 CREATE TABLE Func (
-    idFunc SMALLINT PRIMARY KEY,
+    idFunc INT PRIMARY KEY,
     nomeFunc VARCHAR(60) NOT NULL,
     emailFunc VARCHAR(60) NOT NULL,
     senhaFunc VARCHAR(20) NOT NULL,
