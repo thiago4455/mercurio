@@ -51,6 +51,15 @@ CREATE TABLE Empresas(
     responsavel VARCHAR(100) NOT NULL
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
+CREATE TABLE Empregado(
+    Alunos_ra VARCHAR(10) NOT NULL,
+    FOREIGN KEY Alunos_ra(Alunos_ra)
+    REFERENCES Alunos(Ra),
+    Empresas_codEmpresa VARCHAR(6) NOT NULL,
+    FOREIGN KEY Empresas_codEmpresa(Empresas_codEmpresa)
+    REFERENCES Empresas(codEmpresa)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
 INSERT INTO `Func` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`) VALUES ('00000001', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00');
 
 INSERT INTO `Alunos` (`Ra`, `Nome`, `DataNasc`, `Idade`, `Sexo`, `GrauInstrucao`, `Rua`, `Numero`, `Complemento`, `Bairro`, `Estado`, `Cidade`, `Cep`, `Telefone1`, `Telefone2`, `Identidade`, `Cpf`, `Email`, `CarteiraTrabalho`, `NomePai`, `TelefonePai`, `NomeMae`, `TelefoneMae`, `NomeCurso`, `CodTurma`, `Status`) VALUES
