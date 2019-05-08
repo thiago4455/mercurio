@@ -1,6 +1,6 @@
-CREATE DATABASE dbaprendizagem CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+CREATE DATABASE dbmercurio CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-USE dbaprendizagem;
+USE dbmercurio;
 
 CREATE TABLE Func (
     idFunc SMALLINT PRIMARY KEY,
