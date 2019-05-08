@@ -77,9 +77,15 @@ body {
 }
 
 .form-control {
-    height: 50px;
-    background: #f7f7f7;
+    height: 45px;
+    background: #eee;
 }
+
+#alert-error {
+  display: none;
+}
+
+/* Loading */
 
 #loading {
     width: 100%;
