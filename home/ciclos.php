@@ -83,6 +83,7 @@
                     var workbook = XLSX.read(data, {type: 'array'});
 
                     csvTable = to_csv(workbook);
+                    console.log(csvTable.split(/\r\n|\r|\n/).length-1)
                     $.ajax({
                         url: '../models/importarExcel.php',
                         type: 'POST',
