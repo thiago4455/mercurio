@@ -54,7 +54,7 @@ CREATE TABLE Empresas(
     numero VARCHAR(5) NOT NULL,
     bairro VARCHAR(30) NOT NULL,
     cidade VARCHAR(30) NOT NULL,
-    estado CHAR(2) NOT NULL,
+    estado CHAR(2) NOT NULL
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE Empregado(
