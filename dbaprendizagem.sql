@@ -46,10 +46,15 @@ CREATE TABLE Empresas(
     cnpj CHAR(18) NOT NULL,
     nomeFantasia VARCHAR(100) NOT NULL,
     razaoSocial VARCHAR(100) NOT NULL,
-    endereco VARCHAR(150) NOT NULL,
     telefone VARCHAR(15) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    responsavel VARCHAR(100) NOT NULL
+    responsavel VARCHAR(100) NOT NULL,
+    cep VARCHAR(9) NOT NULL,
+    rua VARCHAR(50) NOT NULL,
+    numero VARCHAR(5) NOT NULL,
+    bairro VARCHAR(30) NOT NULL,
+    cidade VARCHAR(30) NOT NULL,
+    estado CHAR(2) NOT NULL,
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE Empregado(
