@@ -40,65 +40,65 @@
                         <div class="form-row">
                             <div class="form-group col-12">
                                 <label for="ipt-nomeFantasia">Nome Fantasia</label>
-                                <input type="text" class="form-control" id="ipt-nomeFantasia" placeholder="Digite o nome Fantasia da Empresa" maxlength="100" required>
+                                <input type="text" class="form-control" id="ipt-nomeFantasia" placeholder="Digite o nome Fantasia da Empresa" maxlength="100" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12">
                                 <label for="ipt-razaoSocial">Razão Social</label>
-                                <input type="text" class="form-control" id="ipt-razaoSocial" placeholder="Digite a Razão Social da Empresa" maxlength="100" required>
+                                <input type="text" class="form-control" id="ipt-razaoSocial" placeholder="Digite a Razão Social da Empresa" maxlength="100" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12">
                                 <label for="ipt-cnpj">CNPJ</label>
-                                <input type="text" class="form-control" id="ipt-cnpj" placeholder="Digite o cnpj da empresa" maxlength="18" required>
+                                <input type="text" class="form-control" id="ipt-cnpj" placeholder="Digite o cnpj da empresa" maxlength="18" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-nomeResponsavel">Nome do Responsável</label>
-                                <input type="text" class="form-control" id="ipt-nomeResponsavel" placeholder="Digite o nome do responsável" maxlength="100" required>
+                                <input type="text" class="form-control" id="ipt-nomeResponsavel" placeholder="Digite o nome do responsável" maxlength="100" autocomplete="off" required>
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-email">Email de contato</label>
-                                <input type="email" class="form-control" id="ipt-email" placeholder="Digite o email de contato da empresa ou do responsável" maxlength="100" required>
+                                <input type="email" class="form-control" id="ipt-email" placeholder="Digite o email de contato da empresa ou do responsável" maxlength="100" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-telefone">Telefone</label>
-                                <input type="text" class="form-control" id="ipt-telefone" placeholder="Digite o telefone da empresa ou responsável" maxlength="15" required>
+                                <input type="text" class="form-control" id="ipt-telefone" placeholder="Digite o telefone da empresa ou responsável" maxlength="15" autocomplete="off" required>
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-cep">Cep</label>
-                                <input type="text" class="form-control" id="ipt-cep" placeholder="Digite o cep da empresa" maxlength="9" required>
+                                <input type="text" class="form-control" id="ipt-cep" placeholder="Digite o cep da empresa" maxlength="9" autocomplete="off" required>
                             </div>  
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 col-md-8">
                                 <label for="ipt-endereco">Endereço</label>
-                                <input type="text" class="form-control" id="ipt-endereco" placeholder="Digite o endereço da empresa" maxlength="50" required>
+                                <input type="text" class="form-control" id="ipt-endereco" placeholder="Digite o endereço da empresa" maxlength="50" autocomplete="off" required>
                             </div>
                             <div class="form-group col-12 col-md-4">
                                 <label for="ipt-numero">Número</label>
-                                <input type="text" class="form-control" id="ipt-numero" placeholder="Digite o numero da empresa" maxlength="5" required>
+                                <input type="text" class="form-control" id="ipt-numero" placeholder="Digite o numero da empresa" maxlength="5" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-bairro">Bairro</label>
-                                <input type="text" class="form-control" id="ipt-bairro" placeholder="Digite o bairro da empresa" maxlength="30" required>
+                                <input type="text" class="form-control" id="ipt-bairro" placeholder="Digite o bairro da empresa" maxlength="30" autocomplete="off" required>
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-cidade">Cidade</label>
-                                <input type="text" class="form-control" id="ipt-cidade" placeholder="Digite a cidade da empresa" maxlength="30" required>
+                                <input type="text" class="form-control" id="ipt-cidade" placeholder="Digite a cidade da empresa" maxlength="30" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-estado">Estado</label>
-                                <input type="text" class="form-control" id="ipt-estado" placeholder="Digite o estado da empresa" maxlength="30" required>
+                                <input type="text" class="form-control" id="ipt-estado" placeholder="Digite o estado da empresa" maxlength="30" autocomplete="off" required>
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-apelido">Apelido Personálizavel</label>
