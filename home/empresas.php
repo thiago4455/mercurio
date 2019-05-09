@@ -76,9 +76,13 @@
                             </div>  
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-12">
+                            <div class="form-group col-12 col-md-8">
                                 <label for="ipt-endereco">Endereço</label>
-                                <input type="text" class="form-control" id="ipt-endereco" placeholder="Digite o email de contato da empresa ou do responsável" maxlength="50" required>
+                                <input type="text" class="form-control" id="ipt-endereco" placeholder="Digite o endereço da empresa" maxlength="50" required>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <label for="ipt-numero">Número</label>
+                                <input type="text" class="form-control" id="ipt-numero" placeholder="Digite o numero da empresa" maxlength="5" required>
                             </div>
                         </div>
                         <div class="form-row">
@@ -107,6 +111,11 @@
                                 <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg"></h6>
                             </div>
                         </div>
+                        <div class="form-row" style>
+                            <div id="alert-success" style="align-items: center; padding: 10px 30px" class="alert alert-success col-12" role="alert">
+                                <span style="font-weight: 600">Sucesso!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="">Empresa cadastrada com sucesso</h6>
+                            </div>
+                        </div>
                         <div class="modal-footer">
                             <button type="button" id="btn-cadastrar"  class="btn btn-success">Concluir Cadastro</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -125,7 +134,7 @@
     </div>
 
     <div id="fast-actions">
-        <button id="btn-cadastrar" type="button" class="btn btn-success" data-toggle="modal" data-target=".modal-cadastrar">Cadastrar Nova Empresa</button>
+        <button id="btn-modal-cadastrar" type="button" class="btn btn-success" data-toggle="modal" data-target=".modal-cadastrar">Cadastrar Nova Empresa</button>
     </div>
 
     <table id='tableBody' class="table">

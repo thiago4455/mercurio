@@ -39,6 +39,9 @@
         <div id="nav-menu-cel">
             <i class="fas fa-bars"></i>
         </div>
+        <div id="nav-menu">
+            <i class="fas fa-bars"></i>
+        </div>
         <div id="nav-logo">
             <img src="assets/img/logo_grande.jpg" alt="Logo Senai">
         </div>
@@ -61,10 +64,10 @@
     <div id="main">
         <div id="nav-lateral">
             <div id="title-navlat">Opções</div>
-            <div id="nav-ciclos" class="item-nav item-nav-active"><i class="fas fa-redo"></i><p>Novo Ciclo</p></div>
-            <div id="nav-alunos" class="item-nav"><i class="fas fa-users"></i><p>Alunos</p></div>
-            <div id="nav-empresas" class="item-nav"><i class="fas fa-building"></i><p>Empresas</p></div>
-            <div id="nav-relatorios" class="item-nav"><i class="fas fa-list-alt"></i><p>Relatórios</p></div>
+            <div id="nav-ciclos" class="item-nav item-nav-active"><i class="fas fa-redo"></i><p class="item-text">Novo Ciclo</p></div>
+            <div id="nav-alunos" class="item-nav"><i class="fas fa-users"></i><p class="item-text">Alunos</p></div>
+            <div id="nav-empresas" class="item-nav"><i class="fas fa-building"></i><p class="item-text">Empresas</p></div>
+            <div id="nav-relatorios" class="item-nav"><i class="fas fa-list-alt"></i><p class="item-text">Relatórios</p></div>
         </div>
 
         <div id="center">
@@ -115,12 +118,28 @@
         })
 
         $('#nav-logo').click(() => {
-            window.location.href = 'index.php'
-        })
+            window.location.href = 'index.php';
+        });
 
         $('#nav-menu-cel').click(()=>{
             $('#nav-lateral').toggleClass('nav-lat-active');
-        })
+        });
+
+        $('#nav-menu').click(function() {
+            if($('#nav-lateral').css('width') == '300px') {
+                $('.item-text').css('display', 'none');
+                $('#title-navlat').css('display', 'none');
+                $('#nav-lateral').css('width', '84px');
+                $('#nav-menu').css('transform','rotate(360deg)');
+                
+            }
+            else {
+                $('#nav-lateral').css('width', '300px');
+                $('#title-navlat').css('display', 'flex');
+                $('.item-text').css('display', 'flex');
+                $('#nav-menu').css('transform','rotate(-360deg)');
+            }
+        });
 
     })
     </script>
