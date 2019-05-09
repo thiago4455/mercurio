@@ -156,6 +156,8 @@ class ClassEmpresas {
         $objConexao->executarComandoSQL('SET character_set_results=utf8');    
 
         $nomeFantasia = $objCadastro->getNomeFantasia();
+        $razaoSocial = $objCadastro->getRazaoSocial();
+        $nomeResponsavel = $objCadastro->getNomeResponsavel();
         $cnpj = $objCadastro->getCnpj();
         $email = $objCadastro->getEmail();
         $telefone = $objCadastro->getTelefone();
