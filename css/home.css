@@ -21,6 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     background: #fff;
+    transition: .5s;
 }
 
     #title-navlat {
@@ -61,7 +62,6 @@ body {
     .item-nav:hover {
         background: #D85252;
         color: #fff;
-        transition: .3s;
     }
     .item-nav-active {
         background: #D85252;
@@ -87,6 +87,10 @@ body {
     #nav {
         padding: 20px !important;
         height: 60px !important;
+    }
+
+    #nav-menu {
+        display: none;
     }
 
     #nav-logo {
