@@ -170,7 +170,7 @@ class ClassEmpresas {
         $apelido = $objCadastro->getApelido();
 
         try {
-            if($objConexao->executarComandoSQL("INSERT INTO `empresas` (`codEmpresa`, `cnpj`, `nomeFantasia`, `razaoSocial`, `telefone`, `email`, `responsavel`, `cep`, `rua`, `numero`, `bairro`, `cidade`, `estado`) VALUES ('$apelido', '$cnpj', '$nomeFantasia', '$razaoSocial', '$telefone', '$email', '$nomeResponsavel', '$cep', '$endereco', '$numero', '$bairro', '$cidade', '$estado');")) {
+            if($objConexao->executarComandoSQL("INSERT INTO `Empresas` (`codEmpresa`, `cnpj`, `nomeFantasia`, `razaoSocial`, `telefone`, `email`, `responsavel`, `cep`, `rua`, `numero`, `bairro`, `cidade`, `estado`) VALUES ('$apelido', '$cnpj', '$nomeFantasia', '$razaoSocial', '$telefone', '$email', '$nomeResponsavel', '$cep', '$endereco', '$numero', '$bairro', '$cidade', '$estado');")) {
                 return true;
             }
         }
