@@ -89,6 +89,7 @@ body {
   display: none;
 }
 
+<<<<<<< HEAD
 #div-not-found {
   display: none;
   flex: 1;
@@ -183,6 +184,8 @@ td button {
   vertical-align: unset !important;
 }
 
+=======
+>>>>>>> 38f3b060b19b4825a9061d717a4fc99114d0acf7
 /* Loading */
 
 #loading {

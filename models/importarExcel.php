@@ -16,7 +16,11 @@
         require_once('../class/ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
 
+<<<<<<< HEAD
         $query = "LOAD DATA LOCAL INFILE '".str_replace("\\",'/',__DIR__)."/".$filename."' REPLACE INTO TABLE Alunos FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' IGNORE 1 LINES (Ra,Nome,DataNasc,Idade,Sexo,GrauInstrucao,Rua,Numero,Complemento,Bairro,Estado,Cidade,Cep,Telefone1,Identidade,Cpf,Email,CarteiraTrabalho,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,NomePai,TelefonePai,@dummy,@dummy,@dummy,@dummy,NomeMae,TelefoneMae,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,NomeCurso,@dummy,CodTurma,@dummy,Status,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,Telefone2,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy) SET Semestre = '".date("m.y") ."';";
+=======
+        $query = "LOAD DATA LOCAL INFILE '".str_replace("\\",'/',__DIR__)."/".$filename."' REPLACE INTO TABLE Alunos FIELDS TERMINATED BY ',' IGNORE 1 LINES (Ra,Nome,DataNasc,Idade,Sexo,GrauInstrucao,Rua,Numero,Complemento,Bairro,Estado,Cidade,Cep,Telefone1,Identidade,Cpf,Email,CarteiraTrabalho,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,NomePai,TelefonePai,@dummy,@dummy,@dummy,@dummy,NomeMae,TelefoneMae,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,NomeCurso,@dummy,CodTurma,@dummy,Status,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,Telefone2,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy) SET Semestre = '".date("m.y") ."';";
+>>>>>>> 38f3b060b19b4825a9061d717a4fc99114d0acf7
         echo $query;
         $objConexao->executarComandoSQL($query);   
     }
