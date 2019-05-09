@@ -36,11 +36,13 @@ $(document).ready(() => {
 
     function ListarItens(msg) {
         table.innerHTML = "";
-        table.innerHTML = '<tr id="tr-title"><td></td><td>RA</td><td>Nome</td><td>Idade</td><td>Sexo</td><td>Email</td><td>Cidade</td><td>CPF</td><td>Telefone</td><td>Status</td><td>Editar</td></tr>';
+        table.innerHTML = '<tr id="tr-title"><td>Código (Apelido)</td><td>Nome Fantasia</td><td>Razão Social</td><td>CNPJ</td><td>Telefone</td><td>Email</td><td>Cidade</td><td>Editar</td></tr>';
         for (i = 0; i < msg.length; i++) {
-            $('#tableBody').append('<tr id="' + msg[i].Ra + '" class="table-row"> <td class="td-check"> <input class="form-check-input check-alunos" type="checkbox" value="" id="' + msg[i].Ra + '"> </td> <td> ' + msg[i].Ra + ' </td> <td> ' + msg[i].Nome + ' </td> <td> ' + msg[i].Idade + ' </td> <td> ' + msg[i].Sexo + ' </td> <td> ' + msg[i].Email + ' </td> <td> ' + msg[i].Cidade + ' </td> <td> ' + msg[i].Cpf + ' </td> <td> ' + msg[i].Telefone1 + ' </td> <td> ' + msg[i].Status + ' </td> <td class="btnR" id="btnRow' + i + '"><button><i class="fas fa-edit"></i></td> </tr>')
+            $('#tableBody').append('<tr id="' + msg[i].codEmpresa + '" class="table-row"> </td> <td> ' + msg[i].codEmpresa + ' </td> <td> ' + msg[i].nomeFantasia + ' </td> <td> ' + msg[i].razaoSocial + ' </td> <td> ' + msg[i].cnpj + ' </td> <td> ' + msg[i].telefone + ' </td> <td> ' + msg[i].email + ' </td> <td> ' + msg[i].cidade + ' </td> <td class="btnR" id="btnRow' + i + '"><button><i class="fas fa-edit"></i></td> </tr>')
         }
     }
+
+    ListarEmpresas();
 
     $('#btn-cadastrar').click(function () {
         var nomeFantasia = $('#ipt-nomeFantasia').val();
@@ -123,6 +125,7 @@ $(document).ready(() => {
                         $('#alert-error').css('display', 'none');
                         $('#error-msg').text('');
                         $('#alert-success').css('display', 'flex');
+                        ListarEmpresas();
                     }
                 },
                 error: function (err) {
@@ -132,48 +135,19 @@ $(document).ready(() => {
         }
     })
 
-
     let table = document.getElementById('tableBody');
 
-    $.ajax({
-        url: '../models/listarAlunos.php',
-        dataType: 'json',
-        success: function (msg) {
-            if (msg == 'Not found') {
-                $('#fast-actions').css('display', 'none');
-                $('#tableBody').css('display', 'none');
-                $('#div-not-found').css('display', 'flex');
-                $('#msg-notFound').text('Nenhum aluno cadastrado');
-            }
-            else {
-                $('#fast-actions').css('display', 'flex');
-                $('#tableBody').css('display', 'table');
-                $('#div-not-found').css('display', 'none');
-                ListarItens(msg);
-            }
-        },
-        error: function (err) {
-            console.log(err);
-        }
-    });
-
-    $('#inputSearch').keyup(function () {
+    function ListarEmpresas() {
         $.ajax({
-            url: '../models/buscarAlunos.php',
+            url: '../models/listarEmpresas.php',
             dataType: 'json',
-            data: {
-                'nome': $('#inputSearch').val(),
-            },
-            type: 'POST',
             success: function (msg) {
                 if (msg == 'Not found') {
-                    $('#fast-actions').css('display', 'none');
                     $('#tableBody').css('display', 'none');
                     $('#div-not-found').css('display', 'flex');
-                    $('#msg-notFound').text('Aluno não encontrado');
+                    $('#msg-notFound').text('Nenhuma Empresa Cadastrada');
                 }
                 else {
-                    $('#fast-actions').css('display', 'flex');
                     $('#tableBody').css('display', 'table');
                     $('#div-not-found').css('display', 'none');
                     ListarItens(msg);
@@ -183,8 +157,36 @@ $(document).ready(() => {
                 console.log(err);
             }
         });
-    })
-
+    
+        $('#inputSearch').keyup(function () {
+            $.ajax({
+                url: '../models/buscarEmpresas.php',
+                dataType: 'json',
+                data: {
+                    'nome': $('#inputSearch').val(),
+                },
+                type: 'POST',
+                success: function (msg) {
+                    console.log(msg)
+                    if (msg == 'Not found') {
+                        $('#tableBody').css('display', 'none');
+                        $('#div-not-found').css('display', 'flex');
+                        $('#msg-notFound').text('Empresa não encontrada');
+                    }
+                    else {
+                        $('#tableBody').css('display', 'table');
+                        $('#div-not-found').css('display', 'none');
+                        ListarItens(msg);
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        })
+    
+    }
+  
     $("#ipt-cep").keyup(function () {
 
         if ($('#ipt-cep').val().length == 9) {

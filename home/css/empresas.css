@@ -89,6 +89,100 @@ body {
   display: none;
 }
 
+#div-not-found {
+  display: none;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+}
+
+#div-not-found h1 {
+  font-family: 'Google-Bold';
+  font-size: 3.8rem;
+  margin: 0;
+}
+
+#div-not-found i {
+  font-size: 3rem;
+  margin: 0 30px 0 0;
+}
+
+#tableBody {
+  width: 95%;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,.2);
+  margin-bottom: 30px;
+}
+
+tr .btnR button{
+  display: flex;
+  opacity: 0;
+}
+
+tr:hover .btnR button{
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+#tr-title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: #D85252 !important;
+
+}
+
+#tr-title td {
+  height: 50px;
+  padding: 10px;
+  color: #fff;
+  font-size: .9rem;
+  font-family: 'Google-Bold';
+}    
+
+tr td {
+  font-size: .8rem;
+  padding: 0 15px;
+}
+
+.table {
+  border-spacing: 0;
+}
+
+tr:hover {
+  background: #ddd;
+}
+
+td button {
+  border: none;
+  background: #D85252;
+  color: #fff;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.td-check { 
+  margin: auto;
+  width: 30px;
+}
+
+.check-alunos {
+  margin: 0 0 0 15px;
+  width: 15px;
+  height: 15px;
+}
+
+.form-check-input {
+  position: relative;
+}
+
+.table td, .table th {
+  vertical-align: unset !important;
+}
+
 /* Loading */
 
 #loading {
