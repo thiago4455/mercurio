@@ -151,17 +151,11 @@ class ClassEmpresas {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
 
-<<<<<<< HEAD
-        $objConexao->executarComandoSQL("SET NAMES 'utf8'");
         $objConexao->executarComandoSQL('SET character_set_connection=utf8');
         $objConexao->executarComandoSQL('SET character_set_client=utf8');
         $objConexao->executarComandoSQL('SET character_set_results=utf8');    
 
-=======
->>>>>>> 38f3b060b19b4825a9061d717a4fc99114d0acf7
         $nomeFantasia = $objCadastro->getNomeFantasia();
-        $razaoSocial = $objCadastro->getRazaoSocial();
-        $nomeResponsavel = $objCadastro->getNomeResponsavel();
         $cnpj = $objCadastro->getCnpj();
         $email = $objCadastro->getEmail();
         $telefone = $objCadastro->getTelefone();
@@ -182,7 +176,6 @@ class ClassEmpresas {
             return $err;
         }
     }
-<<<<<<< HEAD
 
     public function RetEmpresas() {
         require_once('ConexaoClass.php');
@@ -229,6 +222,4 @@ class ClassEmpresas {
             return "Problem System";
         }
     }
-=======
->>>>>>> 38f3b060b19b4825a9061d717a4fc99114d0acf7
 }
