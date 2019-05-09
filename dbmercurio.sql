@@ -66,7 +66,6 @@ CREATE TABLE Empregado(
     REFERENCES Empresas(codEmpresa)
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-<<<<<<< HEAD
 INSERT INTO `Func` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`) VALUES ('00000001', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00');
 
 INSERT INTO `Alunos` (`Ra`, `Nome`, `DataNasc`, `Idade`, `Sexo`, `GrauInstrucao`, `Rua`, `Numero`, `Complemento`, `Bairro`, `Estado`, `Cidade`, `Cep`, `Telefone1`, `Telefone2`, `Identidade`, `Cpf`, `Email`, `CarteiraTrabalho`, `NomePai`, `TelefonePai`, `NomeMae`, `TelefoneMae`, `NomeCurso`, `CodTurma`, `Status`) VALUES
@@ -92,6 +91,3 @@ INSERT INTO `Alunos` (`Ra`, `Nome`, `DataNasc`, `Idade`, `Sexo`, `GrauInstrucao`
 ('0000244160', 'DANIEL FELIPE GONCALVES SILVA', '3/17/97', 22, 'M', 'Ensino médio completo', 'das Tangerinas', 36, 'AP 301', 'Vila Cloris', 'MG', 'Belo Horizonte', '31744108', '31993105821', '', 'MG-19.102.701', '13599405611', 'dannfelipee@gmail.com', '1648853', 'TABAJARA GONCALVES DA SILVA', '', 'ROSILDA DE SOUZA', '3134523825', 'PROCESSOS LOGÍSTICOS', 'AIPL12T-02', 'MATRICULADO'),
 ('0000258161', 'TAIS CRISTINA DOS SANTOS LOPES', '5/18/97', 22, 'F', 'Ensino médio completo', 'Rua Engenheiro Schnoor', 4, 'Casa 34', 'Céu Azul', 'MG', 'Belo Horizonte', '31540260', '996350831', '992614339', 'MG-17.881.810', '11369643632', 'tais.mlsk@gmail.com', '1084818', 'PESSOA DESCONHECIDA', '', 'EVA MARCIA DAS GRAÇAS LOPES', '31 ', 'PROCESSOS LOGÍSTICOS', 'AIPL13T-01', 'MATRICULADO'),
 ('0000295744', 'ALBERTO DOS SANTOS PAZ', '1/21/98', 21, 'M', 'Ensino médio completo', 'Mathilde Silva', 390, 'cx 02', 'Vila Boa Esperança', 'MG', 'Betim', '32684306', '992736850', '975280108', 'MG-16.636.816', '13533883604', 'albertopaz90@hotmail.com', '1702969', 'ANTONIO JUREMA DA PAZ', '', 'ELIZABETE MARIA DOS SANTOS PAZ', '', 'PROCESSOS LOGÍSTICOS', 'AIPL13T-01', 'MATRICULADO');
-=======
-INSERT INTO `Func` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`) VALUES ('00000001', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00');
->>>>>>> 38f3b060b19b4825a9061d717a4fc99114d0acf7
