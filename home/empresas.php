@@ -107,12 +107,12 @@
                             </div>
                         </div>
                         <div class="form-row" style>
-                            <div id="alert-error" style="align-items: center; padding: 10px 30px" class="alert alert-danger col-12" role="alert">
+                            <div id="alert-error" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-danger col-12" role="alert">
                                 <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg"></h6>
                             </div>
                         </div>
                         <div class="form-row" style>
-                            <div id="alert-success" style="align-items: center; padding: 10px 30px" class="alert alert-success col-12" role="alert">
+                            <div id="alert-success" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-success col-12" role="alert">
                                 <span style="font-weight: 600">Sucesso!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="">Empresa cadastrada com sucesso</h6>
                             </div>
                         </div>

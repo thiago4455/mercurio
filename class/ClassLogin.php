@@ -39,6 +39,25 @@ class ClassLogin {
         catch(Exception $err) {
             return "Problem System";
         }
+    }
 
+    public function RecuperarSenha($objRecuperar) {
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+
+        $email = $objRecuperar->getEmail();
+        try {
+            $queryRecuperar = $objConexao->selecionarDados("SELECT * FROM Func WHERE emailFunc = '$email'");
+
+            if($queryRecuperar === "ERRO") {          
+                return 'User not exist';             
+            }
+            else {
+                return $queryRecuperar;
+            }
+        }
+        catch(Exception $err) {
+            return "Problem System";
+        }
     }
 }

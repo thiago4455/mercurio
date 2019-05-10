@@ -14,11 +14,12 @@ define('GPWD', '@senai123!@#');
 global $error;
 $mail = new PHPMailer();
 /* Montando o Email*/
+$mail->CharSet = 'UTF-8';
 $mail->IsSMTP(); /* Ativar SMTP*/
 $mail->SMTPDebug = 1; /* Debugar: 1 = erros e mensagens, 2 = mensagens apenas*/
 $mail->SMTPAuth = true; /* Autenticação ativada */
 $mail->SMTPSecure = 'ssl'; /* TLS REQUERIDO pelo GMail*/
-$mail->Host = 'smtp.gmail.com'; /* SM                                                                                                       TP utilizado*/
+$mail->Host = 'smtp.gmail.com'; /* SMTP utilizado*/
 $mail->Port = 465; /* A porta 465 deverá estar aberta em seu servidor*/
 $mail->Username = GUSER;
 $mail->Password = GPWD;
@@ -33,5 +34,5 @@ $mail->IsHTML(true);
 if(!$mail->Send()) {
     echo $mail->ErrorInfo;
 } else {
-    echo 'Sucesso';
+    echo json_encode('Sucesso');
 }

@@ -28,6 +28,7 @@ body {
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+    align-items: center;
 }
 
 #form-title {
@@ -59,12 +60,28 @@ body {
     color: #fff;
     font-family: 'Google-Reg';
     outline: none;
+    margin: 5px 0;
+}
+
+.btn:hover {
+    opacity: .7;
+    transition: .3s;
+}
+
+#btn-esqueci {
+    width: 95%;
+    height: 40px;
+    background: #999;
+    border: none;
+    border-radius: 7px;
+    color: #fff;
+    font-family: 'Google-Reg';
+    outline: none;
     margin: 10px 0;
 }
 
-#btn-login:hover {
-    opacity: .7;
-    transition: .3s;
+#btn-recuperar {
+    background: #D85252;
 }
 
 #alert-error {
@@ -84,6 +101,14 @@ body {
 
 #btn-criarconta:hover {
     color: #333;
+}
+
+.alert-modal {
+    display: none;
+}
+
+#success-msg-modal {
+    font-size: .9rem;
 }
 
 @media(max-width: 600px) {
