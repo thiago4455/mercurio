@@ -74,7 +74,9 @@
 
     <script>
         $(window).on('load', function(){
-            $('#loading').css('display', 'none');
+            setTimeout(() => {
+                $('#loading').css('display', 'none');
+            }, 1000);
         })
     </script>
 

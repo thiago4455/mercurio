@@ -1,0 +1,254 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Google-Reg';
+}
+
+#fast-search {
+    width: 95%;
+    height: unset;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    margin: 20px 0 0;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    border-radius: 5px;
+}
+
+#title-search {
+    font-family: 'Google-Bold';
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+#busca {
+    width: 100%;
+    height: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#inputSearch {
+    width: 80%;
+    height: 45px;
+    padding: 0 15px;
+    border-radius: 5px;
+    color: #333;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+}
+
+#search-avanced {
+    width: 15%;
+    height: 45px;
+    border-radius: 5px;
+    color: #fff;
+    background: #D85252;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+#search-avanced:hover {
+    opacity: .7;
+    transition: .3s;
+}
+
+#fast-actions {
+    width: 95%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#btn-modal-cadastrar {
+    margin: 0 0 0 auto;
+    height: 50px;
+}
+
+.form-control {
+    height: 45px;
+    background: #eee;
+}
+
+#alert-error {
+  display: none;
+}
+
+#alert-success {
+  display: none;
+}
+
+#div-not-found {
+  display: none;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+}
+
+#div-not-found h1 {
+  font-family: 'Google-Bold';
+  font-size: 3.8rem;
+  margin: 0;
+}
+
+#div-not-found i {
+  font-size: 3rem;
+  margin: 0 30px 0 0;
+}
+
+#tableBody {
+  width: 95%;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,.2);
+  margin-bottom: 30px;
+}
+
+tr .btnR button{
+  display: flex;
+  opacity: 0;
+}
+
+tr:hover .btnR button{
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+#tr-title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: #D85252 !important;
+
+}
+
+#tr-title td {
+  height: 50px;
+  padding: 10px;
+  color: #fff;
+  font-size: .9rem;
+  font-family: 'Google-Bold';
+}    
+
+tr td {
+  font-size: .8rem;
+  padding: 0 15px;
+}
+
+.table {
+  border-spacing: 0;
+}
+
+tr:hover {
+  background: #ddd;
+}
+
+td button {
+  border: none;
+  background: #D85252;
+  color: #fff;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.td-check { 
+  margin: auto;
+  width: 30px;
+}
+
+.check-alunos {
+  margin: 0 0 0 15px;
+  width: 15px;
+  height: 15px;
+}
+
+.form-check-input {
+  position: relative;
+}
+
+.table td, .table th {
+  vertical-align: unset !important;
+}
+
+/* Loading */
+
+#loading {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#loading-main {
+    width: 500px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0,0,0,.3);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#loading-main h1 {
+    font-family: 'Google-Bold';
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #D85252 transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

@@ -27,7 +27,7 @@ class ClassLogin {
         $email = $objLogin->getEmail();
         $senha = $objLogin->getSenha();
         try {
-            $tableLogin = $objConexao->selecionarDados("SELECT * FROM Func WHERE emailFunc = '$email' AND senhaFunc = '$senha'");
+            $tableLogin = $objConexao->selecionarDados("SELECT * FROM Funcionarios WHERE emailFunc = '$email' AND senhaFunc = '$senha'");
 
             if($tableLogin === "ERRO") {          
                 return 'Incorrect login';             
@@ -47,7 +47,7 @@ class ClassLogin {
 
         $email = $objRecuperar->getEmail();
         try {
-            $queryRecuperar = $objConexao->selecionarDados("SELECT * FROM Func WHERE emailFunc = '$email'");
+            $queryRecuperar = $objConexao->selecionarDados("SELECT * FROM Funcionarios WHERE emailFunc = '$email'");
 
             if($queryRecuperar === "ERRO") {          
                 return 'User not exist';             

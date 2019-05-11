@@ -17,8 +17,8 @@
     <!-- Fontes -->
     <link rel="stylesheet" href="../fonts/fontes.css">
 
-    <!-- Empresas.css -->
-    <link rel="stylesheet" href="css/empresas.css"> 
+    <!-- Fucionarios.css -->
+    <link rel="stylesheet" href="css/funcionarios.css"> 
 
 </head>
 
@@ -36,7 +36,7 @@
         <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" style="font-family: 'Google-Bold'; font-size: 1.5rem">Cadastrar Empresa</h5>
+                        <h5 class="modal-title" style="font-family: 'Google-Bold'; font-size: 1.5rem">Cadastrar Funcionário</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -44,71 +44,69 @@
                     <div class="modal-body" style="padding: 15px 20px">
                         <div class="form-row">
                             <div class="form-group col-12">
-                                <label for="ipt-nomeFantasia">Nome Fantasia</label>
-                                <input type="text" class="form-control" id="ipt-nomeFantasia" placeholder="Digite o nome Fantasia da Empresa" maxlength="100" autocomplete="off" required>
+                                <label for="ipt-nome">Nome Completo</label>
+                                <input type="text" class="form-control" id="ipt-nome" placeholder="Digite o nome do funcionário" maxlength="60" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12">
-                                <label for="ipt-razaoSocial">Razão Social</label>
-                                <input type="text" class="form-control" id="ipt-razaoSocial" placeholder="Digite a Razão Social da Empresa" maxlength="100" autocomplete="off" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="ipt-cnpj">CNPJ</label>
-                                <input type="text" class="form-control" id="ipt-cnpj" placeholder="Digite o cnpj da empresa" maxlength="18" autocomplete="off" required>
+                                <label for="ipt-cpf">CPF</label>
+                                <input type="text" class="form-control" id="ipt-cpf" placeholder="Digite o cpf do funcionário" maxlength="14" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
-                                <label for="ipt-nomeResponsavel">Nome do Responsável</label>
-                                <input type="text" class="form-control" id="ipt-nomeResponsavel" placeholder="Digite o nome do responsável" maxlength="100" autocomplete="off" required>
+                                <label for="ipt-email">Email de Acesso</label>
+                                <input type="email" class="form-control" id="ipt-email" placeholder="Digite o email do funcionário" maxlength="60" autocomplete="off" required>
                             </div>
                             <div class="form-group col-12 col-md-6">
-                                <label for="ipt-email">Email de contato</label>
-                                <input type="email" class="form-control" id="ipt-email" placeholder="Digite o email de contato da empresa ou do responsável" maxlength="100" autocomplete="off" required>
+                                <label for="ipt-senha">Senha de Acesso</label>
+                                <input type="password" class="form-control" id="ipt-senha" placeholder="Digite a senha do funcionário" maxlength="20" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-telefone">Telefone</label>
-                                <input type="text" class="form-control" id="ipt-telefone" placeholder="Digite o telefone da empresa ou responsável" maxlength="15" autocomplete="off" required>
+                                <input type="text" class="form-control" id="ipt-telefone" placeholder="Digite o telefone do funcionário" maxlength="15" autocomplete="off" required>
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-cep">Cep</label>
-                                <input type="text" class="form-control" id="ipt-cep" placeholder="Digite o cep da empresa" maxlength="9" autocomplete="off" required>
+                                <input type="text" class="form-control" id="ipt-cep" placeholder="Digite o cep do funcionário" maxlength="9" autocomplete="off" required>
                             </div>  
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 col-md-8">
                                 <label for="ipt-endereco">Endereço</label>
-                                <input type="text" class="form-control" id="ipt-endereco" placeholder="Digite o endereço da empresa" maxlength="50" autocomplete="off" required>
+                                <input type="text" class="form-control" id="ipt-endereco" placeholder="Digite o endereço do funcionário" maxlength="50" autocomplete="off" required>
                             </div>
                             <div class="form-group col-12 col-md-4">
                                 <label for="ipt-numero">Número</label>
-                                <input type="text" class="form-control" id="ipt-numero" placeholder="Digite o numero da empresa" maxlength="5" autocomplete="off" required>
+                                <input type="text" class="form-control" id="ipt-numero" placeholder="Digite o numero do funcionário" maxlength="5" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-bairro">Bairro</label>
-                                <input type="text" class="form-control" id="ipt-bairro" placeholder="Digite o bairro da empresa" maxlength="30" autocomplete="off" required>
+                                <input type="text" class="form-control" id="ipt-bairro" placeholder="Digite o bairro do funcionário" maxlength="30" autocomplete="off" required>
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-cidade">Cidade</label>
-                                <input type="text" class="form-control" id="ipt-cidade" placeholder="Digite a cidade da empresa" maxlength="30" autocomplete="off" required>
+                                <input type="text" class="form-control" id="ipt-cidade" placeholder="Digite a cidade do funcionário" maxlength="30" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-estado">Estado</label>
-                                <input type="text" class="form-control" id="ipt-estado" placeholder="Digite o estado da empresa" maxlength="30" autocomplete="off" required>
+                                <input type="text" class="form-control" id="ipt-estado" placeholder="Digite o estado do funcionário" maxlength="2" autocomplete="off" required>
                             </div>
                             <div class="form-group col-12 col-md-6">
-                                <label for="ipt-apelido">Apelido Personálizavel</label>
-                                <input style="margin-bottom: 10px" type="text" class="form-control" id="ipt-apelido" placeholder="Digite um apelido para a empresa" maxlength="6" minlength="6" required>
-                                <span style="font-size: .9rem; color: #666;">Para facilitar a identificação, você deve dar um apelido de 6 caractéres para a empresa (Ex: Ortobom: ORTBOM)</span>
+                                <label for="ipt-tipoFunc">Tipo Usuário</label>
+                                <select type="text" class="form-control" id="ipt-tipoFunc" maxlength="30" autocomplete="off" required>
+                                    <option value="null">Escolha um tipo de usuário...</option>
+                                    <option value="admin">Administrador</option>
+                                    <option value="comum">Comum</option>
+                                </select>
+                                <span style="font-size: .9rem; color: #666;">Usuários Administradores podem cadastrar e editar dados. Usuários Comuns podem somente visualizar os dados.</span>
                             </div>
                         </div>
                         <div class="form-row" style>
@@ -118,7 +116,7 @@
                         </div>
                         <div class="form-row" style>
                             <div id="alert-success" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-success col-12" role="alert">
-                                <span style="font-weight: 600">Sucesso!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="">Empresa cadastrada com sucesso</h6>
+                                <span style="font-weight: 600">Sucesso!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="">Funcionário cadastrado com sucesso</h6>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -131,7 +129,7 @@
     </div>
 
     <div id="fast-search">
-        <h1 id="title-search">Buscar Empresas</h1>
+        <h1 id="title-search">Buscar Funcionários</h1>
         <div id="busca">
             <input type="text" id="inputSearch" placeholder="Pesquise Código, Razão Social ou Representante" autocomplete="off">
             <div id="search-avanced" class="btn">Busca Avançada</div>
@@ -139,7 +137,7 @@
     </div>
 
     <div id="fast-actions">
-        <button id="btn-modal-cadastrar" type="button" class="btn btn-success" data-toggle="modal" data-target=".modal-cadastrar">Cadastrar Nova Empresa</button>
+        <button id="btn-modal-cadastrar" type="button" class="btn btn-success" data-toggle="modal" data-target=".modal-cadastrar">Cadastrar Novo Funcionário</button>
     </div>
 
     <table id='tableBody' class="table">
@@ -147,7 +145,7 @@
 
     <div id="div-not-found">
         <i class="fas fa-exclamation-triangle"></i>
-        <h1 id="msg-notFound">Empresa não Encontrada</h1>
+        <h1 id="msg-notFound">Funcionário não Encontrado</h1>
     </div>
 
     <script
@@ -159,7 +157,7 @@
     </script>
 
     <script src="../js/jquery.mask.min.js"></script>
-    <script src="../js/empresas.js"></script>
+    <script src="../js/funcionarios.js"></script>
 
     <script>
         $(window).on('load', function(){

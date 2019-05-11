@@ -64,14 +64,15 @@
     <div id="main">
         <div id="nav-lateral">
             <div id="title-navlat">Opções</div>
-            <div id="nav-ciclos" class="item-nav item-nav-active"><i class="fas fa-redo"></i><p class="item-text">Novo Ciclo</p></div>
+            <div id="nav-ciclos" class="item-nav item-nav-active"><i class="fas fa-redo"></i><p class="item-text">Ciclos</p></div>
             <div id="nav-alunos" class="item-nav"><i class="fas fa-users"></i><p class="item-text">Alunos</p></div>
             <div id="nav-empresas" class="item-nav"><i class="fas fa-building"></i><p class="item-text">Empresas</p></div>
+            <div id="nav-funcionarios" class="item-nav"><i class="fas fa-users-cog"></i><p class="item-text">Funcionários</p></div>
             <div id="nav-relatorios" class="item-nav"><i class="fas fa-list-alt"></i><p class="item-text">Relatórios</p></div>
         </div>
 
         <div id="center">
-            <iframe src="home/ciclos.php" frameborder="0" id="iframe-home"></iframe>
+            <iframe src="home/funcionarios.php" frameborder="0" id="iframe-home"></iframe>
         </div>
 
     </div>
@@ -111,9 +112,10 @@
                 $('#iframe-home').attr('src', 'home/alunos.php'); 
             } else if (id == 'nav-empresas') {
                 $('#iframe-home').attr('src', 'home/empresas.php'); 
+            } else if(id == 'nav-funcionarios') {
+                $('#iframe-home').attr('src', 'home/funcionarios.php'); 
             } else if(id == 'nav-relatorios') {
                 $('#iframe-home').attr('src', 'home/relatorios.php'); 
-
             }
         })
 

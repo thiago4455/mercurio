@@ -2,12 +2,20 @@ CREATE DATABASE dbmercurio CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 USE dbmercurio;
 
-CREATE TABLE Func (
-    idFunc INT PRIMARY KEY,
+CREATE TABLE Funcionarios (
+    idFunc INT PRIMARY KEY AUTO_INCREMENT,
     nomeFunc VARCHAR(60) NOT NULL,
     emailFunc VARCHAR(60) NOT NULL,
     senhaFunc VARCHAR(20) NOT NULL,
-    cpfFunc VARCHAR(14) NOT NULL
+    cpfFunc VARCHAR(14) NOT NULL,
+    telefoneFunc VARCHAR(15) NOT NULL,
+    cepFunc VARCHAR(9) NOT NULL,
+    ruaFunc VARCHAR(50) NOT NULL,
+    numeroFunc VARCHAR(5) NOT NULL,
+    bairroFunc VARCHAR(30) NOT NULL,
+    cidadeFunc VARCHAR(30) NOT NULL,
+    estadoFunc CHAR(2) NOT NULL,
+    tipoFunc VARCHAR(20) NOT NULL
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE Alunos(
@@ -66,4 +74,4 @@ CREATE TABLE Empregado(
     REFERENCES Empresas(codEmpresa)
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-INSERT INTO `Func` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`) VALUES ('00000001', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00');
+INSERT INTO `Funcionarios` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`, `telefoneFunc`, `cepFunc`, `ruaFunc`, `numeroFunc`, `bairroFunc`, `cidadeFunc`, `estadoFunc`, `tipoFunc`) VALUES ('1', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00', '(00) 00000-0000', '00000-000', 'Rua X', '0', 'Bairro X', 'Cidade X', '00', 'admin');
