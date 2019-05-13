@@ -45,7 +45,7 @@
 
     <table id='tableBody' class="table">
     </table>
-    <div id='lds' class="lds-ring"><div>
+    <div id='lds' class="lds-ring"></div>
 
     <div id="div-not-found">
         <i class="fas fa-exclamation-triangle"></i>

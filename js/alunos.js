@@ -58,8 +58,9 @@ $(document).ready(() => {
             url: '../controllers/listarAlunos.php',
             dataType: 'json',
             success: function(msg) {
+                console.log(msg)
                 $('#lds').css('display', 'none');
-                if(msg=='Not found'){
+                if(msg =='Not found'){
                     $('#fast-actions').css('display', 'none');
                     $('#tableBody').css('display', 'none');
                     $('#div-not-found').css('display', 'flex');
