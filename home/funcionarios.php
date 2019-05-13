@@ -24,13 +24,6 @@
 
 <body>
 
-    <div id="loading">
-        <div id="loading-main">
-            <h1>Carregando</h1>
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-      </div>
-    </div>
-
     <!-- Modal Cadastrar -->
     <div class="modal fade modal-cadastrar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -142,6 +135,7 @@
 
     <table id='tableBody' class="table">
     </table>
+    <div id='lds' class="lds-ring"><div>
 
     <div id="div-not-found">
         <i class="fas fa-exclamation-triangle"></i>
@@ -158,14 +152,6 @@
 
     <script src="../js/jquery.mask.min.js"></script>
     <script src="../js/funcionarios.js"></script>
-
-    <script>
-        $(window).on('load', function(){
-            setTimeout(() => {
-                $('#loading').css('display', 'none');
-            }, 1000);
-        })
-    </script>
 
 </body>
 

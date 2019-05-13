@@ -152,7 +152,7 @@ $(document).ready(() => {
 
     function ListarFuncionarios() {
         $.ajax({
-            url: '../models/ListarFuncionarios.php',
+            url: '../models/listarFuncionarios.php',
             dataType: 'json',
             success: function (msg) {
                 console.log(msg)
@@ -166,6 +166,7 @@ $(document).ready(() => {
                     $('#div-not-found').css('display', 'none');
                     ListarItens(msg);
                 }
+                $('#lds').css('display', 'none');
             },
             error: function (err) {
                 console.log(err);
@@ -182,6 +183,7 @@ $(document).ready(() => {
                 type: 'POST',
                 success: function (msg) {
                     console.log(msg)
+                    $('#lds').css('display', 'none');
                     if (msg == 'Not found') {
                         $('#tableBody').css('display', 'none');
                         $('#div-not-found').css('display', 'flex');

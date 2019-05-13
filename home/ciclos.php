@@ -24,13 +24,6 @@
 
 <body>
 
-    <div id="loading">  
-        <div id="loading-main">
-            <h1>Carregando</h1>
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-      </div>
-    </div>
-
     <div id="main">
         <h1 id="title-main">Iniciar novo Ciclo</h1>
         <h2>
@@ -71,12 +64,6 @@
             });
             return result.join("\n");
         };
-
-        $(window).on('load', function(){
-            setTimeout(() => {
-                $('#loading').css('display', 'none');
-            }, 1000);
-        })
 
         let inputFile = document.getElementById('inputGroupFile01');
         
