@@ -31,12 +31,8 @@
             estarão disponíveis para o encaminhamento as devidas empresas.
         </h2>
         <div class="input-group mb-3 col-md-8 input-file">
-            <div class="input-group-prepend">
-                <span class="input-group-text">Upload</span>
-            </div>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01">
-                <label class="custom-file-label" for="inputGroupFile01">Escolha o arquivo</label>
+            <div class="form-group">
+                <input type="file" class="form-control-file" id="inputGroupFile01" accept="jpg">
             </div>
         </div>
     </div>
