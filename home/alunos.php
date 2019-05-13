@@ -24,14 +24,6 @@
 </head>
 
 <body>
-
-    <div id="loading">
-        <div id="loading-main">
-            <h1>Carregando</h1>
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-      </div>
-    </div>
-        
     <div id="fast-search">
         <h1>Buscar Alunos</h1>
         <div id="busca">
@@ -53,6 +45,7 @@
 
     <table id='tableBody' class="table">
     </table>
+    <div id='lds' class="lds-ring"><div>
 
     <div id="div-not-found">
         <i class="fas fa-exclamation-triangle"></i>
@@ -71,14 +64,6 @@
     </script>
 
     <script src="../js/alunos.js"></script>
-
-    <script>
-        $(window).on('load', function(){
-            setTimeout(() => {
-                $('#loading').css('display', 'none');
-            }, 1000);
-        })
-    </script>
 
 </body>
 

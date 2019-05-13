@@ -13,7 +13,18 @@ $(document).ready(() => {
             $('.check-alunos').prop('checked', false);
             $('.table-row').css('background', '#fff')
         }
+        if($(":checkbox:checked").length > 0 ){
+            $('#btn-encaminhar').text('Encaminhar Selecionados ('+$(":checkbox:checked").length+')');
+        }else{
+            $('#btn-encaminhar').text('Encaminhar Selecionados');
+        }
     });
+
+    $(document).on('click','.td-check',function(e){
+        if (e.target !== this)
+        return;
+        $(this).children().click(); 
+    })
 
     $(document).on('change','.check-alunos',function(){
         if(this.checked) {
@@ -24,6 +35,11 @@ $(document).ready(() => {
             $('#check-todos').prop('checked', false);
             $(this).prop('checked', false);
             $(this).parent().parent().css('background', '#fff');
+        }
+        if($(":checkbox:checked").length > 0 ){
+            $('#btn-encaminhar').text('Encaminhar Selecionados ('+$(":checkbox:checked").length+')');
+        }else{
+            $('#btn-encaminhar').text('Encaminhar Selecionados');
         }
     })
 
@@ -42,6 +58,7 @@ $(document).ready(() => {
             url: '../models/listarAlunos.php',
             dataType: 'json',
             success: function(msg) {
+                $('#lds').css('display', 'none');
                 if(msg=='Not found'){
                     $('#fast-actions').css('display', 'none');
                     $('#tableBody').css('display', 'none');

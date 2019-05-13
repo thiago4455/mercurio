@@ -24,13 +24,6 @@
 
 <body>
 
-    <div id="loading">  
-        <div id="loading-main">
-            <h1>Carregando</h1>
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-      </div>
-    </div>
-
     <div id="main">
         <h1 id="title-main">Iniciar novo Ciclo</h1>
         <h2>
@@ -38,8 +31,12 @@
             estarão disponíveis para o encaminhamento as devidas empresas.
         </h2>
         <div class="input-group mb-3 col-md-8 input-file">
-            <div class="form-group">
-                <input type="file" class="form-control-file" id="inputGroupFile01" accept="jpg">
+        <div class="input-group-prepend">
+                <span class="input-group-text">Upload</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                <label class="custom-file-label" for="inputGroupFile01">Escolha o arquivo</label>
             </div>
         </div>
     </div>
@@ -68,12 +65,6 @@
             return result.join("\n");
         };
 
-        $(window).on('load', function(){
-            setTimeout(() => {
-                $('#loading').css('display', 'none');
-            }, 1000);
-        })
-
         let inputFile = document.getElementById('inputGroupFile01');
         
 
@@ -88,7 +79,8 @@
                     var workbook = XLSX.read(data, {type: 'array'});
 
                     csvTable = to_csv(workbook);
-                    console.log(csvTable.split(/\r\n|\r|\n/).length-1)
+                    const numAlunos = csvTable.split(/\r\n|\r|\n/).length-1;
+                    console.log(numAlunos);
                     $.ajax({
                         url: '../models/importarExcel.php',
                         type: 'POST',
@@ -96,10 +88,12 @@
                             'csv': csvTable
                         },
                         success: function(data) {
-                            console.log(data);                    
+                            console.log(data);     
+                            $('.custom-file-label').text('Escolha o arquivo');            
                         },
                         error: function(err) {
                             alert('deu ruim')
+                            $('.custom-file-label').text('Escolha o arquivo');
                             console.log(err)
                         }
                     });

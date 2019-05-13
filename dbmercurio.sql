@@ -74,5 +74,18 @@ CREATE TABLE Empregado(
     REFERENCES Empresas(codEmpresa)
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
+CREATE TABLE Relatorio(
+    idRelatorio VARCHAR(10) NOT NULL,
+    dia VARCHAR(10) NOT NULL,
+    Ra VARCHAR(10) NOT NULL,
+    FOREIGN KEY Ra(Ra)
+    REFERENCES Alunos(Ra),
+    CodEmpresa VARCHAR(6) NOT NULL,
+    FOREIGN KEY CodEmpresa(CodEmpresa)
+    REFERENCES Empresas(codEmpresa)
+)CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+SELECT R.*, A.Nome, A.Cpf, A.Email, E.cnpj, E.razaoSocial, E.responsavel FROM Relatorio AS R INNER JOIN Alunos AS A ON (R.Ra = A.Ra) INNER JOIN Empresas AS E ON (E.codEmpresa = R.CodEmpresa);
+
 INSERT INTO `Funcionarios` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`, `telefoneFunc`, `cepFunc`, `ruaFunc`, `numeroFunc`, `bairroFunc`, `cidadeFunc`, `estadoFunc`, `tipoFunc`) VALUES ('1', 'Admin', 'admin@admin.com', 'admin', '000.000.000-00', '(00) 00000-0000', '00000-000', 'Rua X', '0', 'Bairro X', 'Cidade X', '00', 'admin');
 INSERT INTO `Funcionarios` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`, `telefoneFunc`, `cepFunc`, `ruaFunc`, `numeroFunc`, `bairroFunc`, `cidadeFunc`, `estadoFunc`, `tipoFunc`) VALUES ('2', 'Guilherme Reis', 'guilhermereis9876@gmail.com', 'senhapadrao', '000.000.000-00', '(00) 00000-0000', '00000-000', 'Rua X', '0', 'Bairro X', 'Cidade X', '00', 'admin');

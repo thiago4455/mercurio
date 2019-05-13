@@ -152,6 +152,7 @@ $(document).ready(() => {
                     $('#div-not-found').css('display', 'none');
                     ListarItens(msg);
                 }
+                $('#lds').css('display', 'none');
             },
             error: function (err) {
                 console.log(err);
@@ -167,6 +168,7 @@ $(document).ready(() => {
                 },
                 type: 'POST',
                 success: function (msg) {
+                    $('#lds').css('display', 'none');
                     console.log(msg)
                     if (msg == 'Not found') {
                         $('#tableBody').css('display', 'none');
