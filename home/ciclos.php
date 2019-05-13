@@ -35,7 +35,7 @@
                 <span class="input-group-text">Upload</span>
             </div>
             <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                <input type="file" class="custom-file-input" id="inputGroupFile01" accept=" .xls, .xml, .xlsx">
                 <label class="custom-file-label" for="inputGroupFile01">Escolha o arquivo</label>
             </div>
         </div>
