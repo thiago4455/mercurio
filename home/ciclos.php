@@ -82,7 +82,7 @@
                     const numAlunos = csvTable.split(/\r\n|\r|\n/).length-1;
                     console.log(numAlunos);
                     $.ajax({
-                        url: '../models/importarExcel.php',
+                        url: '../controllers/importarExcel.php',
                         type: 'POST',
                         data: {
                             'csv': csvTable

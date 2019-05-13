@@ -23,7 +23,7 @@
     $CodTurma = ($_POST['codTurma']);
     $Status = ($_POST['status']);
 
-    require_once('../class/ClassAlunos.php');
+    require_once('../models/ClassAlunos.php');
     $objAlunos = new ClassAlunos();
     $objAlunos->setNome($Nome);
     $objAlunos->setRa($Ra);

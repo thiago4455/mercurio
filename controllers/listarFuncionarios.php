@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once('../class/ClassFuncionarios.php');
+    require_once('../models/ClassFuncionarios.php');
     $objFuncionarios = new ClassFuncionarios();
     $queryResp = $objFuncionarios->RetFuncionarios();
 

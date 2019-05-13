@@ -55,7 +55,7 @@ $(document).ready(() => {
     let table = document.getElementById('tableBody');
 
     $.ajax({
-            url: '../models/listarAlunos.php',
+            url: '../controllers/listarAlunos.php',
             dataType: 'json',
             success: function(msg) {
                 $('#lds').css('display', 'none');
@@ -79,7 +79,7 @@ $(document).ready(() => {
 
     $('#inputSearch').keyup(function() {
         $.ajax({
-            url: '../models/buscarAlunos.php',
+            url: '../controllers/buscarAlunos.php',
             dataType: 'json',
             data: {
                 'nome': $('#inputSearch').val(),

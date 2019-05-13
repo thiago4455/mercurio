@@ -2,7 +2,7 @@
     session_start();
 
     $nome = ($_POST['nome']);
-    require_once('../class/ClassAlunos.php');
+    require_once('../models/ClassAlunos.php');
     $objAlunos = new ClassAlunos();
     $objAlunos->setNome($nome);
     $queryResp = $objAlunos->BuscaAlunos($nome);

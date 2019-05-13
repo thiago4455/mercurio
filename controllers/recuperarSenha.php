@@ -2,7 +2,7 @@
     session_start();
     $email = ($_POST['ipt-emailRecuperar']);
 
-    require_once('../class/ClassLogin.php');
+    require_once('../models/ClassLogin.php');
     $objRecuperar = new ClassLogin();
     $objRecuperar->setEmail($email);
     $queryResp = $objRecuperar->RecuperarSenha($objRecuperar);

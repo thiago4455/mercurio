@@ -132,7 +132,7 @@
     <script>
         $(window).on('load', () => {
             $.ajax({
-                url: '../models/meuPerfil.php',
+                url: '../controllers/meuPerfil.php',
                 data: {
                     'idLog': <?php echo $_SESSION['idLog']; ?>,
                 },

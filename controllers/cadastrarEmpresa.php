@@ -16,7 +16,7 @@
     $estado = ($_POST['estado']);
     $apelido = ($_POST['apelido']);
 
-    require_once('../class/ClassEmpresas.php');
+    require_once('../models/ClassEmpresas.php');
     $objEmpresas = new ClassEmpresas();
 
     $objEmpresas->setNomeFantasia($nomeFantasia);

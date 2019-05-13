@@ -6,7 +6,7 @@
     if(($email == "") || ($senha == "")) {
         echo json_encode("Fill all inputs");
     } else {
-        require_once('../class/ClassLogin.php');
+        require_once('../models/ClassLogin.php');
         $objLogin = new ClassLogin();
         $objLogin->setEmail($email);
         $objLogin->setSenha($senha);

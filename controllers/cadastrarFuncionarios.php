@@ -15,7 +15,7 @@
     $estado = ($_POST['estado']);
     $tipoFunc = ($_POST['tipoFunc']);
 
-    require_once('../class/ClassFuncionarios.php');
+    require_once('../models/ClassFuncionarios.php');
     $objFuncionarios = new ClassFuncionarios();
 
     $objFuncionarios->setNome($nome);

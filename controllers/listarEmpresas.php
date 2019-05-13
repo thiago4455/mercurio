@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once('../class/ClassEmpresas.php');
+    require_once('../models/ClassEmpresas.php');
     $objEmpresas = new ClassEmpresas();
     $queryResp = $objEmpresas->RetEmpresas();
 

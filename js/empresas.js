@@ -75,7 +75,7 @@ $(document).ready(() => {
             $('#btn-cadastrar').prop('disabled', false);
 
             $.ajax({
-                url: '../models/cadastrarEmpresa.php',
+                url: '../controllers/cadastrarEmpresa.php',
                 dataType: 'json',
                 data: {
                     'nomeFantasia': nomeFantasia,
@@ -139,7 +139,7 @@ $(document).ready(() => {
 
     function ListarEmpresas() {
         $.ajax({
-            url: '../models/listarEmpresas.php',
+            url: '../controllers/listarEmpresas.php',
             dataType: 'json',
             success: function (msg) {
                 if (msg == 'Not found') {
@@ -161,7 +161,7 @@ $(document).ready(() => {
     
         $('#inputSearch').keyup(function () {
             $.ajax({
-                url: '../models/buscarEmpresas.php',
+                url: '../controllers/buscarEmpresas.php',
                 dataType: 'json',
                 data: {
                     'nome': $('#inputSearch').val(),
