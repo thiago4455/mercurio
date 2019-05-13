@@ -121,7 +121,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" id="btn-cadastrar"  class="btn btn-success">Concluir Cadastro</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                         </div>
                     </div>
                 </div>

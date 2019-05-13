@@ -78,6 +78,7 @@ $(document).ready(function () {
                             type: 'POST',
                             dataType: 'json',
                             success: function (msg) {
+                                console.log(msg)
                                 $('#btn-recuperar').text('Recuperar Senha');
                                 $('#btn-recuperar').prop('disabled', false);
                                 $('#alert-modal-success').css('display', 'flex');

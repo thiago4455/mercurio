@@ -119,11 +119,17 @@ class ClassFuncionarios {
         $cpf = $objCadastro->getCpf();
         $email = $objCadastro->getEmail();
 
+        # MySQL UTF-8
+        $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+        $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+        $objConexao->executarComandoSQL('SET character_set_client=utf8');
+        $objConexao->executarComandoSQL('SET character_set_results=utf8');     
+
         $verificarCpf = $objConexao->selecionarDados("SELECT * FROM Funcionarios WHERE cpfFunc = '$cpf'");
         $verificarEmail = $objConexao->selecionarDados("SELECT * FROM Funcionarios WHERE emailFunc = '$email'");
 
         if(($verificarCpf != 'ERRO') && ($verificarEmail != 'ERRO')) {
-            return $verificarCpf;
+            return 'cpf e email ja utilizados';
         }
         else if ($verificarCpf != 'ERRO') {
             return 'cpf ja utilizado';
@@ -142,9 +148,11 @@ class ClassFuncionarios {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
 
-        $objConexao->executarComandoSQL('SET character_set_connection=utf8');
-        $objConexao->executarComandoSQL('SET character_set_client=utf8');
-        $objConexao->executarComandoSQL('SET character_set_results=utf8');    
+       # MySQL UTF-8
+       $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+       $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+       $objConexao->executarComandoSQL('SET character_set_client=utf8');
+       $objConexao->executarComandoSQL('SET character_set_results=utf8');     
 
         $nome = $objCadastro->getNome();
         $cpf = $objCadastro->getCpf();
@@ -161,7 +169,7 @@ class ClassFuncionarios {
 
         try {
             $query = $objConexao->executarComandoSQL("INSERT INTO `Funcionarios` (`nomeFunc`, `cpfFunc` , `emailFunc`, `senhaFunc`, `telefoneFunc`, `cepFunc`, `ruaFunc`, `numeroFunc`, `bairroFunc`, `cidadeFunc`, `estadoFunc`, `tipoFunc`) VALUES ('$nome', '$cpf', '$email', '$senha', '$telefone', '$cep', '$endereco', '$numero', '$bairro', '$cidade', '$estado', '$tipoFunc');");
-                return $query;
+            return $query;
             
         }
         catch(Exception $err) {
