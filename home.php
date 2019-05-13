@@ -54,7 +54,7 @@
                 aria-haspopup="true" aria-expanded="false">
             </button>
             <div class="dropdown-menu" aria-labelledby="btn-drop">
-                <a class="dropdown-item" href="#">Meu Perfil</a>
+                <a class="dropdown-item" id="profile" href="#">Meu Perfil</a>
                 <a class="dropdown-item" id="sair" href="signout.php">Sair</a>
             </div>
         </div>
@@ -72,7 +72,7 @@
         </div>
 
         <div id="center">
-            <iframe src="home/ciclos.php" frameborder="0" id="iframe-home"></iframe>
+            <iframe src="home/profile.php" frameborder="0" id="iframe-home"></iframe>
         </div>
 
     </div>
@@ -122,6 +122,10 @@
         $('#nav-logo').click(() => {
             window.location.href = 'index.php';
         });
+
+        $('#profile').click(function() {
+            $('#iframe-home').attr('src', 'home/profile.php');
+        })
 
         $('#nav-menu-cel').click(()=>{
             $('#nav-lateral').toggleClass('nav-lat-active');

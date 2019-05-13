@@ -1,6 +1,7 @@
 <?php
 class ClassFuncionarios {
 
+    private $idFunc;
     private $nome;
     private $cpf;
     private $email;
@@ -13,6 +14,10 @@ class ClassFuncionarios {
     private $cidade;
     private $estado;
     private $tipoFunc;
+
+    function getIdFunc() {
+        return $this->idFunc;
+    }
 
     function getNome() {
         return $this->nome;
@@ -60,6 +65,10 @@ class ClassFuncionarios {
 
     function getTipoFunc() {
         return $this->tipoFunc;
+    }
+
+    function setIdFunc($idFunc) {
+        $this->idFunc = $idFunc;
     }
 
     function setNome($nome) {
@@ -187,6 +196,32 @@ class ClassFuncionarios {
         $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
             $tableFuncionarios = $objConexao->selecionarDados("SELECT * FROM Funcionarios ORDER BY idFunc ASC");
+
+            if($tableFuncionarios === "ERRO") {          
+                return 'Not found';             
+            }
+            else {
+                return $tableFuncionarios;
+            }
+        }
+        catch(Exception $err) {
+            return "Problem System";
+        }
+    }
+
+    public function RetornarPerfil($objPerfil) {
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        # MySQL UTF-8
+        $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+        $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+        $objConexao->executarComandoSQL('SET character_set_client=utf8');
+        $objConexao->executarComandoSQL('SET character_set_results=utf8');        
+
+        $idFunc = $objPerfil->getIdFunc();
+
+        try {
+            $tableFuncionarios = $objConexao->selecionarDados("SELECT * FROM Funcionarios WHERE idFunc = '$idFunc'");
 
             if($tableFuncionarios === "ERRO") {          
                 return 'Not found';             

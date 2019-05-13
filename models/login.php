@@ -21,6 +21,7 @@
         else {
             $_SESSION['idLog'] = $queryResp[0]['idFunc'];
             $_SESSION['nomeLog'] = $queryResp[0]['nomeFunc'];
+            $_SESSION['tipoLog'] = $queryResp[0]['tipoFunc'];
             echo json_encode('Success');
         }
     }
