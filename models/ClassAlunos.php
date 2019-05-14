@@ -181,31 +181,31 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
 
-            $busca = "SELECT * FROM Alunos WHERE (Nome != NULL) ";
+            $busca = "SELECT * FROM Alunos WHERE (Nome != '') ";
 
-            if($objAlunos->getNome()!='') $busca += " AND (Nome LIKE \'%".$objAlunos->getNome()."%\')";
-            if($objAlunos->getRa()!='') $busca += " AND (Ra LIKE \'%".$objAlunos->getRa()."%\')";
-            if($objAlunos->getIdade1()!='' && $objAlunos->getIdade2()!='') $busca += " AND (Idade BETWEEN \'%".$objAlunos->getIdade1()."%\' AND \'%".$objAlunos->getIdade2()."%\') AND";
-            else if($objAlunos->getIdade1()!='') $busca += " AND (Idade = \'%".$objAlunos->getIdade1()."%\')";
-            if($objAlunos->getSexo()!='') $busca += " AND (Sexo = \'%".$objAlunos->getSexo()."%\')";
-            if($objAlunos->getGrauInstrucao()!='') $busca += " AND (GrauInstrucao LIKE \'%".$objAlunos->getGrauInstrucao()."%\') AND";            
-            if($objAlunos->getBairro()!='') $busca += " AND (Bairro LIKE \'%".$objAlunos->getBairro()."%\')";   
-            if($objAlunos->getEstado()!='') $busca += " AND (Estado LIKE \'%".$objAlunos->getEstado()."%\')";   
-            if($objAlunos->getCidade()!='') $busca += " AND (Cidade LIKE \'%".$objAlunos->getCidade()."%\')";   
-            if($objAlunos->getTelefone()!='') $busca += " AND ((Telefone1 LIKE \'%".$objAlunos->getTelefone()."%\') OR (Telefone2 LIKE \'%".$objAlunos->getTelefone()."%\') OR (TelefonePai LIKE \'%".$objAlunos->getTelefone()."%\') OR (TelefoneMae LIKE \'%".$objAlunos->getTelefone()."%\'))";   
-            if($objAlunos->getIdentidade()!='') $busca += " AND (Identidade LIKE \'%".$objAlunos->getIdentidade()."%\')";   
-            if($objAlunos->getCpf()!='') $busca += " AND (Cpf LIKE \'%".$objAlunos->getCpf()."%\')";   
-            if($objAlunos->getEmail()!='') $busca += " AND (Email LIKE \'%".$objAlunos->getEmail()."%\')";   
-            if($objAlunos->getCarteiraTrabalho()!='') $busca += " AND (CarteiraTrabalho LIKE \'%".$objAlunos->getCarteiraTrabalho()."%\') AND";   
-            if($objAlunos->getNomePai()!='') $busca += " AND (NomePai LIKE \'%".$objAlunos->getNomePai()."%\')";   
-            if($objAlunos->getNomeMae()!='') $busca += " AND (NomeMae LIKE \'%".$objAlunos->getNomeMae()."%\')"; 
-            if($objAlunos->getCodTurma()!='') $busca += " AND (CodTurma LIKE \'%".$objAlunos->getCodTurma()."%\')"; 
-            if($objAlunos->getStatus()!='') $busca += " AND (Status LIKE \'%".$objAlunos->getStatus()."%\')"; 
+            if($objAlunos->getNome()!='') $busca = $busca . " AND (Nome LIKE '%".$objAlunos->getNome()."%')";
+            if($objAlunos->getRa()!='') $busca = $busca . " AND (Ra LIKE '%".$objAlunos->getRa()."%')";
+            if($objAlunos->getIdade1()!='' && $objAlunos->getIdade2()!='') $busca = $busca . " AND (Idade BETWEEN ".$objAlunos->getIdade1()." AND ".$objAlunos->getIdade2().")";
+            else if($objAlunos->getIdade1()!='') $busca = $busca . " AND (Idade = ".$objAlunos->getIdade1().")";
+            if($objAlunos->getSexo()!='') $busca = $busca . " AND (Sexo LIKE '%".$objAlunos->getSexo()."%')";
+            if($objAlunos->getGrauInstrucao()!='') $busca = $busca . " AND (GrauInstrucao LIKE '%".$objAlunos->getGrauInstrucao()."%') AND";            
+            if($objAlunos->getBairro()!='') $busca = $busca . " AND (Bairro LIKE '%".$objAlunos->getBairro()."%')";   
+            if($objAlunos->getEstado()!='') $busca = $busca . " AND (Estado LIKE '%".$objAlunos->getEstado()."%')";   
+            if($objAlunos->getCidade()!='') $busca = $busca . " AND (Cidade LIKE '%".$objAlunos->getCidade()."%')";   
+            if($objAlunos->getTelefone()!='') $busca = $busca . " AND ((Telefone1 LIKE '%".$objAlunos->getTelefone()."%') OR (Telefone2 LIKE '%".$objAlunos->getTelefone()."%') OR (TelefonePai LIKE '%".$objAlunos->getTelefone()."%') OR (TelefoneMae LIKE '%".$objAlunos->getTelefone()."%'))";   
+            if($objAlunos->getIdentidade()!='') $busca = $busca . " AND (Identidade LIKE '%".$objAlunos->getIdentidade()."%')";   
+            if($objAlunos->getCpf()!='') $busca = $busca . " AND (Cpf LIKE '%".$objAlunos->getCpf()."%')";   
+            if($objAlunos->getEmail()!='') $busca = $busca . " AND (Email LIKE '%".$objAlunos->getEmail()."%\')";   
+            if($objAlunos->getCarteiraTrabalho()!='') $busca = $busca . " AND (CarteiraTrabalho LIKE \'%".$objAlunos->getCarteiraTrabalho()."%\') AND";   
+            if($objAlunos->getNomePai()!='') $busca = $busca . " AND (NomePai LIKE '%".$objAlunos->getNomePai()."%')";   
+            if($objAlunos->getNomeMae()!='') $busca = $busca . " AND (NomeMae LIKE '%".$objAlunos->getNomeMae()."%')"; 
+            if($objAlunos->getCodTurma()!='') $busca = $busca . " AND (CodTurma LIKE '%".$objAlunos->getCodTurma()."%')"; 
+            if($objAlunos->getStatus()!='') $busca = $busca . " AND (Status LIKE '%".$objAlunos->getStatus()."%')"; 
             
 
 
             $tableAlunos = $objConexao->selecionarDados($busca);
-
+            //return $busca;
             if($tableAlunos === "ERRO") {          
                 return 'Not found';             
             }

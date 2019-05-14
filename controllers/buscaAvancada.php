@@ -3,7 +3,6 @@
 
     $Nome = ($_POST['nome']);
     $Ra = ($_POST['ra']);
-    $DataNasc = ($_POST['dataNasc']);
     $Idade1 = ($_POST['idade1']);
     $Idade2 = ($_POST['idade2']);
     $Sexo = ($_POST['sexo']);
@@ -27,7 +26,6 @@
     $objAlunos = new ClassAlunos();
     $objAlunos->setNome($Nome);
     $objAlunos->setRa($Ra);
-    $objAlunos->setDataNasc($DataNasc);
     $objAlunos->setIdade1($Idade1);
     $objAlunos->setIdade2($Idade2);
     $objAlunos->setSexo($Sexo);
