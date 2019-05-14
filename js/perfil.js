@@ -1,5 +1,3 @@
-
-
 $(document).ready(() => {
 
     $('#ipt-cpf').mask('000.000.000-00', { reverse: true });
@@ -62,5 +60,57 @@ $(document).ready(() => {
             }
         }
     });
+
+    $('#btn-editar').click(function () { 
+        var nome = $('#ipt-nome').val();
+        var cpf = $('#ipt-cpf').val();
+        var email = $('#ipt-email').val();
+        var senha = $('#ipt-senha').val();
+        var telefone = $('#ipt-telefone').val();
+        var cep = $('#ipt-cep').val();
+        var endereco = $('#ipt-endereco').val();
+        var numero = $('#ipt-numero').val();
+        var bairro = $('#ipt-bairro').val();
+        var cidade = $('#ipt-cidade').val();
+        var estado = $('#ipt-estado').val();
+        var tipoFunc = $('#ipt-tipoFunc').val();
+
+        $('#btn-editar').text('Editando...');
+        $('#btn-editar').prop('disabled', true);
+        if (!nome || !cpf || !email || !senha || !telefone || !cep || !endereco || !numero || !bairro || !cidade || !estado) {
+            $('#alert-error').css('display', 'flex');
+            $('#error-msg').text('Preencha todos os campos e tente novamente');
+            $('#btn-editar').text('Salvar alterações');
+            $('#btn-editar').prop('disabled', false);
+        }else{
+            $('#alert-error').css('display', 'none');
+            $('#error-msg').text('');
+
+            $.ajax({
+                url: '../controllers/editarPerfil.php',
+                dataType: 'json',
+                data: {
+                    'nome': nome,
+                    'cpf': cpf,
+                    'email': email,
+                    'senha': senha,
+                    'telefone': telefone,
+                    'cep': cep,
+                    'endereco': endereco,
+                    'numero': numero,
+                    'bairro': bairro,
+                    'cidade': cidade,
+                    'estado': estado
+                },
+                type: 'POST',success: function (msg) {
+                    console.log(msg);
+                    parent.location.reload()
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+        })
+    }
+    })
 })
 

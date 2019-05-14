@@ -95,24 +95,14 @@
                     <input type="text" class="form-control" id="ipt-estado" placeholder="Digite o estado do funcionário" maxlength="2" autocomplete="off" required>
                 </div>
             </div>
-            <?php
-                if($_SESSION['tipoLog'] == 'admin') {
-                    echo "<h1>Tipo de Usuário</h1>";
-                    echo "<hr>";
-                    echo "<div class='form-row'>";
-                    echo " <div class='form-group col-12'>";
-                    echo "<label for='ipt-tipoFunc'>Tipo Usuário</label>";
-                    echo "<select type='text' class='form-control' id='ipt-tipoFunc' maxlength='30' autocomplete='off' required>";
-                    echo "<option value='null'>Escolha um tipo de usuário...</option>";
-                    echo "<option value='admin'>Administrador</option>";
-                    echo "<option value='comum'>Comum</option>";
-                    echo "</select>";
-                    echo '<span style="font-size: .9rem; color: #666;">Ususários Administradores podem cadastrar e editar dados. Usuários Comuns podem somente visualizar os dados.</span>';
-                    echo "</div>";
-                    echo "</div>";
-                }
-
-            ?>
+            <div class="form-row" style>
+                            <div id="alert-error" style="align-items: center; padding: 10px 30px; display: none" class="alert alert-modal alert-danger col-12" role="alert">
+                                <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg"></h6>
+                            </div>
+                        </div>
+            <div class="modal-footer">
+                <button type="button" id="btn-editar" class="btn btn-success">Salvar alterações</button>
+            </div>
         </div>
         
 
@@ -128,10 +118,13 @@
 
     </script>
 
+    <script src="../js/jquery.mask.min.js"></script>
+    <script src="../js/perfil.js"></script>
+
     <script>
         $(window).on('load', () => {
             $.ajax({
-                url: '../controllers/meuPerfil.php',
+                url: '../controllers/meuperfil.php',
                 data: {
                     'idLog': <?php echo $_SESSION['idLog']; ?>,
                 },
@@ -150,7 +143,6 @@
                     $('#ipt-bairro').val(msg[0].bairroFunc);
                     $('#ipt-cidade').val(msg[0].cidadeFunc);
                     $('#ipt-estado').val(msg[0].estadoFunc);
-                    $('#ipt-tipoFunc').val(msg[0].tipoFunc);
                 },
                 error: function (err) {
                     console.log(err);
@@ -158,7 +150,6 @@
             })
         })
     </script>
-
 
 </body>
 

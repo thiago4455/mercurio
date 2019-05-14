@@ -153,6 +153,40 @@ class ClassFuncionarios {
         }
     }
 
+    public function EditarFuncionario($objCadastro){
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+
+        # MySQL UTF-8
+        $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+        $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+        $objConexao->executarComandoSQL('SET character_set_client=utf8');
+        $objConexao->executarComandoSQL('SET character_set_results=utf8');     
+
+        $idFunc= $objCadastro->getIdFunc();
+        $nome = $objCadastro->getNome();
+        $cpf = $objCadastro->getCpf();
+        $email = $objCadastro->getEmail();
+        $senha = $objCadastro->getSenha();
+        $telefone = $objCadastro->getTelefone();
+        $cep = $objCadastro->getCep();
+        $endereco = $objCadastro->getEndereco();
+        $numero = $objCadastro->getNumero();
+        $bairro = $objCadastro->getBairro();
+        $cidade = $objCadastro->getCidade();
+        $estado = $objCadastro->getEstado();
+
+        try {
+            $query = $objConexao->executarComandoSQL("UPDATE `Funcionarios` SET `nomeFunc` = '$nome', `cpfFunc` = '$cpf', `emailFunc` = '$email', `senhaFunc` = '$senha', `telefoneFunc` = '$telefone', `cepFunc` = '$cep', `ruaFunc` = '$endereco', `numeroFunc` = '$numero', `bairroFunc` = '$bairro', `cidadeFunc` = '$cidade', `estadoFunc` = '$estado' WHERE `idFunc` = '$idFunc'");
+            if($query){
+                return $query;
+            }
+        }
+        catch(Exception $err) {
+            return $err;
+        }
+    }
+
     public function CadastrarFuncionario($objCadastro) {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
