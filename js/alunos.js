@@ -8,16 +8,20 @@ $(document).ready(() => {
 
     $(document).on('change', '#check-todos', function() {
         if(this.checked) {
+            alunosSelecionados = []
             $('.check-alunos').prop('checked', true);
             $('.table-row').css('background', '#d8525252')
-            
+            $('.check-alunos').each(function(i,element){
+                alunosSelecionados.push(element.id)
+            })
         }
         else{ 
             $('.check-alunos').prop('checked', false);
             $('.table-row').css('background', '#fff')
+            alunosSelecionados = []
         }
         if($(":checkbox:checked").length > 0 ){
-            $('#btn-encaminhar').text('Encaminhar Selecionados ('+$(":checkbox:checked").length+')');
+            $('#btn-encaminhar').text('Encaminhar Selecionados ('+ ($(":checkbox:checked").length - 1) +')');
         }else{
             $('#btn-encaminhar').text('Encaminhar Selecionados');
         }
@@ -34,14 +38,12 @@ $(document).ready(() => {
             $(this).prop('checked', true);
             $(this).parent().parent().css('background', '#d8525252');
             alunosSelecionados.push($(this).attr('id'));
-            console.log(alunosSelecionados)
         }
         else{ 
             $('#check-todos').prop('checked', false);
             $(this).prop('checked', false);
             $(this).parent().parent().css('background', '#fff');
             alunosSelecionados.pop($(this).attr('id'));
-            console.log(alunosSelecionados)
         }
         if($(":checkbox:checked").length > 0 ){
             $('#btn-encaminhar').text('Encaminhar Selecionados ('+$(":checkbox:checked").length+')');
@@ -65,7 +67,6 @@ $(document).ready(() => {
             url: '../controllers/listarAlunos.php',
             dataType: 'json',
             success: function(msg) {
-                console.log(msg)
                 $('#lds').css('display', 'none');
                 if(msg =='Not found'){
                     $('#fast-actions').css('display', 'none');
@@ -111,6 +112,19 @@ $(document).ready(() => {
                 console.log(err);
             }
         });
+    })
+
+    $('#btn-encaminhar').click(function() {
+        if(alunosSelecionados == "") {
+            
+        }
+        else {
+            console.log(alunosSelecionados)
+            $('#modal-encaminhar').modal('show')
+            alunosSelecionados.forEach(element => {
+                $('#ipt-alunosSelecionados').append("<option>"+ element + "</option>")
+            });
+        }
     })
 })
 

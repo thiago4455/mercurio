@@ -24,6 +24,40 @@
 </head>
 
 <body>
+
+    <div id="modal-encaminhar" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Encaminhar Alunos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 15px 20px">
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label for="ipt-nome">Alunos Selecionados</label>
+                        <select type="text" class="form-control" id="ipt-alunosSelecionados" autocomplete="off" required>
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label for="ipt-cpf">CPF</label>
+                        <input type="text" class="form-control" id="ipt-cpf" placeholder="Digite o cpf do funcionário" maxlength="14" autocomplete="off" required>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
     <div id="fast-search">
         <h1>Buscar Alunos</h1>
         <div id="busca">
