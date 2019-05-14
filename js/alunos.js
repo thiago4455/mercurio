@@ -1,13 +1,16 @@
 $(window).on('load', () => {
-      
+      ''
 })
 
 $(document).ready(() => {
+
+    var alunosSelecionados = [];
 
     $(document).on('change', '#check-todos', function() {
         if(this.checked) {
             $('.check-alunos').prop('checked', true);
             $('.table-row').css('background', '#d8525252')
+            
         }
         else{ 
             $('.check-alunos').prop('checked', false);
@@ -30,11 +33,15 @@ $(document).ready(() => {
         if(this.checked) {
             $(this).prop('checked', true);
             $(this).parent().parent().css('background', '#d8525252');
+            alunosSelecionados.push($(this).attr('id'));
+            console.log(alunosSelecionados)
         }
         else{ 
             $('#check-todos').prop('checked', false);
             $(this).prop('checked', false);
             $(this).parent().parent().css('background', '#fff');
+            alunosSelecionados.pop($(this).attr('id'));
+            console.log(alunosSelecionados)
         }
         if($(":checkbox:checked").length > 0 ){
             $('#btn-encaminhar').text('Encaminhar Selecionados ('+$(":checkbox:checked").length+')');

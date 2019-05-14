@@ -24,6 +24,26 @@
 
 <body>
 
+    <div id="modal-ciclos" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="title-modal"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p id="text-modal-ciclos">Deseja realmente criar um novo ciclo com a tabela: </p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+            <button id="btn-add-ciclo" type="button" class="btn btn-primary">Sim</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
     <div id="main">
         <h1 id="title-main">Iniciar novo Ciclo</h1>
         <h2>
@@ -35,9 +55,15 @@
                 <span class="input-group-text">Upload</span>
             </div>
             <div class="custom-file">
-                <input type="file" class="custom-file-input" id="inputGroupFile01" accept=" .xls, .xml, .xlsx">
+                <input type="file" class="custom-file-input" id="inputGroupFile01" accept=" .xls, .xml, .xlsx, .csv">
                 <label class="custom-file-label" for="inputGroupFile01">Escolha o arquivo</label>
             </div>
+        </div>
+        <div id="alert-success" class="alert alert-success" role="alert">
+            <p id="msg-success">Ciclo cadadastrado com sucesso. Os </p>
+        </div>
+        <div id="alert-error" class="alert alert-danger" role="alert">
+            <p id="msg-error"></p>
         </div>
     </div>
 
@@ -66,13 +92,41 @@
         };
 
         let inputFile = document.getElementById('inputGroupFile01');
-        
 
-        inputFile.addEventListener('change', function(e){
+        $('#modal-ciclos').on('hidden.bs.modal', function (e) {
+            inputFile.value = null;
+        })
+        
+        var files;
+
+        inputFile.addEventListener('input', function(e){
+        var cicloExiste;
+        $('#title-modal').text('Cadastrar novo ciclo')
+        $('#text-modal-ciclos').text('Deseja realmente criar um novo ciclo com a tabela: ' + inputFile.files[0].name)
+            
+            $.ajax({
+                url: '../controllers/verificarCiclo.php',
+                type: 'GET',
+                success: function(data) {
+                    cicloExiste = data;
+                    if(cicloExiste == "true"){
+                        $('#title-modal').text('Atualizar ciclo')
+                        $('#text-modal-ciclos').text('Já existe um ciclo cadastrado nesse mês. Deseja realmente substituí-lo pelo da tabela: ' + inputFile.files[0].name)
+                    }
+                },
+                error: function(err) {
+                    console.log(err)
+                }
+            });
+            
+            $('#modal-ciclos').modal('show')
+            files = e.target.files, f = files[0];
+        });
+
+        $('#btn-add-ciclo').click(function(){
             if(inputFile.files.length != 0) {
                 $('.custom-file-label').text('Enviando...');
 
-                var files = e.target.files, f = files[0];
                 var reader = new FileReader();
                 reader.onload = function(e) {
                     var data = new Uint8Array(e.target.result);
@@ -81,6 +135,7 @@
                     csvTable = to_csv(workbook);
                     const numAlunos = csvTable.split(/\r\n|\r|\n/).length-1;
                     console.log(numAlunos);
+                $('#btn-active-modal').click();
                     $.ajax({
                         url: '../controllers/importarExcel.php',
                         type: 'POST',
@@ -89,18 +144,30 @@
                         },
                         success: function(data) {
                             console.log(data);     
-                            $('.custom-file-label').text('Escolha o arquivo');            
+                            $('#modal-ciclos').modal('hide')
+                            $('.custom-file-label').text('Escolha o arquivo');   
+                            $('#alert-error').css('display', 'none');
+
+                            $('#alert-success').css('display', 'flex');
+                            $('#msg-success').append(numAlunos + " alunos foram cadastrados com sucesso!");
+                            
                         },
                         error: function(err) {
                             alert('deu ruim')
                             $('.custom-file-label').text('Escolha o arquivo');
                             console.log(err)
+
+                            $('#alert-success').css('display', 'none');
+
+                            $('#alert-error').css('display', 'flex');
+                            $('#msg-error').html(error);
                         }
                     });
                 };
                 reader.readAsArrayBuffer(f);
             } 
-        });
+        }) 
+        
     </script>
 
 </body>
