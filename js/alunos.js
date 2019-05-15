@@ -116,15 +116,58 @@ $(document).ready(() => {
 
     $('#btn-encaminhar').click(function() {
         if(alunosSelecionados == "") {
-            
+            $('#modal-erro').modal('show');
         }
         else {
+            $('#ipt-alunosSelecionados').html('');
             console.log(alunosSelecionados)
             $('#modal-encaminhar').modal('show')
-            alunosSelecionados.forEach(element => {
-                $('#ipt-alunosSelecionados').append("<option>"+ element + "</option>")
-            });
+            $.ajax({
+                url: '../controllers/listarSelecionados.php',
+                data: {
+                    'alunosSelecionados': alunosSelecionados,
+                },
+                type: 'POST',
+                dataType: 'json',
+                success: function(msg) {
+                    console.log(msg)
+                    var i = 0; 
+                    alunosSelecionados.forEach(element => {
+                        $('#ipt-alunosSelecionados').append(element + " - "+ msg[i].Nome +"\n")
+                        i++;
+                    });
+                    $('#label-alunosSelecionados').text('Alunos Selecionados - (' + i + ')')
+
+                    $.ajax({
+                        url: '../controllers/listarEmpresasSelecionadas.php',
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(msg) {
+                            if(msg == 'ERRO') {
+                                $('#modal-encaminhar').modal('hide')
+                                $('#modal-erro-empresa').modal('show');
+                            }else {
+                                $.each(msg, function(key, value) {
+                                    $('#ipt-empresaSelecionada').append('<option value='+ value.codEmpresa +'>'+ value.codEmpresa +'</option>')
+                                });
+                            }
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    })
+
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            })
+            
         }
+    })
+
+    $('#btn-erro-cadastarEmpresa').click(() => {
+        window.location.href = 'empresas.php';
     })
 })
 

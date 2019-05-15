@@ -25,37 +25,76 @@
 
 <body>
 
-    <div id="modal-encaminhar" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Encaminhar Alunos</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" style="padding: 15px 20px">
-                <div class="form-row">
-                    <div class="form-group col-12">
-                        <label for="ipt-nome">Alunos Selecionados</label>
-                        <select type="text" class="form-control" id="ipt-alunosSelecionados" autocomplete="off" required>
-                            
-                        </select>
-                    </div>
+    <div id="modal-erro-empresa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Erro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-12">
-                        <label for="ipt-cpf">CPF</label>
-                        <input type="text" class="form-control" id="ipt-cpf" placeholder="Digite o cpf do funcionário" maxlength="14" autocomplete="off" required>
-                    </div>
+                <div class="modal-body" style="padding: 15px 20px">
+                    <p>Não existe nenhuma empresa cadastrada. Cadastre uma empresa primeiro!</p>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btn-erro-cadastarEmpresa">Cadastrar uma Empresa</button>
+                </div>
             </div>
         </div>
     </div>
+
+    <div id="modal-erro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Erro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="padding: 15px 20px">
+                    <p>Você deve selecionar no mínimo um aluno para prosseguir!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-encaminhar" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Encaminhar Alunos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="padding: 15px 20px">
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label for="ipt-alunosSelecionados" id="label-alunosSelecionados"></label>
+                            <textarea class="form-control" id="ipt-alunosSelecionados" disabled></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label for="ipt-empresaSelecionada">Selecione uma Empresa</label>
+                            <select class="form-control" id="ipt-empresaSelecionada">
+                                
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Encaminhar Alunos</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="fast-search">
