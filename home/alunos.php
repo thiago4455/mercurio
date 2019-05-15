@@ -91,7 +91,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Encaminhar Alunos</button>
+                    <button type="button" class="btn btn-primary" id="btn-encaminhar-model">Encaminhar Alunos</button>
                 </div>
             </div>
         </div>
@@ -137,6 +137,10 @@
     </script>
 
     <script src="../js/alunos.js"></script>
+
+    <script>
+        
+    </script>
 
 </body>
 

@@ -166,6 +166,13 @@ $(document).ready(() => {
         }
     })
 
+    $('#btn-encaminhar-model').click(function() {
+        var empresa = $('#ipt-empresaSelecionada').val();
+
+        window.location.href = "../controllers/gerarPdfEncaminhar.php?alunosSelecionados=" + alunosSelecionados + "&empresa=" + empresa;
+
+    })
+
     $('#btn-erro-cadastarEmpresa').click(() => {
         window.location.href = 'empresas.php';
     })
