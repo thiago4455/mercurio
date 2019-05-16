@@ -33,13 +33,17 @@
 
         
 
-        $tabela = '<html> <table> <tr> <th> Lista de Encaminhamento para '. $queryRespNomeEmpresa[0]['nomeFantasia'] .'</th> </tr> <tr> <th> Registro Academico </th> <th> Nome </th> <th> Cpf </th> <th> Idade </th> <th> Sexo </th> <th> Nome Curso </th> </tr>';
+        $tabela = '<html> <header> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta http-equiv="X-UA-Compatible" content="ie=edge"> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> </header> <img src="../assets/img/logo_grande.jpg" alt="Logo Senai"/> <h1> Lista de Encaminhamento para '. $queryRespNomeEmpresa[0]['nomeFantasia'] .'</h1>   <table class="table table-striped"> <tr> <th> Registro Academico </th> <th> Nome </th> <th> Cpf </th> <th> Idade </th> <th> Sexo </th> <th> Nome Curso </th> </tr>';
 
         foreach($queryResp as $item) {
             $tabela = $tabela . '<tr> <td> '. $item['Ra'] .' </td> <td> '. $item['Nome'] .' </td> <td> '. $item['Cpf'] .' </td> <td> '. $item['Idade'] .' </td> <td> '. $item['Sexo'] .' </td> <td> '. $item['NomeCurso'] .' </td> </tr>';
         }
 
-        $tabela = $tabela . '</table> </html>';
+        $tabela = $tabela . '</table> </body> </html>';
+
+        $data = date("d.m.Y");
+
+        $nomeArquivo = "Relatório de Encaminhamento para ". $queryRespNomeEmpresa[0]['nomeFantasia'] ." - (" . $data . ")";
 
         use Dompdf\Dompdf;
         require_once 'dompdf/autoload.inc.php';
@@ -47,7 +51,7 @@
         $dompdf->load_html($tabela);
         $dompdf->render();
         $dompdf->stream(
-            "teste.pdf",
+            $nomeArquivo,
             array(
                 "Attachment" => false
             )

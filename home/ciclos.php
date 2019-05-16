@@ -50,8 +50,8 @@
             Para iniciar um novo ciclo, anexe abaixo uma planilha do Excel (xlsx, xls ou xml). Automaticamente os dados serão adicionados ao banco de dados e
             estarão disponíveis para o encaminhamento as devidas empresas.
         </h2>
-        <div class="input-group mb-3 col-md-8 input-file">
-        <div class="input-group-prepend">
+        <div class="input-group mb-3 col-12 col-md-8 input-file" style="padding: 0">
+            <div class="input-group-prepend">
                 <span class="input-group-text">Upload</span>
             </div>
             <div class="custom-file">
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div id="alert-success" class="alert alert-success" role="alert">
-            <p id="msg-success">Ciclo cadadastrado com sucesso. Os </p>
+            <p id="msg-success">Ciclo cadastrado com sucesso. Os </p>
         </div>
         <div id="alert-error" class="alert alert-danger" role="alert">
             <p id="msg-error"></p>
@@ -149,7 +149,7 @@
                             $('#alert-error').css('display', 'none');
 
                             $('#alert-success').css('display', 'flex');
-                            $('#msg-success').append(numAlunos + " alunos foram cadastrados com sucesso!");
+                            $('#msg-success').append(numAlunos + " alunos foram adicionados com sucesso!");
                             
                         },
                         error: function(err) {
