@@ -9,6 +9,11 @@ $(document).ready(() => {
     $('#ipt-telefone').mask('(00) 00000-0000');
     $('#ipt-numero').mask('00000');
 
+    $('#ipt-cnpj-editar').mask('00.000.000/0000-00', { reverse: true });
+    $('#ipt-cep-editar').mask('00000-000');
+    $('#ipt-telefone-editar').mask('(00) 00000-0000');
+    $('#ipt-numero-editar').mask('00000');
+
     $('#ipt-apelido').keyup(function () {
         var valorCampo = $(this).val();
         $(this).val(valorCampo.toUpperCase())
@@ -33,12 +38,129 @@ $(document).ready(() => {
         $('#alert-error').css('display', 'none');
 
     })
+    
+    $('#btn-editar').click(function () {
+        var nomeFantasia = $('#ipt-nomeFantasia-editar').val();
+        var razaoSocial = $('#ipt-razaoSocial-editar').val();
+        var nomeResponsavel = $('#ipt-nomeResponsavel-editar').val();
+        var cnpj = $('#ipt-cnpj-editar').val();
+        var email = $('#ipt-email-editar').val();
+        var telefone = $('#ipt-telefone-editar').val();
+        var cep = $('#ipt-cep-editar').val();
+        var endereco = $('#ipt-endereco-editar').val();
+        var numero = $('#ipt-numero-editar').val();
+        var bairro = $('#ipt-bairro-editar').val();
+        var cidade = $('#ipt-cidade-editar').val();
+        var estado = $('#ipt-estado-editar').val();
+        var apelido = $('#ipt-apelido-editar').val();
+
+        $('#btn-editar').text('Editando...');
+        $('#btn-editar').prop('disabled', true);
+
+        if (!nomeFantasia || !razaoSocial || !nomeResponsavel || !cnpj || !email || !telefone || !cep || !endereco || !numero || !bairro || !cidade || !estado || !apelido) {
+            $('#alert-error-editar').css('display', 'flex');
+            $('#error-msg-editar').text('Preencha todos os campos e tente novamente');
+            $('#btn-editar').text('Concluir Edição');
+            $('#btn-editar').prop('disabled', false);
+        }
+        else {
+            $('#alert-error-editar').css('display', 'none');
+            $('#error-msg-editar').text('');
+            $('#btn-editar').text('Concluir Edição');
+            $('#btn-editar').prop('disabled', false);
+
+            $.ajax({
+                url: '../controllers/editarEmpresa.php',
+                dataType: 'json',
+                data: {
+                    'nomeFantasia': nomeFantasia,
+                    'razaoSocial': razaoSocial,
+                    'nomeResponsavel': nomeResponsavel,
+                    'cnpj': cnpj,
+                    'email': email,
+                    'telefone': telefone,
+                    'cep': cep,
+                    'endereco': endereco,
+                    'numero': numero,
+                    'bairro': bairro,
+                    'cidade': cidade,
+                    'estado': estado,
+                    'apelido': apelido
+                },
+                type: 'POST',
+                success: function (msg) {
+                    console.log(msg)
+
+                   if (msg != true) {
+                        $('#alert-error-editar').css('display', 'flex');
+                        $('#error-msg-editar').text(msg);
+                    } else if(msg == true) {
+                        $('#ipt-nomeFantasia-editar').val('');
+                        $('#ipt-razaoSocial-editar').val('');
+                        $('#ipt-nomeResponsavel-editar').val('');
+                        $('#ipt-cnpj-editar').val('');
+                        $('#ipt-email-editar').val('');
+                        $('#ipt-telefone-editar').val('');
+                        $('#ipt-cep-editar').val('');
+                        $('#ipt-endereco-editar').val('');
+                        $('#ipt-numero-editar').val('');
+                        $('#ipt-bairro-editar').val('');
+                        $('#ipt-cidade-editar').val('');
+                        $('#ipt-estado-editar').val('');
+                        $('#ipt-apelido-editar').val('');
+                        $('#alert-error-editar').css('display', 'none');
+                        $('#error-msg-editar').text('');
+                        $('#alert-success-editar').css('display', 'flex');
+                        $('.modal-editar').modal('hide')
+                        ListarEmpresas();
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+    })
+    $(document).on('click', '.btn-editar', function() {
+        id = (($(this).attr('id')).split('-'))[1];
+        $.ajax({
+            url: '../controllers/buscarEmpresaCod.php',
+            dataType: 'json',
+            data: {
+                'codEmpresa':id
+            },
+            type: 'POST',
+            success: function (msg) {
+                console.log(msg);
+                $('.modal-editar').modal('show')
+                $('#ipt-nomeFantasia-editar').val(msg[0].nomeFantasia);
+                $('#ipt-razaoSocial-editar').val(msg[0].razaoSocial);
+                $('#ipt-nomeResponsavel-editar').val(msg[0].responsavel);
+                $('#ipt-cnpj-editar').val(msg[0].cnpj);
+                $('#ipt-email-editar').val(msg[0].email);
+                $('#ipt-telefone-editar').val(msg[0].telefone);
+                $('#ipt-cep-editar').val(msg[0].cep);
+                $('#ipt-endereco-editar').val(msg[0].rua);
+                $('#ipt-numero-editar').val(msg[0].numero);
+                $('#ipt-bairro-editar').val(msg[0].bairro);
+                $('#ipt-apelido-editar').val(msg[0].codEmpresa);
+                $('#ipt-cidade-editar').val(msg[0].cidade);
+                $('#ipt-estado-editar').val(msg[0].estado);
+                $('#alert-success-editar').css('display', 'none');
+                $('#alert-error-editar').css('display', 'none');
+                
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    })
 
     function ListarItens(msg) {
         table.innerHTML = "";
         table.innerHTML = '<tr id="tr-title"><td>Código (Apelido)</td><td>Nome Fantasia</td><td>Razão Social</td><td>CNPJ</td><td>Telefone</td><td>Email</td><td>Cidade</td><td>Editar</td></tr>';
         for (i = 0; i < msg.length; i++) {
-            $('#tableBody').append('<tr id="' + msg[i].codEmpresa + '" class="table-row"> </td> <td> ' + msg[i].codEmpresa + ' </td> <td style="min-width: 150px"> ' + msg[i].nomeFantasia + ' </td> <td style="min-width: 150px"> ' + msg[i].razaoSocial + ' </td> <td> ' + msg[i].cnpj + ' </td> <td style="min-width: 150px"> ' + msg[i].telefone + ' </td> <td> ' + msg[i].email + ' </td> <td> ' + msg[i].cidade + ' </td> <td class="btnR" id="btnRow' + i + '"><button><i class="fas fa-edit"></i></td> </tr>')
+            $('#tableBody').append('<tr id="' + msg[i].codEmpresa + '" class="table-row"> </td> <td> ' + msg[i].codEmpresa + ' </td> <td style="min-width: 150px"> ' + msg[i].nomeFantasia + ' </td> <td style="min-width: 150px"> ' + msg[i].razaoSocial + ' </td> <td> ' + msg[i].cnpj + ' </td> <td style="min-width: 150px"> ' + msg[i].telefone + ' </td> <td> ' + msg[i].email + ' </td> <td> ' + msg[i].cidade + ' </td> <td class="btnR" id="btnRow' + i + '"><button id="btn-'+ msg[i].codEmpresa +'" class="btn-editar"><i class="fas fa-edit"></i></td> </tr>')
         }
     }
 
