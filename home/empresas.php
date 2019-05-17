@@ -96,7 +96,7 @@
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-estado">Estado</label>
-                                <input type="text" class="form-control" id="ipt-estado" placeholder="Digite o estado da empresa" maxlength="30" autocomplete="off" required>
+                                <input type="text" class="form-control" id="ipt-estado" placeholder="Digite o estado da empresa" maxlength="2" autocomplete="off" required>
                             </div>
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-apelido">Apelido Personálizavel</label>
@@ -116,6 +116,102 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" id="btn-cadastrar"  class="btn btn-success">Concluir Cadastro</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- Modal Editar -->
+    <div class="modal fade modal-editar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-family: 'Google-Bold'; font-size: 1.5rem">Editar Empresa</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 15px 20px">
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="ipt-nomeFantasia">Nome Fantasia</label>
+                                <input type="text" class="form-control" id="ipt-nomeFantasia-editar" placeholder="Digite o nome Fantasia da Empresa" maxlength="100" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="ipt-razaoSocial">Razão Social</label>
+                                <input type="text" class="form-control" id="ipt-razaoSocial-editar" placeholder="Digite a Razão Social da Empresa" maxlength="100" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12">
+                                <label for="ipt-cnpj">CNPJ</label>
+                                <input type="text" class="form-control" id="ipt-cnpj-editar" placeholder="Digite o cnpj da empresa" maxlength="18" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-nomeResponsavel">Nome do Responsável</label>
+                                <input type="text" class="form-control" id="ipt-nomeResponsavel-editar" placeholder="Digite o nome do responsável" maxlength="100" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-email">Email de contato</label>
+                                <input type="email" class="form-control" id="ipt-email-editar" placeholder="Digite o email de contato da empresa ou do responsável" maxlength="100" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-telefone">Telefone</label>
+                                <input type="text" class="form-control" id="ipt-telefone-editar" placeholder="Digite o telefone da empresa ou responsável" maxlength="15" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-cep">Cep</label>
+                                <input type="text" class="form-control" id="ipt-cep-editar" placeholder="Digite o cep da empresa" maxlength="9" autocomplete="off" required>
+                            </div>  
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-8">
+                                <label for="ipt-endereco">Endereço</label>
+                                <input type="text" class="form-control" id="ipt-endereco-editar" placeholder="Digite o endereço da empresa" maxlength="50" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <label for="ipt-numero">Número</label>
+                                <input type="text" class="form-control" id="ipt-numero-editar" placeholder="Digite o numero da empresa" maxlength="5" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-bairro">Bairro</label>
+                                <input type="text" class="form-control" id="ipt-bairro-editar" placeholder="Digite o bairro da empresa" maxlength="30" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-cidade">Cidade</label>
+                                <input type="text" class="form-control" id="ipt-cidade-editar" placeholder="Digite a cidade da empresa" maxlength="30" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-estado">Estado</label>
+                                <input type="text" class="form-control" id="ipt-estado-editar" placeholder="Digite o estado da empresa" maxlength="2" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-6" style="display:none">
+                                <input style="margin-bottom: 10px" type="text" class="form-control" id="ipt-apelido-editar" placeholder="Digite um apelido para a empresa" maxlength="6" minlength="6" required>
+                            </div>
+                        </div>
+                        <div class="form-row" style>
+                            <div id="alert-error-editar" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-danger col-12" role="alert">
+                                <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg-editar"></h6>
+                            </div>
+                        </div>
+                        <div class="form-row" style>
+                            <div id="alert-success-editar" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-success col-12" role="alert">
+                                <span style="font-weight: 600">Sucesso!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="">Empresa editada com sucesso</h6>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btn-editar"  class="btn btn-success">Concluir Edição</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
