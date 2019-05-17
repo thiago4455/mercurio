@@ -101,3 +101,16 @@
     .dropdown-item.active, .dropdown-item:active {
         background-color: #d85252;
     }
+
+    @media(max-width: 600px) {
+        #nav {
+            padding: 20px !important;
+            height: 60px !important;
+        }
+
+        #nav-logo img {
+            width: 130px;
+            height: 35px;
+        }
+
+    }

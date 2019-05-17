@@ -91,7 +91,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="btn-encaminhar-model">Encaminhar Alunos</button>
+                    <button type="button" class="btn btn-success" id="btn-encaminhar-model">Encaminhar Alunos</button>
                 </div>
             </div>
         </div>
@@ -116,9 +116,11 @@
         <button id="btn-encaminhar" type="button" class="btn btn-success" href="#">Encaminhar Selecionados</button>
     </div>
 
-    <table id='tableBody' class="table">
-    </table>
-    <div id='lds' class="lds-ring"></div>
+    <div class="table-responsive">
+        <table id='tableBody' class="table">
+        </table>
+    </div>
+    <div id='lds' class="lds-ring"><div></div></div>
 
     <div id="div-not-found">
         <i class="fas fa-exclamation-triangle"></i>

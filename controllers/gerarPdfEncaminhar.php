@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $alunosSelecionados = $_GET['alunosSelecionados'];
     $empresa = $_GET['empresa'];
 
@@ -26,20 +28,20 @@
             }
         }
 
-        $queryBuscaNomeEmpresa = "SELECT nomeFantasia From empresas WHERE codEmpresa LIKE '" . $empresa . "';";
+        $queryBuscaEmpresa = "SELECT * From empresas WHERE codEmpresa LIKE '" . $empresa . "';";
 
         $queryResp = $objConexao->selecionarDados($queryBusca);
-        $queryRespNomeEmpresa = $objConexao->selecionarDados($queryBuscaNomeEmpresa);
+        $queryRespNomeEmpresa = $objConexao->selecionarDados($queryBuscaEmpresa);
 
-        
+        $dataRelatorio = date("d/m/Y");        
 
-        $tabela = '<html> <header> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta http-equiv="X-UA-Compatible" content="ie=edge"> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> </header> <img src="../assets/img/logo_grande.jpg" alt="Logo Senai"/> <h1> Lista de Encaminhamento para '. $queryRespNomeEmpresa[0]['nomeFantasia'] .'</h1>   <table class="table table-striped"> <tr> <th> Registro Academico </th> <th> Nome </th> <th> Cpf </th> <th> Idade </th> <th> Sexo </th> <th> Nome Curso </th> </tr>';
+        $tabela = '<html> <header> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta http-equiv="X-UA-Compatible" content="ie=edge"> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> </header> <body> <style> th {font-size: 12px}; td {font-size: 10px}; </style> <img style="width: 140px; height: 35px" src="../assets/img/logo_grande.jpg" alt="Logo Senai"/> <h1 style="text-align: center; font-size: 1.5rem; font-weight: bold; margin: 30px 0 50px"> Lista de Encaminhamento para '. $queryRespNomeEmpresa[0]['nomeFantasia'] .'</h1>  <p> Segue abaixo o relatório do encaminhamento de '. $length .' aluno(s) para a empresa '. $queryRespNomeEmpresa[0]['nomeFantasia'] .', de razão social '. $queryRespNomeEmpresa[0]['razaoSocial'] .' e cnpj '. $queryRespNomeEmpresa[0]['cnpj'] .': </p> <table class="table table-sm" style="margin: 30px 0 100px"> <tr> <th> Registro Academico </th> <th> Nome </th> <th> Cpf </th> <th> Idade </th> <th> Sexo </th> <th> Nome Curso </th> </tr>';
 
         foreach($queryResp as $item) {
-            $tabela = $tabela . '<tr> <td> '. $item['Ra'] .' </td> <td> '. $item['Nome'] .' </td> <td> '. $item['Cpf'] .' </td> <td> '. $item['Idade'] .' </td> <td> '. $item['Sexo'] .' </td> <td> '. $item['NomeCurso'] .' </td> </tr>';
+            $tabela = $tabela . '<tr> <td style="font-size: 10px"> '. $item['Ra'] .' </td> <td style="font-size: 10px"> '. $item['Nome'] .' </td> <td style="font-size: 10px"> '. $item['Cpf'] .' </td> <td style="font-size: 10px"> '. $item['Idade'] .' </td> <td style="font-size: 10px"> '. $item['Sexo'] .' </td> <td style="font-size: 10px"> '. $item['NomeCurso'] .' </td> </tr>';
         }
 
-        $tabela = $tabela . '</table> </body> </html>';
+        $tabela = $tabela . '</table> <hr style="width: 300px;margin: 0 auto 10px; background: #222"> <h6 style="font-size: 14px; text-align:center"> '. $_SESSION['nomeLog'] .' </h6> <h6  style="font-size: 10px; text-align:center"> '. $dataRelatorio. ' </h6> </body> </html>';
 
         $data = date("d.m.Y");
 

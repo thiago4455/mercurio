@@ -17,7 +17,7 @@ $(document).ready(() => {
         table.innerHTML = "";
         table.innerHTML = '<tr id="tr-title"><td>Código</td><td>Nome</td><td>CPF</td><td>Email</td><td>Telefone</td><td>Bairro</td><td>Cidade</td><td>Tipo</td><td>Editar</td></tr>';
         for (i = 0; i < msg.length; i++) {
-            $('#tableBody').append('<tr id="' + msg[i].idFunc + '" class="table-row"> </td> <td> ' + msg[i].idFunc + ' </td> <td> ' + msg[i].nomeFunc + ' </td> <td> ' + msg[i].cpfFunc + ' </td> <td> ' + msg[i].emailFunc + ' </td> <td> ' + msg[i].telefoneFunc + ' </td> <td> ' + msg[i].bairroFunc + ' </td> <td> ' + msg[i].cidadeFunc + ' </td> <td> ' + msg[i].tipoFunc + ' </td> <td class="btnR" id="btnRow' + i + '"><button><i class="fas fa-edit"></i></td> </tr>')
+            $('#tableBody').append('<tr id="' + msg[i].idFunc + '" class="table-row"> </td> <td> ' + msg[i].idFunc + ' </td> <td style="min-width: 200px"> ' + msg[i].nomeFunc + ' </td> <td  style="min-width: 150px"> ' + msg[i].cpfFunc + ' </td> <td> ' + msg[i].emailFunc + ' </td> <td  style="min-width: 150px"> ' + msg[i].telefoneFunc + ' </td> <td style="min-width: 200px"> ' + msg[i].bairroFunc + ' </td> <td style="min-width: 150px"> ' + msg[i].cidadeFunc + ' </td> <td> ' + msg[i].tipoFunc + ' </td> <td class="btnR" id="btnRow' + i + '"><button><i class="fas fa-edit"></i></td> </tr>')
         }
     }
 

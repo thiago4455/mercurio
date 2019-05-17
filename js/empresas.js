@@ -38,7 +38,7 @@ $(document).ready(() => {
         table.innerHTML = "";
         table.innerHTML = '<tr id="tr-title"><td>Código (Apelido)</td><td>Nome Fantasia</td><td>Razão Social</td><td>CNPJ</td><td>Telefone</td><td>Email</td><td>Cidade</td><td>Editar</td></tr>';
         for (i = 0; i < msg.length; i++) {
-            $('#tableBody').append('<tr id="' + msg[i].codEmpresa + '" class="table-row"> </td> <td> ' + msg[i].codEmpresa + ' </td> <td> ' + msg[i].nomeFantasia + ' </td> <td> ' + msg[i].razaoSocial + ' </td> <td> ' + msg[i].cnpj + ' </td> <td> ' + msg[i].telefone + ' </td> <td> ' + msg[i].email + ' </td> <td> ' + msg[i].cidade + ' </td> <td class="btnR" id="btnRow' + i + '"><button><i class="fas fa-edit"></i></td> </tr>')
+            $('#tableBody').append('<tr id="' + msg[i].codEmpresa + '" class="table-row"> </td> <td> ' + msg[i].codEmpresa + ' </td> <td style="min-width: 150px"> ' + msg[i].nomeFantasia + ' </td> <td style="min-width: 150px"> ' + msg[i].razaoSocial + ' </td> <td> ' + msg[i].cnpj + ' </td> <td style="min-width: 150px"> ' + msg[i].telefone + ' </td> <td> ' + msg[i].email + ' </td> <td> ' + msg[i].cidade + ' </td> <td class="btnR" id="btnRow' + i + '"><button><i class="fas fa-edit"></i></td> </tr>')
         }
     }
 

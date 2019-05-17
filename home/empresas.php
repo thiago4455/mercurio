@@ -135,9 +135,11 @@
         <button id="btn-modal-cadastrar" type="button" class="btn btn-success" data-toggle="modal" data-target=".modal-cadastrar">Cadastrar Nova Empresa</button>
     </div>
 
-    <table id='tableBody' class="table">
-    </table>
-    <div id='lds' class="lds-ring"></div>
+    <div class="table-responsive">
+        <table id='tableBody' class="table">
+        </table>
+    </div>
+    <div id='lds' class="lds-ring"><div></div></div>
 
     <div id="div-not-found">
         <i class="fas fa-exclamation-triangle"></i>
