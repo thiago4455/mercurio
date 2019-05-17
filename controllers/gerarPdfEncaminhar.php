@@ -16,7 +16,7 @@
         $objConexao->executarComandoSQL('SET character_set_results=utf8');   
 
         $length = sizeof($alunosSelecionados);
-        $queryBusca = "SELECT * From Alunos WHERE";
+        $queryBusca = "SELECT * From alunos WHERE";
 
         $i = 0;
         foreach($alunosSelecionados as $aluno) {
@@ -28,7 +28,7 @@
             }
         }
 
-        $queryBuscaEmpresa = "SELECT * From Empresas WHERE codEmpresa LIKE '" . $empresa . "';";
+        $queryBuscaEmpresa = "SELECT * From empresas WHERE codEmpresa LIKE '" . $empresa . "';";
 
         $queryResp = $objConexao->selecionarDados($queryBusca);
         $queryRespNomeEmpresa = $objConexao->selecionarDados($queryBuscaEmpresa);
@@ -44,6 +44,7 @@
         $tabela = $tabela . '</table> <hr style="width: 300px;margin: 0 auto 10px; background: #222"> <h6 style="font-size: 14px; text-align:center"> '. $_SESSION['nomeLog'] .' </h6> <h6  style="font-size: 10px; text-align:center"> '. $dataRelatorio. ' </h6> </body> </html>';
 
         $data = date("d.m.Y");
+        $time = time();
 
         $nomeArquivo = "Relatório de Encaminhamento para ". $queryRespNomeEmpresa[0]['nomeFantasia'] ." - (" . $data . ")";
 
@@ -58,5 +59,8 @@
                 "Attachment" => false
             )
         );
+        $output = $dompdf->output();
+        $filename = "../relatorios/".time().".pdf";
+        file_put_contents($filename, $output);
 
 ?>

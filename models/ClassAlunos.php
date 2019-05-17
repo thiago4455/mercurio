@@ -124,6 +124,14 @@ class ClassAlunos {
         $this->status = $status;
     }
 
+    function getSemestre(){
+        return $this->semestre;
+    }
+
+    function setSemestre($semestre){
+        $this->semestre = $semestre;
+    }
+
 
     public function RetAlunos() {
         require_once('ConexaoClass.php');
@@ -172,7 +180,7 @@ class ClassAlunos {
     }
 
 
-    public function BuscaAlunos($busca) {
+    public function BuscaAlunos($busca, $semestre) {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
                 # MySQL UTF-8
@@ -181,7 +189,7 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
-            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE (Nome LIKE '%$busca%') OR (Ra LIKE '%$busca%') OR (Cpf LIKE '%$busca%') OR (Telefone1 LIKE '%$busca%') OR (Telefone2 LIKE '%$busca%')");
+            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE ((Nome LIKE '%$busca%') OR (Ra LIKE '%$busca%') OR (Cpf LIKE '%$busca%') OR (Telefone1 LIKE '%$busca%') OR (Telefone2 LIKE '%$busca%')) AND Semestre='$semestre'");
 
             if($tableAlunos === "ERRO") {          
                 return 'Not found';             
@@ -205,7 +213,7 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
 
-            $busca = "SELECT * FROM Alunos WHERE (Nome != '') ";
+            $busca = "SELECT * FROM Alunos WHERE (Semestre = '".$objAlunos->getSemestre()."') ";
 
             if($objAlunos->getNome()!='') $busca = $busca . " AND (Nome LIKE '%".$objAlunos->getNome()."%')";
             if($objAlunos->getRa()!='') $busca = $busca . " AND (Ra LIKE '%".$objAlunos->getRa()."%')";

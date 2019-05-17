@@ -21,6 +21,7 @@
     $NomeCurso = ($_POST['nomeCurso']);
     $CodTurma = ($_POST['codTurma']);
     $Status = ($_POST['status']);
+    $Ciclo = ($_POST['ciclo']);
 
     require_once('../models/ClassAlunos.php');
     $objAlunos = new ClassAlunos();
@@ -44,6 +45,7 @@
     $objAlunos->setNomeCurso($NomeCurso);
     $objAlunos->setCodTurma($CodTurma);
     $objAlunos->setStatus($Status);
+    $objAlunos->setSemestre($Ciclo);
     $queryResp = $objAlunos->BuscaAvancada($objAlunos);
 
     echo json_encode($queryResp);
