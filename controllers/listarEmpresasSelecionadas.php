@@ -9,7 +9,7 @@
         $objConexao->executarComandoSQL('SET character_set_client=utf8');
         $objConexao->executarComandoSQL('SET character_set_results=utf8');   
 
-        $queryResp = $objConexao->selecionarDados("SELECT codEmpresa FROM empresas");
+        $queryResp = $objConexao->selecionarDados("SELECT codEmpresa FROM Empresas");
     
     echo json_encode($queryResp);
 ?>

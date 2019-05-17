@@ -78,8 +78,24 @@ body {
 }
 
 #btn-encaminhar {
-    margin: 0 0 0 auto;
+    margin: 0 0 0 0;
     height: 50px;
+}
+
+#cbx-ciclos {
+    width: unset;
+    margin: 0 15px 0 auto;
+    height: 50px;
+    outline: none;
+    border-radius: 2px;
+    background: #eee;
+    border: none;
+    font-size: 1rem;
+    color: #333;
+}
+
+#cbx-ciclos:focus {
+    box-shadow: none;
 }
 
 #div-not-found {

@@ -113,6 +113,11 @@
             <input type="checkbox" class="custom-control-input" id="check-todos">
             <label class="custom-control-label" for="check-todos">Selecionar Todos</label>
         </div>
+        <select id="cbx-ciclos" class="form-control form-control-lg">
+            <option>Ciclo - 05/2019</option>
+            <option>Ciclo - 06/2019</option>
+            <option>Ciclo - 07/2019</option>
+        </select>
         <button id="btn-encaminhar" type="button" class="btn btn-success" href="#">Encaminhar Selecionados</button>
     </div>
 

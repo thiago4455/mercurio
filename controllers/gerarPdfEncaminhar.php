@@ -16,7 +16,7 @@
         $objConexao->executarComandoSQL('SET character_set_results=utf8');   
 
         $length = sizeof($alunosSelecionados);
-        $queryBusca = "SELECT * From alunos WHERE";
+        $queryBusca = "SELECT * From Alunos WHERE";
 
         $i = 0;
         foreach($alunosSelecionados as $aluno) {
@@ -28,7 +28,7 @@
             }
         }
 
-        $queryBuscaEmpresa = "SELECT * From empresas WHERE codEmpresa LIKE '" . $empresa . "';";
+        $queryBuscaEmpresa = "SELECT * From Empresas WHERE codEmpresa LIKE '" . $empresa . "';";
 
         $queryResp = $objConexao->selecionarDados($queryBusca);
         $queryRespNomeEmpresa = $objConexao->selecionarDados($queryBuscaEmpresa);

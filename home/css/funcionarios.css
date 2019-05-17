@@ -179,6 +179,19 @@ td button {
   position: relative;
 }
 
+.table-responsive {
+  width: 95%;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+#tableBody {
+  width: 100%;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,.2);
+}
+
 .table td, .table th {
   vertical-align: unset !important;
 }

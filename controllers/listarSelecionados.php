@@ -12,7 +12,7 @@
 
         $length = sizeof($alunosSelecionados);
 
-        $queryBusca = "SELECT Nome From alunos WHERE";
+        $queryBusca = "SELECT Nome From Alunos WHERE";
 
         $i = 0;
         foreach($alunosSelecionados as $aluno) {
