@@ -133,7 +133,7 @@ class ClassAlunos {
     }
 
 
-    public function RetAlunos() {
+    public function RetAlunos($ciclo) {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
                 # MySQL UTF-8
@@ -142,7 +142,7 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
-            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos");
+            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE Semestre='".$ciclo."';");
 
             if($tableAlunos === "ERRO") {          
                 return 'Not found';             

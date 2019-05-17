@@ -28,7 +28,7 @@
             }
         }
 
-        $queryBuscaEmpresa = "SELECT * From empresas WHERE codEmpresa LIKE '" . $empresa . "';";
+        $queryBuscaEmpresa = "SELECT * From Empresas WHERE codEmpresa LIKE '" . $empresa . "';";
 
         $queryResp = $objConexao->selecionarDados($queryBusca);
         $queryRespNomeEmpresa = $objConexao->selecionarDados($queryBuscaEmpresa);
@@ -43,10 +43,10 @@
 
         $tabela = $tabela . '</table> <hr style="width: 300px;margin: 0 auto 10px; background: #222"> <h6 style="font-size: 14px; text-align:center"> '. $_SESSION['nomeLog'] .' </h6> <h6  style="font-size: 10px; text-align:center"> '. $dataRelatorio. ' </h6> </body> </html>';
 
-        $data = date("d.m.Y");
+        $data = date("m-d-y H.i.s");
         $time = time();
 
-        $nomeArquivo = "Relatório de Encaminhamento para ". $queryRespNomeEmpresa[0]['nomeFantasia'] ." - (" . $data . ")";
+        $nomeArquivo = "Relatório de Encaminhamento para ". $queryRespNomeEmpresa[0]['nomeFantasia'] ." (" . $data . ")";
 
         use Dompdf\Dompdf;
         require_once 'dompdf/autoload.inc.php';
@@ -60,7 +60,7 @@
             )
         );
         $output = $dompdf->output();
-        $filename = "../relatorios/".time().".pdf";
+        $filename = "../relatorios/".$nomeArquivo.".pdf";
         file_put_contents($filename, $output);
 
 ?>

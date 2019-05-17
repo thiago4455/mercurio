@@ -3,8 +3,30 @@ $(window).on('load', () => {
 })
 
 $(document).ready(() => {
-
     var alunosSelecionados = [];
+
+    $.ajax({
+        url: '../controllers/listarCiclos.php',
+        dataType: 'json',
+        success: function(msg) {
+            if(msg =='Not found'){
+            }
+            else{
+                msg.forEach((i) => {
+                    $('#cbx-ciclos').append('<option value="'+i.Semestre+'"> Ciclo - '+i.Semestre+'</option>')
+                })
+
+                ListarPorCiclo($('#cbx-ciclos').val())
+            }
+        },
+        error: function(err) {
+            console.log(err);
+        }
+});
+
+    $('#cbx-ciclos').on('change',(()=>{
+        ListarPorCiclo($('#cbx-ciclos').val())
+    }));
 
     $(document).on('change', '#check-todos', function() {
         if(this.checked) {
@@ -63,9 +85,14 @@ $(document).ready(() => {
 
     let table = document.getElementById('tableBody');
 
-    $.ajax({
+    function ListarPorCiclo(ciclo) {
+        $.ajax({
             url: '../controllers/listarAlunos.php',
             dataType: 'json',
+            data: {
+                'ciclo': ciclo,
+            },
+            type: 'POST',
             success: function(msg) {
                 $('#lds').css('display', 'none');
                 if(msg =='Not found'){
@@ -84,7 +111,8 @@ $(document).ready(() => {
             error: function(err) {
                 console.log(err);
             }
-    });
+        });
+    }
 
     $('#inputSearch').keyup(function() {
         $.ajax({
