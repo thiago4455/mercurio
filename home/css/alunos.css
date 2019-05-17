@@ -88,10 +88,15 @@ body {
     height: 50px;
     outline: none;
     border-radius: 2px;
-    background: #eee;
+    background: #666;
     border: none;
     font-size: 1rem;
-    color: #333;
+    color: #fff;
+}
+
+#cbx-ciclos > option {
+    background: #fff;
+    color: #222;
 }
 
 #cbx-ciclos:focus {
