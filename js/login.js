@@ -1,6 +1,7 @@
 $(window).on('load', () => {
     pageHide = () => {
         $('#page-load').css('display', 'none')
+        $('#section-login').fadeIn(3000)
     }
 
     setTimeout(pageHide, 500)

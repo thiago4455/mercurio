@@ -20,14 +20,37 @@ body {
     flex: 1;
 }
 
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .card-info h1 {
+        font-family: 'Google-Reg';
+        color: #555;
+        font-size: 2rem;
+    }
+
+    .card-info h2 {
+        margin: auto 0 auto 20px;
+        color: #666;
+        font-size: 3rem;
+    }
+
+    .card-body img {
+        margin: 0 0 0 20px;
+        width: 80px;
+        height: 80px;
+    }
+
 .card-bottom {
     display: flex;
     align-items: center;
     width: 100%;
     height: 65px;
-    background: #333;
     color: #fff;
-    padding-left: 20px;
+    padding: 0 20px;
 }
 
 .card-bottom:hover {
@@ -37,15 +60,30 @@ body {
     transition: .3s;
 }
 
+#card-ciclosCriados {
+    background: #d85252e0;
+}
+
 @media(max-width:600px) {
     body {
         padding: 15px 0;
     }
 
     .card-dash {
-        height: 300px;
+        flex-direction: row-reverse;
+        height: 150px;
         background: #fff;
         margin-left: 0;
         margin-bottom: 10px;
+    }
+
+    .card-bottom {
+        display: flex;
+        align-items: center;
+        width: 60px;
+        height: 100%;
+        background: #333;
+        color: #fff;
+        padding-left: 20px;
     }
 }

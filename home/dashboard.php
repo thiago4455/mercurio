@@ -29,14 +29,25 @@
             <div class="col-12 col-md-3">
                 <div class="card-dash">
                     <div class="card-body">
-                        
+                        <div class="card-info">
+                            <h1>Ciclos Criados</h1>
+                            <h2 id="info-ciclos"></h2>
+                        </div>
+                        <img src="../assets/img/ciclos-min.png" alt="Ciclos Criados">
                     </div>
-                    <a href="ciclos.php" class="card-bottom" data-value="nav-ciclos">teste</a>
+                    <a id="card-ciclosCriados" href="ciclos.php" class="card-bottom" data-value="nav-ciclos">VEJA MAIS</a>
                 </div>
             </div>
             <div class="col-12 col-md-3">
-                <div class="card-dash">
-                    
+            <div class="card-dash">
+                    <div class="card-body">
+                        <div class="card-info">
+                            <h1>Alunos Cadastrados</h1>
+                            <h2 id="info-alunosCadastrados"></h2>
+                        </div>
+                        <img src="../assets/img/ciclos-min.png" alt="Alunos Cadastrados">
+                    </div>
+                    <a id="card-AlunosCriados" href="alunos.php" class="card-bottom" data-value="nav-alunos">VEJA MAIS</a>
                 </div>
             </div>
             <div class="col-12 col-md-3">
