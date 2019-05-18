@@ -18,24 +18,52 @@
     <!-- Fontes -->
     <link rel="stylesheet" href="../fonts/fontes.css">
 
-    <!-- Alunos.css -->
+    <!-- Relatórios.css -->
     <link rel="stylesheet" href="css/relatorios.css"> 
 
 </head>
 
 <body>
 
-    <div class="table-responsive">
-        <table id='tableBody' class="table">
-        <tr>
-            <th>Arquivos</th>
-        </tr>
-        </table>
+    <div id="main">
+        <h1>Relatórios</h1>
+
+        <div class="table-responsive">
+            <table id='tableBody' class="table" style="border: 1px solid #666;">
+                <thead class="thead">
+                    <tr>
+                        <th>Nome do Relatório</th>
+                        <th>Data</th>
+                        <th>Tamanho</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $arrayFiles = scandir('../relatorios/');
+
+                        for ($i = 2; $i < sizeof($arrayFiles); $i++) {
+                            $caminho = '../relatorios/'. $arrayFiles[$i];
+                            $tamanho = (filesize($caminho) / 1000);
+                            $nome = $arrayFiles[$i];
+                            $length = strlen($nome);
+                            $data = $nome[$length-22] . $nome[$length-21] . '/' . $nome[$length-19] . $nome[$length-18] . '/20' . $nome[$length-16] . $nome[$length-15]; 
+
+
+                            echo '<tr>';
+                            echo '<td> <a href="'. $caminho .'">'. $nome .'</a> </td>';
+                            echo '<td> '. $data .' </td>';
+                            echo '<td> '. $tamanho .' kb</td>';
+                            echo '</tr>';
+                        }
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div id="div-not-found">
         <i class="fas fa-exclamation-triangle"></i>
-        <h1 id="msg-notFound">Aluno não Encontrado</h1>
+        <h1 id="msg-notFound">Nenhum Relatório Encontrado</h1>
     </div>
 
 

@@ -100,7 +100,7 @@
     <div id="fast-search">
         <h1>Buscar Alunos</h1>
         <div id="busca">
-            <input type="text" id="inputSearch" placeholder="Pesquise por RA, Nome, Email ou CPF" autocomplete="off">
+            <input type="text" id="inputSearch" placeholder="Pesquise por RA, Nome, Email, CPF ou Telefone" autocomplete="off">
             <div id="search-avanced" class="btn">Busca Avançada</div>
         </div>
         <div id="busca-avancada">

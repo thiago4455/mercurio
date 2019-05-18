@@ -189,7 +189,7 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
-            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE ((Nome LIKE '%$busca%') OR (Ra LIKE '%$busca%') OR (Cpf LIKE '%$busca%') OR (Telefone1 LIKE '%$busca%') OR (Telefone2 LIKE '%$busca%')) AND Semestre='$semestre'");
+            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE ((Nome LIKE '%$busca%') OR (Ra LIKE '%$busca%') OR (Cpf LIKE '%$busca%') OR (Email LIKE '%$busca%') OR (Telefone1 LIKE '%$busca%') OR (Telefone2 LIKE '%$busca%')) AND Semestre='$semestre'");
 
             if($tableAlunos === "ERRO") {          
                 return 'Not found';             

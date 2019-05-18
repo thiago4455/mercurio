@@ -16,7 +16,7 @@
         $objConexao->executarComandoSQL('SET character_set_results=utf8');   
 
         $length = sizeof($alunosSelecionados);
-        $queryBusca = "SELECT * From alunos WHERE";
+        $queryBusca = "SELECT * From Alunos WHERE";
 
         $i = 0;
         foreach($alunosSelecionados as $aluno) {
@@ -43,7 +43,7 @@
 
         $tabela = $tabela . '</table> <hr style="width: 300px;margin: 0 auto 10px; background: #222"> <h6 style="font-size: 14px; text-align:center"> '. $_SESSION['nomeLog'] .' </h6> <h6  style="font-size: 10px; text-align:center"> '. $dataRelatorio. ' </h6> </body> </html>';
 
-        $data = date("m-d-y H.i.s");
+        $data = date("d-m-y H.i.s");
         $time = time();
 
         $nomeArquivo = "Relatório de Encaminhamento para ". $queryRespNomeEmpresa[0]['nomeFantasia'] ." (" . $data . ")";

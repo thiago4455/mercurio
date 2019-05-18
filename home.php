@@ -29,7 +29,7 @@
 
     <?php
         session_start();
-        if($_SESSION['idLog'] == "") {
+        if(!isset($_SESSION['idLog'])) {
             header('Location: index.php');
         }
 	?>
@@ -64,7 +64,8 @@
     <div id="main">
         <div id="nav-lateral">
             <div id="title-navlat">Opções</div>
-            <div id="nav-ciclos" class="item-nav item-nav-active"><i class="fas fa-redo"></i><p class="item-text">Ciclos</p></div>
+            <div id="nav-dashboard" class="item-nav item-nav-active"><i class="fas fa-home"></i><p class="item-text">Dashboard</p></div>
+            <div id="nav-ciclos" class="item-nav"><i class="fas fa-redo"></i><p class="item-text">Ciclos</p></div>
             <div id="nav-alunos" class="item-nav"><i class="fas fa-users"></i><p class="item-text">Alunos</p></div>
             <div id="nav-empresas" class="item-nav"><i class="fas fa-building"></i><p class="item-text">Empresas</p></div>
             <div id="nav-funcionarios" class="item-nav"><i class="fas fa-users-cog"></i><p class="item-text">Funcionários</p></div>
@@ -72,7 +73,7 @@
         </div>
 
         <div id="center">
-            <iframe src="home/ciclos.php" frameborder="0" id="iframe-home"></iframe>
+            <iframe src="home/dashboard.php" frameborder="0" id="iframe-home"></iframe>
         </div>
 
     </div>
@@ -98,6 +99,11 @@
         setTimeout(pageHide, 500)
     })
 
+    window.colorActive = function(id) {
+        $('.item-nav').removeClass('item-nav-active')
+        $('#'+id).addClass('item-nav-active')
+    }
+
     $(document).ready(() => {
 
         $('.item-nav').click(function() {
@@ -108,6 +114,8 @@
 
             if(id == 'nav-ciclos') {
                 $('#iframe-home').attr('src', 'home/ciclos.php'); 
+            } else if (id == 'nav-dashboard') {
+                $('#iframe-home').attr('src', 'home/dashboard.php'); 
             } else if (id == 'nav-alunos') {
                 $('#iframe-home').attr('src', 'home/alunos.php'); 
             } else if (id == 'nav-empresas') {

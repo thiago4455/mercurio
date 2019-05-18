@@ -124,7 +124,7 @@
     <div id="fast-search">
         <h1 id="title-search">Buscar Funcionários</h1>
         <div id="busca">
-            <input type="text" id="inputSearch" placeholder="Pesquise Código, Nome, CPF ou email" autocomplete="off">
+            <input type="text" id="inputSearch" placeholder="Pesquise Código, Nome, CPF, Email, Telefone ou Cidade" autocomplete="off">
             <div id="search-avanced" class="btn">Busca Avançada</div>
         </div>
     </div>

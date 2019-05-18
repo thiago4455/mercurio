@@ -50,7 +50,7 @@
             Para iniciar um novo ciclo, anexe abaixo uma planilha do Excel (xlsx, xls ou xml). Automaticamente os dados serão adicionados ao banco de dados e
             estarão disponíveis para o encaminhamento as devidas empresas.
         </h2>
-        <div class="input-group mb-3 col-12 col-md-8 input-file" style="padding: 0">
+        <div class="input-group mb-3 col-12 col-md-8 input-file" style="padding: 0; max-heigth: 38px">
             <div class="input-group-prepend">
                 <span class="input-group-text">Upload</span>
             </div>
