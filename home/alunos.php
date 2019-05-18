@@ -104,7 +104,38 @@
             <div id="search-avanced" class="btn">Busca Avançada</div>
         </div>
         <div id="busca-avancada">
-
+         <input type="text" id="nome" placeholder="Nome" autocomplete="off">
+         <input type="text" id="ra" placeholder="RA" autocomplete="off">
+            Idade
+         <input type="text" id="age1" placeholder="Mínima" autocomplete="off"> -
+         <input type="text" id="age2" placeholder="Máxima" autocomplete="off">
+         <select id="sexo">
+            <option value="" disabled selected hidden>Sexo</option>
+            <option value="">Nenhum</option>
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
+         </select>
+         <select id="grauInstrucao">
+            <option value="" disabled selected hidden>Grau de Instrução</option>
+            <option value="">Nenhum</option>
+            <option value="Ensino médio incompleto">Ensino médio incompleto</option>
+            <option value="Ensino médio completo">Ensino médio completo</option>
+         </select>
+         <input type="text" id="bairro" placeholder="Bairro" autocomplete="off">
+         <input type="text" id="cidade" placeholder="Cidade" autocomplete="off">
+         <input type="text" id="estado" placeholder="Estado" autocomplete="off">
+         <input type="text" id="cep" placeholder="CEP" autocomplete="off">
+         <input type="text" id="telefone" placeholder="Telefone" autocomplete="off">
+         <input type="text" id="identidade" placeholder="Identidade" autocomplete="off">
+         <input type="text" id="cpf" placeholder="CPF" autocomplete="off">
+         <input type="text" id="email" placeholder="Email" autocomplete="off">
+         <input type="text" id="carteiraTrabalho" placeholder="Carteira de Trabalho" autocomplete="off">
+         <input type="text" id="nomePai" placeholder="Nome do pai" autocomplete="off">
+         <input type="text" id="nomeMae" placeholder="Nome da mãe" autocomplete="off">
+         <input type="text" id="nomeCurso" placeholder="Nome do curso" autocomplete="off">
+         <input type="text" id="codTurma" placeholder="Código da turma" autocomplete="off">
+         <input type="text" id="status" placeholder="Status" autocomplete="off">
+         <div id="search-avanced-submit" class="btn">Buscar</div>
         </div>
     </div>
 

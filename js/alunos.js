@@ -5,6 +5,52 @@ $(window).on('load', () => {
 $(document).ready(() => {
     var alunosSelecionados = [];
 
+    let age1Previus = $('#age1').val();
+    $('#age1').on('keyup',() => {
+        if (age1Previus==$('#age2').val()) {
+            $('#age2').val($('#age1').val());
+        }
+
+        age1Previus = $('#age1').val();
+    })
+
+    $('#search-avanced-submit').on('click',() =>{
+        $.ajax({
+            url: '../controllers/buscaAvancada.php',
+            data: {
+                'nome': $('#nome').val(),
+                'ra': $('#ra').val(),
+                'idade1': $('#age1').val(),
+                'idade2': $('#age2').val(),
+                'sexo': $('#sexo').val(),
+                'grauInstrucao': $('#grauInstrucao').val(),
+                'bairro': $('#bairro').val(),
+                'estado': $('#estado').val(),
+                'cidade': $('#cidade').val(),
+                'cep': $('#cep').val(),
+                'telefone': $('#telefone').val(),
+                'identidade': $('#identidade').val(),
+                'cpf': $('#cpf').val(),
+                'email': $('#email').val(),
+                'carteiraTrabalho': $('#carteiraTrabalho').val(),
+                'nomePai': $('#nomePai').val(),
+                'nomeMae': $('#nomeMae').val(),
+                'nomeCurso': $('#nomeCurso').val(),
+                'codTurma': $('#codTurma').val(),
+                'status': $('#status').val(),
+                'ciclo': $('#cbx-ciclos').val(),
+            },
+            type: 'POST',
+            dataType: 'json',
+            success: function (msg) {
+                ListarItens(msg)
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        })
+    });
+
     $.ajax({
         url: '../controllers/listarCiclos.php',
         dataType: 'json',
