@@ -26,56 +26,63 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="card-dash">
                     <div class="card-body">
                         <div class="card-info">
-                            <h1>Ciclos Criados</h1>
+                            <h1 style="color: #d85252e0">Ciclos Criados</h1>
                             <h2 id="info-ciclos"></h2>
                         </div>
                         <img src="../assets/img/ciclos-min.png" alt="Ciclos Criados">
                     </div>
-                    <a id="card-ciclosCriados" href="ciclos.php" class="card-bottom" data-value="nav-ciclos">VEJA MAIS</a>
+                    <a style="background: #d85252e0" href="ciclos.php" class="card-bottom" data-value="nav-ciclos">VEJA MAIS</a>
                 </div>
             </div>
-            <div class="col-12 col-md-3">
-            <div class="card-dash">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card-dash">
                     <div class="card-body">
                         <div class="card-info">
-                            <h1>Alunos Cadastrados</h1>
+                            <h1 style="color: #ff5722cf">Alunos Cadastrados</h1>
                             <h2 id="info-alunosCadastrados"></h2>
                         </div>
-                        <img src="../assets/img/ciclos-min.png" alt="Alunos Cadastrados">
+                        <img src="../assets/img/alunos-min.png" alt="Alunos Cadastrados">
                     </div>
-                    <a id="card-AlunosCriados" href="alunos.php" class="card-bottom" data-value="nav-alunos">VEJA MAIS</a>
+                    <a style="background: #ff5722cf"  href="alunos.php" class="card-bottom" data-value="nav-alunos">VEJA MAIS</a>
                 </div>
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card-dash">
+                    <div class="card-body">
+                        <div class="card-info">
+                            <h1 style="color: #ff5722cf">Alunos Cadastrados</h1>
+                            <h2 id="info-alunosCadastrados"></h2>
+                        </div>
+                        <img src="../assets/img/alunos-min.png" alt="Alunos Cadastrados">
+                    </div>
+                    <a style="background: #ff5722cf"  href="alunos.php" class="card-bottom" data-value="nav-alunos">VEJA MAIS</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="card-dash">
                     
                 </div>
             </div>
-            <div class="col-12 col-md-3">
-                <div class="card-dash">
-                    
-                </div>
-            </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="card-dash">
 
                 </div>
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="card-dash">
                     
                 </div>
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="card-dash">
                     
                 </div>
             </div>
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="card-dash">
                     
                 </div>

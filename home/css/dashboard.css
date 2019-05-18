@@ -9,10 +9,11 @@ body {
 .card-dash {
     display: flex;
     flex-direction: column;
-    height: 300px;
+    height: 250px;
     background: #fff;
     margin-left: 0;
     margin-bottom: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
 }
 
 .card-body {
@@ -27,7 +28,7 @@ body {
     }
 
     .card-info h1 {
-        font-family: 'Google-Reg';
+        font-family: 'Google-Bold';
         color: #555;
         font-size: 2rem;
     }
@@ -48,7 +49,7 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 65px;
+    height: 50px;
     color: #fff;
     padding: 0 20px;
 }
@@ -60,13 +61,57 @@ body {
     transition: .3s;
 }
 
-#card-ciclosCriados {
-    background: #d85252e0;
+@media(max-width:1600px) {
+    .card-info h1 {
+        font-family: 'Google-Bold';
+        color: #555;
+        font-size: 1.5rem;
+    }
+
+    .card-info h2 {
+        margin: auto 0 auto 20px;
+        color: #666;
+        font-size: 3rem;
+    }
+
+    .card-body img {
+        margin: 0 0 0 20px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .card-bottom {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        color: #fff;
+        padding: 0 20px;
+    }
 }
+
 
 @media(max-width:600px) {
     body {
         padding: 15px 0;
+    }
+
+    .card-info h1 {
+        font-family: 'Google-Bold';
+        color: #555;
+        font-size: 1.3rem;
+    }
+
+    .card-info h2 {
+        margin: auto 0 auto 20px;
+        color: #666;
+        font-size: 2.6rem;
+    }
+
+    .card-body img {
+        margin: 0 0 0 20px;
+        width: 50px;
+        height: 50px;
     }
 
     .card-dash {
@@ -80,10 +125,13 @@ body {
     .card-bottom {
         display: flex;
         align-items: center;
-        width: 60px;
+        justify-content: center;
+        width: 50px;
+        min-width: 50px;
         height: 100%;
         background: #333;
         color: #fff;
-        padding-left: 20px;
+        padding: 0;
+        writing-mode: vertical-rl;
     }
 }

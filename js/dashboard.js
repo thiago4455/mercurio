@@ -9,10 +9,10 @@ $(document).ready(function () {
         type: 'GET',
         dataType: 'json',
         success: function (msg) {
-            console.log(msg[0][0])
+            console.log(msg)
 
-            $('#info-ciclos').val(msg[0][0].Semestre)
-            $('#info-alunosCadastrados').val(msg[1][0])
+            $('#info-ciclos').text(msg[0].length)
+            $('#info-alunosCadastrados').text(msg[1].length)
 
         },
         error: function (err) {

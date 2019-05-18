@@ -18,10 +18,10 @@ class ClassDashboard {
                 $dashCiclos = 0;
             }
 
-            $dashAlunos = $objConexao->selecionarDados("SELECT COUNT(*) FROM Alunos");
-            $dashAlunos = $dashAlunos[0];            
+            $dashAlunos = $objConexao->selecionarDados("SELECT Ra FROM Alunos");
+                        
 
-            $dados = [$dashCiclos[0], $dashAlunos[0]];
+            $dados = [$dashCiclos, $dashAlunos];
 
             return $dados;
             
