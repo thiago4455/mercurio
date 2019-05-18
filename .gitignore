@@ -3,3 +3,6 @@
 
 #Exceto o arquivo example.csv
 !example.csv
+
+#Ignorar todos os arquivos .pdf
+*.pdf

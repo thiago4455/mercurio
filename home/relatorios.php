@@ -40,8 +40,8 @@
                 <tbody>
                     <?php
                         $arrayFiles = scandir('../relatorios/');
-
                         for ($i = 2; $i < sizeof($arrayFiles); $i++) {
+                        if($arrayFiles[$i]!='README.md'){
                             $caminho = '../relatorios/'. $arrayFiles[$i];
                             $tamanho = (filesize($caminho) / 1000);
                             $nome = $arrayFiles[$i];
@@ -54,6 +54,7 @@
                             echo '<td> '. $data .' </td>';
                             echo '<td> '. $tamanho .' kb</td>';
                             echo '</tr>';
+                        }
                         }
                     ?>
                 </tbody>
