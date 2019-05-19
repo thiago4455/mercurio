@@ -221,6 +221,8 @@ $(document).ready(() => {
             $('#ipt-alunosSelecionados').html('');
             $('#ipt-empresaSelecionada').html('');
             $('#modal-encaminhar').modal('show')
+            $('#btn-encaminhar-model').text('Buscando Empresas...')
+            $('#btn-encaminhar-model').prop('disabled', true)
             $.ajax({
                 url: '../controllers/listarSelecionados.php',
                 data: {
@@ -229,7 +231,6 @@ $(document).ready(() => {
                 type: 'POST',
                 dataType: 'json',
                 success: function (msg) {
-                    
                     var i = 0;
                     alunosSelecionados.forEach(element => {
                         $('#ipt-alunosSelecionados').append(element + " - " + msg[i].Nome + "\n")
@@ -249,13 +250,16 @@ $(document).ready(() => {
                                 $.each(msg, function (key, value) {
                                     $('#ipt-empresaSelecionada').append('<option value=' + value.codEmpresa + '>' + value.codEmpresa + '</option>')
                                 });
+
                             }
                         },
                         error: function (err) {
                             
                         }
+                        
                     })
-
+                    $('#btn-encaminhar-model').text('Encaminhar Alunos')
+                    $('#btn-encaminhar-model').prop('disabled', false)
                 },
                 error: function (err) {
                     

@@ -242,7 +242,7 @@ class ClassEmpresas {
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
-            $tableEmpresas = $objConexao->selecionarDados("SELECT * FROM Empresas WHERE (codEmpresa LIKE '%$busca%') OR (cnpj LIKE '%$busca%') OR (nomeFantasia LIKE '%$busca%') OR (razaoSocial LIKE '%$busca%') ORDER BY codEmpresa ASC");
+            $tableEmpresas = $objConexao->selecionarDados("SELECT * FROM Empresas WHERE (codEmpresa LIKE '%$busca%') OR (cnpj LIKE '%$busca%') OR (nomeFantasia LIKE '%$busca%') OR (razaoSocial LIKE '%$busca%') OR (responsavel LIKE '%$busca%') ORDER BY codEmpresa ASC");
 
             if($tableEmpresas === "ERRO") {          
                 return 'Not found';             

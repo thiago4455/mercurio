@@ -18,6 +18,7 @@
         $length = sizeof($alunosSelecionados);
         $queryBusca = "SELECT * From Alunos WHERE";
 
+        // Monta Query Select
         $i = 0;
         foreach($alunosSelecionados as $aluno) {
             $i = $i + 1;
@@ -29,9 +30,23 @@
         }
 
         $queryBuscaEmpresa = "SELECT * From Empresas WHERE codEmpresa LIKE '" . $empresa . "';";
+        $queryRespNomeEmpresa = $objConexao->selecionarDados($queryBuscaEmpresa);
+
+
+        // Monta Query Update
+        $queryEmpregado = "INSERT INTO `empregado` (`Alunos_ra`, `Empresas_codEmpresa`) VALUES";
+        $i = 0;
+        foreach($alunosSelecionados as $aluno) {
+            $i = $i + 1;
+            if($i != $length) {
+                $queryEmpregado = $queryEmpregado . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "') ,";
+            } else {
+                $queryEmpregado = $queryEmpregado . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "') ;";
+            }
+        }
 
         $queryResp = $objConexao->selecionarDados($queryBusca);
-        $queryRespNomeEmpresa = $objConexao->selecionarDados($queryBuscaEmpresa);
+        $queryRespEmpregado = $objConexao->executarComandoSQL($queryEmpregado);
 
         $dataRelatorio = date("d/m/Y");        
 
