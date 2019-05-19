@@ -35,9 +35,18 @@ class ClassDashboard {
             if($dashEmp == "ERRO") {
                 $dashEmp = 0;
             }
+
+            $dashEncaminhados = $objConexao->selecionarDados("SELECT Alunos_ra FROM Empregado");
+
+            if($dashEncaminhados == "ERRO") {
+                $dashEncaminhados = 0;
+            }
+
+            $arrayFiles = scandir('../relatorios/');
+            $dashRelatorios = sizeof($arrayFiles);
                         
 
-            $dados = [$dashCiclos, $dashAlunos, $dashFunc, $dashEmp];
+            $dados = [$dashCiclos, $dashAlunos, $dashFunc, $dashEmp, $dashEncaminhados, $dashRelatorios];
 
             return $dados;
             

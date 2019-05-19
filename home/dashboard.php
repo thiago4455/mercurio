@@ -26,7 +26,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card-dash">
                     <div class="card-body">
                         <div class="card-info">
@@ -38,7 +38,7 @@
                     <a style="background: #d85252a8" href="ciclos.php" class="card-bottom" data-value="nav-ciclos">VEJA MAIS</a>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card-dash">
                     <div class="card-body">
                         <div class="card-info">
@@ -50,7 +50,7 @@
                     <a style="background: #ff5722a8"  href="alunos.php" class="card-bottom" data-value="nav-alunos">VEJA MAIS</a>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card-dash">
                     <div class="card-body">
                         <div class="card-info">
@@ -62,8 +62,8 @@
                     <a style="background: #ffc107a8"  href="funcionarios.php" class="card-bottom" data-value="nav-funcionarios">VEJA MAIS</a>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-            <div class="card-dash">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card-dash">
                     <div class="card-body">
                         <div class="card-info">
                             <h1 style="color: #4caf50a8">Empresas Cadastradas</h1>
@@ -74,24 +74,28 @@
                     <a style="background: #4caf50a8"  href="empresas.php" class="card-bottom" data-value="nav-empresas">VEJA MAIS</a>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card-dash">
-
+                    <div class="card-body">
+                        <div class="card-info">
+                            <h1 style="color: #009688a8">Alunos Encaminhados</h1>
+                            <h2 id="info-alunosEncaminhados">0</h2>
+                        </div>
+                        <img src="../assets/img/encaminhados-min.png" alt="Alunos Encaminhados">
+                    </div>
+                    <a style="background: #009688a8"  href="alunos.php" class="card-bottom" data-value="nav-alunos">VEJA MAIS</a>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="card-dash">
-                    
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card-dash">
-                    
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card-dash">
-                    
+                    <div class="card-body">
+                        <div class="card-info">
+                            <h1 style="color: #00bcd4a8">Relatórios Gerados</h1>
+                            <h2 id="info-relatorios">0</h2>
+                        </div>
+                        <img src="../assets/img/relatorio-min.png" alt="Relatorios gerados">
+                    </div>
+                    <a style="background: #00bcd4a8"  href="relatorios.php" class="card-bottom" data-value="nav-relatorios">VEJA MAIS</a>
                 </div>
             </div>
         </div>
