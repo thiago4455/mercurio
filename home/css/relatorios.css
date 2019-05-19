@@ -29,7 +29,7 @@ body {
 
 .table-responsive {
     width: 100%;
-    margin: 30px 0;
+    margin: 20px 0;
     border-radius: 5px;
 }
 
@@ -37,7 +37,7 @@ body {
     width: 100%;
     border-radius: 5px;
     background: #fff;
-    box-shadow: 0 0 3px rgba(0,0,0,.2);
+    border: 1px solid #eee;
 }
   
 .thead {
@@ -45,73 +45,43 @@ body {
     color: #fff;
 }
 
+tr th {
+    vertical-align: middle !important;
+}
+
 tr td {
     font-size: 1rem;
     padding: 0 15px;
+    vertical-align: middle !important;
 }
 
 .table {
     border-spacing: 0;
 }
 
-tr:hover {
-    background: #ddd;
-}
-
-#div-not-found {
+.div-not-found {
     display: none;
     flex: 1;
     justify-content: center;
     align-items: center;
-    color: #999;
+    color: #999 !important;
 }
 
-#div-not-found h1 {
+.div-not-found h1 {
     font-family: 'Google-Bold';
     font-size: 3.8rem;
     margin: 0;
 }
 
-#div-not-found i {
+.div-not-found i {
     font-size: 3rem;
     margin: 0 30px 0 0;
 }
 
 @media(max-width: 600px) {
 
-    #fast-search {
-        padding: 20px;
-    }
-    
-    #fast-search h1 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
-
-    #busca {
-        justify-content: space-between;
-    }
-
-    #inputSearch {
-        width: 75%;
-        height: 45px;
-        padding: 0 10px;
-        font-size: .8rem;
-        text-overflow: ellipsis;
-    }
-    
-    #search-avanced {
-        width: 23%;
-        font-size: .7rem;
-    }
-
-    #fast-actions {
-        margin: 20px 0;
-    }
-    
-    .custom-control-input:checked~.custom-control-label::before {
-        border-color: #fff;
-        background-color: #D85252;
+    #main {
+        padding: 25px 17px;
     }
 
     .custom-control-label {
@@ -146,8 +116,8 @@ tr:hover {
     }
 
     .table td, .table th {
-        font-size: .8rem;
-        padding: 0 10px;
+        font-size: .6rem;
+        padding: 0 5px;
     }
 
     #ipt-alunosSelecionados {
@@ -155,15 +125,17 @@ tr:hover {
         min-height: 125px;
     }
 
-    #div-not-found {
+    .div-not-found {
+        padding: 50px;
         padding-bottom: 80px;
     }
     
-    #div-not-found h1 {
+    .div-not-found h1 {
+        text-align: center;
         font-size: 1.5rem;
     }
     
-    #div-not-found i {
+    .div-not-found i {
         font-size: 1.4rem;
         margin: 0 10px 0 0;
     }

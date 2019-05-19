@@ -25,11 +25,16 @@
 
 <body>
 
+    <div class="div-not-found">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h1 id="msg-notFound">Nenhum Relatório Encontrado</h1>
+        </div>
+
     <div id="main">
         <h1>Relatórios</h1>
 
         <div class="table-responsive">
-            <table id='tableBody' class="table" style="border: 1px solid #666;">
+            <table id='tableBody' class="table">
                 <thead class="thead">
                     <tr>
                         <th>Nome do Relatório</th>
@@ -40,32 +45,37 @@
                 <tbody>
                     <?php
                         $arrayFiles = scandir('../relatorios/');
-                        for ($i = 2; $i < sizeof($arrayFiles); $i++) {
-                        if($arrayFiles[$i]!='README.md'){
-                            $caminho = '../relatorios/'. $arrayFiles[$i];
-                            $tamanho = (filesize($caminho) / 1000);
-                            $nome = $arrayFiles[$i];
-                            $length = strlen($nome);
-                            $data = $nome[$length-22] . $nome[$length-21] . '/' . $nome[$length-19] . $nome[$length-18] . '/20' . $nome[$length-16] . $nome[$length-15]; 
 
-
-                            echo '<tr>';
-                            echo '<td> <a href="'. $caminho .'">'. $nome .'</a> </td>';
-                            echo '<td> '. $data .' </td>';
-                            echo '<td> '. $tamanho .' kb</td>';
-                            echo '</tr>';
+                        if(sizeof($arrayFiles) > 2) {
+                            
+                            for ($i = 2; $i < sizeof($arrayFiles); $i++) {
+                                if($arrayFiles[$i]!='README.md'){
+                                    $caminho = '../relatorios/'. $arrayFiles[$i];
+                                    $tamanho = (filesize($caminho) / 1000);
+                                    $nome = $arrayFiles[$i];
+                                    $length = strlen($nome);
+                                    $data = $nome[$length-22] . $nome[$length-21] . '/' . $nome[$length-19] . $nome[$length-18] . '/20' . $nome[$length-16] . $nome[$length-15]; 
+        
+        
+                                    echo '<tr>';
+                                    echo '<td> <a href="'. $caminho .'">'. $nome .'</a> </td>';
+                                    echo '<td> '. $data .' </td>';
+                                    echo '<td> '. $tamanho .' kb</td>';
+                                    echo '</tr>';
+                                }
+                            }
                         }
+                        else {
+                            echo '<script> tabela = document.querySelector("#main"); tabela.style.display = "none" ; notFound = document.querySelector(".div-not-found"); notFound.style.display = "flex"; </script>';
                         }
+                        
                     ?>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <div id="div-not-found">
-        <i class="fas fa-exclamation-triangle"></i>
-        <h1 id="msg-notFound">Nenhum Relatório Encontrado</h1>
-    </div>
+    
 
 
     <!-- Optional JavaScript -->
