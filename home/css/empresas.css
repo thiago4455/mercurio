@@ -250,16 +250,18 @@ td button {
   }
 
   #div-not-found {
+    padding: 50px;
     padding-bottom: 80px;
   }
 
   #div-not-found h1 {
       font-size: 1.5rem;
+      text-align: center;
   }
 
   #div-not-found i {
       font-size: 1.4rem;
-      margin: 0 10px 0 0;
+      margin: 0 5px 0 0;
   }
 }
 

@@ -26,3 +26,21 @@ body {
     #main h1 {
         font-size: 2rem;
     }
+
+@media(max-width: 600px) {
+    #main {
+        width: 95%;
+        background: #fff;
+        height: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        padding: 30px;
+        border-radius: 5px;
+        color: #333;
+        font-family: 'Google-Bold';
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+}
