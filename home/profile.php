@@ -131,7 +131,7 @@
                 type: 'POST',
                 dataType: 'json',
                 success: function (msg) {
-                    console.log(msg)
+                    (msg)
                     $('#ipt-nome').val(msg[0].nomeFunc);
                     $('#ipt-cpf').val(msg[0].cpfFunc);
                     $('#ipt-email').val(msg[0].emailFunc);
@@ -145,7 +145,7 @@
                     $('#ipt-estado').val(msg[0].estadoFunc);
                 },
                 error: function (err) {
-                    console.log(err);
+                    (err);
                 }
             })
         })

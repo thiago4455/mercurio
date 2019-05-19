@@ -19,9 +19,25 @@ class ClassDashboard {
             }
 
             $dashAlunos = $objConexao->selecionarDados("SELECT Ra FROM Alunos");
+
+            if($dashAlunos == "ERRO") {
+                $dashAlunos = 0;
+            }
+
+            $dashFunc = $objConexao->selecionarDados("SELECT idFunc FROM Funcionarios");
+
+            if($dashFunc == "ERRO") {
+                $dashFunc = 0;
+            }
+
+            $dashEmp = $objConexao->selecionarDados("SELECT codEmpresa FROM Empresas");
+
+            if($dashEmp == "ERRO") {
+                $dashEmp = 0;
+            }
                         
 
-            $dados = [$dashCiclos, $dashAlunos];
+            $dados = [$dashCiclos, $dashAlunos, $dashFunc, $dashEmp];
 
             return $dados;
             

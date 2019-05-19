@@ -15,9 +15,9 @@ $(document).ready(() => {
 
     function ListarItens(msg) {
         table.innerHTML = "";
-        table.innerHTML = '<tr id="tr-title"><td>Código</td><td>Nome</td><td>CPF</td><td>Email</td><td>Telefone</td><td>Bairro</td><td>Cidade</td><td>Tipo</td><td>Editar</td></tr>';
+        table.innerHTML = '<tr id="tr-title"><td>Código</td><td>Nome</td><td>CPF</td><td>Email</td><td>Telefone</td><td>Tipo</td><td>Editar</td></tr>';
         for (i = 0; i < msg.length; i++) {
-            $('#tableBody').append('<tr id="' + msg[i].idFunc + '" class="table-row"> </td> <td> ' + msg[i].idFunc + ' </td> <td style="min-width: 200px"> ' + msg[i].nomeFunc + ' </td> <td  style="min-width: 150px"> ' + msg[i].cpfFunc + ' </td> <td> ' + msg[i].emailFunc + ' </td> <td  style="min-width: 150px"> ' + msg[i].telefoneFunc + ' </td> <td style="min-width: 200px"> ' + msg[i].bairroFunc + ' </td> <td style="min-width: 150px"> ' + msg[i].cidadeFunc + ' </td> <td> ' + msg[i].tipoFunc + ' </td> <td class="btnR" id="btnRow' + i + '"><button><i class="fas fa-edit"></i></td> </tr>')
+            $('#tableBody').append('<tr id="' + msg[i].idFunc + '" class="table-row"> </td> <td> ' + msg[i].idFunc + ' </td> <td style="min-width: 200px"> ' + msg[i].nomeFunc + ' </td> <td  style="min-width: 150px"> ' + msg[i].cpfFunc + ' </td> <td> ' + msg[i].emailFunc + ' </td> <td  style="min-width: 150px"> ' + msg[i].telefoneFunc + ' </td> <td> ' + msg[i].tipoFunc + ' </td> <td class="btnR" id="btnRow' + i + '"><button><i class="fas fa-edit"></i></td> </tr>')
         }
     }
 
@@ -88,7 +88,7 @@ $(document).ready(() => {
                 },
                 type: 'POST',
                 success: function (msg) {
-                    console.log(msg)
+                    
 
                     if(msg == 'cpf e email ja utilizados') {
                         $('#alert-error').css('display', 'flex');
@@ -126,10 +126,10 @@ $(document).ready(() => {
                             type: 'POST',
                             dataType: 'json',
                             success: function (msg) {
-                                console.log(msg)
+                                
                             },
                             error: function (err) {
-                                console.log(err);
+                                
                             }
                         })
 
@@ -142,7 +142,7 @@ $(document).ready(() => {
                     }
                 },
                 error: function (err) {
-                    console.log(err);
+                    
                 }
             });
         }
@@ -155,7 +155,7 @@ $(document).ready(() => {
             url: '../controllers/listarFuncionarios.php',
             dataType: 'json',
             success: function (msg) {
-                console.log(msg)
+                
                 if (msg == 'Not found') {
                     $('#tableBody').css('display', 'none');
                     $('#div-not-found').css('display', 'flex');
@@ -169,7 +169,7 @@ $(document).ready(() => {
                 $('#lds').css('display', 'none');
             },
             error: function (err) {
-                console.log(err);
+                
             }
         });
     
@@ -182,7 +182,7 @@ $(document).ready(() => {
                 },
                 type: 'POST',
                 success: function (msg) {
-                    console.log(msg)
+                    
                     $('#lds').css('display', 'none');
                     if (msg == 'Not found') {
                         $('#tableBody').css('display', 'none');
@@ -196,7 +196,7 @@ $(document).ready(() => {
                     }
                 },
                 error: function (err) {
-                    console.log(err);
+                    
                 }
             });
         })

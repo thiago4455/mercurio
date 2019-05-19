@@ -104,38 +104,110 @@
             <div id="search-avanced" class="btn">Busca Avançada</div>
         </div>
         <div id="busca-avancada">
-         <input type="text" id="nome" placeholder="Nome" autocomplete="off">
-         <input type="text" id="ra" placeholder="RA" autocomplete="off">
-            Idade
-         <input type="text" id="age1" placeholder="Mínima" autocomplete="off"> -
-         <input type="text" id="age2" placeholder="Máxima" autocomplete="off">
-         <select id="sexo">
-            <option value="" disabled selected hidden>Sexo</option>
-            <option value="">Nenhum</option>
-            <option value="M">Masculino</option>
-            <option value="F">Feminino</option>
-         </select>
-         <select id="grauInstrucao">
-            <option value="" disabled selected hidden>Grau de Instrução</option>
-            <option value="">Nenhum</option>
-            <option value="Ensino médio incompleto">Ensino médio incompleto</option>
-            <option value="Ensino médio completo">Ensino médio completo</option>
-         </select>
-         <input type="text" id="bairro" placeholder="Bairro" autocomplete="off">
-         <input type="text" id="cidade" placeholder="Cidade" autocomplete="off">
-         <input type="text" id="estado" placeholder="Estado" autocomplete="off">
-         <input type="text" id="cep" placeholder="CEP" autocomplete="off">
-         <input type="text" id="telefone" placeholder="Telefone" autocomplete="off">
-         <input type="text" id="identidade" placeholder="Identidade" autocomplete="off">
-         <input type="text" id="cpf" placeholder="CPF" autocomplete="off">
-         <input type="text" id="email" placeholder="Email" autocomplete="off">
-         <input type="text" id="carteiraTrabalho" placeholder="Carteira de Trabalho" autocomplete="off">
-         <input type="text" id="nomePai" placeholder="Nome do pai" autocomplete="off">
-         <input type="text" id="nomeMae" placeholder="Nome da mãe" autocomplete="off">
-         <input type="text" id="nomeCurso" placeholder="Nome do curso" autocomplete="off">
-         <input type="text" id="codTurma" placeholder="Código da turma" autocomplete="off">
-         <input type="text" id="status" placeholder="Status" autocomplete="off">
-         <div id="search-avanced-submit" class="btn">Buscar</div>
+            <div class="row">
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Nome do Aluno</label>
+                    <input type="text" id="nome" placeholder="Nome" autocomplete="off" class="form-control ipt-busca">
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <label for="">RA do Aluno</label>
+                    <input type="text" id="ra" placeholder="RA" autocomplete="off" class="form-control ipt-busca">
+                </div>
+                <div class="form-group col-6 col-md-2">
+                    <label for="">Idade Minima</label>
+                    <input type="text" id="age1" placeholder="Mínima" autocomplete="off" class="form-control ipt-busca">
+                </div>
+                <div class="form-group col-6 col-md-2">
+                <label for="">Idade Máxima</label>
+                    <input type="text" id="age2" placeholder="Máxima" autocomplete="off" class="form-control ipt-busca">
+                </div>            
+                <div class="form-group col-12 col-md-2">
+                    <label for="">Sexo do Aluno</label>
+                    <select id="sexo" class="form-control">
+                        <option value="" disabled selected hidden>Escolha...</option>
+                        <option value="">Nenhum</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Feminino</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12 col-md-2">
+                    <label for="">Escolaridade</label>
+                    <select id="grauInstrucao" class="form-control">
+                        <option value="" disabled selected hidden>Escolha</option>
+                        <option value="">Nenhum</option>
+                        <option value="Ensino médio incompleto">Ensino médio incompleto</option>
+                        <option value="Ensino médio completo">Ensino médio completo</option>
+                    </select>
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Bairro</label>
+                    <input type="text" id="bairro" placeholder="Bairro" autocomplete="off" class="form-control ipt-busca">
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Cidade</label>
+                    <input type="text" id="cidade" placeholder="Cidade" autocomplete="off" class="form-control ipt-busca">
+                </div>
+                <div class="form-group col-12 col-md-2">
+                    <label for="">Estado(Sigla)</label>
+                    <input type="text" id="estado" placeholder="Estado" autocomplete="off" class="form-control ipt-busca" maxlength="2">
+                </div>
+                <div class="form-group col-12 col-md-2">
+                    <label for="">Cep</label>
+                    <input type="text" id="cep" placeholder="CEP" autocomplete="off" class="form-control ipt-busca">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Telefone do Aluno</label>
+                    <input type="text" id="telefone" placeholder="Telefone" autocomplete="off" class="form-control ipt-busca">
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Identidade do Aluno</label>
+                    <input type="text" id="identidade" placeholder="Identidade" autocomplete="off" class="form-control ipt-busca">
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Cpf do Aluno</label>
+                    <input type="text" id="cpf" placeholder="CPF" autocomplete="off" class="form-control ipt-busca">
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Email do Aluno</label>
+                    <input type="text" id="email" placeholder="Email" autocomplete="off" class="form-control ipt-busca">
+                </div>
+            </div>
+            <div class="row">
+            
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Carteira de Trabalho</label>
+                    <input type="text" id="carteiraTrabalho" placeholder="Carteira de Trabalho" autocomplete="off" class="form-control ipt-busca">
+                </div>                    
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Nome do Pai</label>
+                    <input type="text" id="nomePai" placeholder="Nome do pai" autocomplete="off" class="form-control ipt-busca">
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Nome da Mãe</label>
+                    <input type="text" id="nomeMae" placeholder="Nome da mãe" autocomplete="off" class="form-control ipt-busca">
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Nome do Curso</label>
+                    <input type="text" id="nomeCurso" placeholder="Nome do curso" autocomplete="off" class="form-control ipt-busca">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Código da Turma</label>
+                    <input type="text" id="codTurma" placeholder="Código da turma" autocomplete="off" class="form-control ipt-busca">
+                </div>
+                <div class="form-group col-12 col-md-3">
+                    <label for="">Status do Aluno</label>
+                    <input type="text" id="status" placeholder="Status" autocomplete="off" class="form-control ipt-busca">
+                </div>
+            </div>
+            <div class="row">
+                <div id="search-avanced-submit" class="btn-primary">Buscar</div>
+            </div>
         </div>
     </div>
 

@@ -115,7 +115,6 @@
                     }
                 },
                 error: function(err) {
-                    console.log(err)
                 }
             });
             
@@ -134,7 +133,7 @@
 
                     csvTable = to_csv(workbook);
                     const numAlunos = csvTable.split(/\r\n|\r|\n/).length-1;
-                    console.log(numAlunos);
+                    (numAlunos);
                 $('#btn-active-modal').click();
                     $.ajax({
                         url: '../controllers/importarExcel.php',
@@ -143,7 +142,6 @@
                             'csv': csvTable
                         },
                         success: function(data) {
-                            console.log(data);     
                             $('#modal-ciclos').modal('hide')
                             $('.custom-file-label').text('Escolha o arquivo');   
                             $('#alert-error').css('display', 'none');
@@ -153,10 +151,7 @@
                             
                         },
                         error: function(err) {
-                            alert('deu ruim')
                             $('.custom-file-label').text('Escolha o arquivo');
-                            console.log(err)
-
                             $('#alert-success').css('display', 'none');
 
                             $('#alert-error').css('display', 'flex');

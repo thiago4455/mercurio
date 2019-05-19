@@ -220,7 +220,7 @@ class ClassAlunos {
             if($objAlunos->getIdade1()!='' && $objAlunos->getIdade2()!='') $busca = $busca . " AND (Idade BETWEEN ".$objAlunos->getIdade1()." AND ".$objAlunos->getIdade2().")";
             else if($objAlunos->getIdade1()!='') $busca = $busca . " AND (Idade = ".$objAlunos->getIdade1().")";
             if($objAlunos->getSexo()!='') $busca = $busca . " AND (Sexo LIKE '%".$objAlunos->getSexo()."%')";
-            if($objAlunos->getGrauInstrucao()!='') $busca = $busca . " AND (GrauInstrucao LIKE '%".$objAlunos->getGrauInstrucao()."%') AND";            
+            if($objAlunos->getGrauInstrucao()!='') $busca = $busca . " AND (GrauInstrucao LIKE '%".$objAlunos->getGrauInstrucao()."%')";            
             if($objAlunos->getBairro()!='') $busca = $busca . " AND (Bairro LIKE '%".$objAlunos->getBairro()."%')";   
             if($objAlunos->getEstado()!='') $busca = $busca . " AND (Estado LIKE '%".$objAlunos->getEstado()."%')";   
             if($objAlunos->getCidade()!='') $busca = $busca . " AND (Cidade LIKE '%".$objAlunos->getCidade()."%')";   

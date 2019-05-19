@@ -5,16 +5,25 @@ $(window).on('load', () => {
 $(document).ready(() => {
     var alunosSelecionados = [];
 
+    $('#search-avanced').click(function() {
+        if($('#busca-avancada').css('display') != 'flex') {
+            $('#busca-avancada').css('display', 'flex')
+        }
+        else {
+            $('#busca-avancada').css('display', 'none')
+        }
+    })
+
     let age1Previus = $('#age1').val();
-    $('#age1').on('keyup',() => {
-        if (age1Previus==$('#age2').val()) {
+    $('#age1').on('keyup', () => {
+        if (age1Previus == $('#age2').val()) {
             $('#age2').val($('#age1').val());
         }
 
         age1Previus = $('#age1').val();
     })
 
-    $('#search-avanced-submit').on('click',() =>{
+    $('#search-avanced-submit').on('click', () => {
         $.ajax({
             url: '../controllers/buscaAvancada.php',
             data: {
@@ -43,10 +52,22 @@ $(document).ready(() => {
             type: 'POST',
             dataType: 'json',
             success: function (msg) {
-                ListarItens(msg)
+                
+                if (msg == 'Not found') {
+                    $('#fast-actions').css('display', 'none');
+                    $('#tableBody').css('display', 'none');
+                    $('#div-not-found').css('display', 'flex');
+                    $('#msg-notFound').text('Nenhum aluno cadastrado');
+                }
+                else {
+                    $('#fast-actions').css('display', 'flex');
+                    $('#tableBody').css('display', 'table');
+                    $('#div-not-found').css('display', 'none');
+                    ListarItens(msg)
+                }
             },
             error: function (err) {
-                console.log(err);
+                
             }
         })
     });
@@ -75,7 +96,7 @@ $(document).ready(() => {
             $('#lds').css('display', 'none');
         },
         error: function (err) {
-            console.log(err);
+            
         }
     });
 
@@ -158,7 +179,7 @@ $(document).ready(() => {
                 ListarItens(msg);
             },
             error: function (err) {
-                console.log(err);
+                
             }
         });
     }
@@ -187,7 +208,7 @@ $(document).ready(() => {
                 }
             },
             error: function (err) {
-                console.log(err);
+                
             }
         });
     })
@@ -208,7 +229,7 @@ $(document).ready(() => {
                 type: 'POST',
                 dataType: 'json',
                 success: function (msg) {
-                    console.log(msg)
+                    
                     var i = 0;
                     alunosSelecionados.forEach(element => {
                         $('#ipt-alunosSelecionados').append(element + " - " + msg[i].Nome + "\n")
@@ -231,13 +252,13 @@ $(document).ready(() => {
                             }
                         },
                         error: function (err) {
-                            console.log(err);
+                            
                         }
                     })
 
                 },
                 error: function (err) {
-                    console.log(err);
+                    
                 }
             })
 

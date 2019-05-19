@@ -223,7 +223,6 @@
         <h1 id="title-search">Buscar Empresas</h1>
         <div id="busca">
             <input type="text" id="inputSearch" placeholder="Pesquise Código, Razão Social ou Representante" autocomplete="off">
-            <div id="search-avanced" class="btn">Busca Avançada</div>
         </div>
     </div>
 

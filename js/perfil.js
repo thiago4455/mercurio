@@ -103,11 +103,11 @@ $(document).ready(() => {
                     'estado': estado
                 },
                 type: 'POST',success: function (msg) {
-                    console.log(msg);
+                    
                     parent.location.reload()
                 },
                 error: function (err) {
-                    console.log(err);
+                    
                 }
         })
     }

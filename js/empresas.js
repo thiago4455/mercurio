@@ -89,7 +89,7 @@ $(document).ready(() => {
                 },
                 type: 'POST',
                 success: function (msg) {
-                    console.log(msg)
+                    
 
                    if (msg != true) {
                         $('#alert-error-editar').css('display', 'flex');
@@ -116,7 +116,7 @@ $(document).ready(() => {
                     }
                 },
                 error: function (err) {
-                    console.log(err);
+                    
                 }
             });
         }
@@ -131,7 +131,7 @@ $(document).ready(() => {
             },
             type: 'POST',
             success: function (msg) {
-                console.log(msg);
+                ;
                 $('.modal-editar').modal('show')
                 $('#ipt-nomeFantasia-editar').val(msg[0].nomeFantasia);
                 $('#ipt-razaoSocial-editar').val(msg[0].razaoSocial);
@@ -151,7 +151,7 @@ $(document).ready(() => {
                 
             },
             error: function (err) {
-                console.log(err);
+                
             }
         });
     })
@@ -216,7 +216,7 @@ $(document).ready(() => {
                 },
                 type: 'POST',
                 success: function (msg) {
-                    console.log(msg)
+                    
 
                     if(msg == 'cnpj e apelido ja utilizados') {
                         $('#alert-error').css('display', 'flex');
@@ -251,7 +251,7 @@ $(document).ready(() => {
                     }
                 },
                 error: function (err) {
-                    console.log(err);
+                    
                 }
             });
         }
@@ -277,7 +277,7 @@ $(document).ready(() => {
                 $('#lds').css('display', 'none');
             },
             error: function (err) {
-                console.log(err);
+                
             }
         });
     
@@ -291,7 +291,7 @@ $(document).ready(() => {
                 type: 'POST',
                 success: function (msg) {
                     $('#lds').css('display', 'none');
-                    console.log(msg)
+                    
                     if (msg == 'Not found') {
                         $('#tableBody').css('display', 'none');
                         $('#div-not-found').css('display', 'flex');
@@ -304,7 +304,7 @@ $(document).ready(() => {
                     }
                 },
                 error: function (err) {
-                    console.log(err);
+                    
                 }
             });
         })

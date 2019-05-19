@@ -50,7 +50,7 @@ $(document).ready(function () {
                 type: 'POST',
                 dataType: 'json',
                 success: function (msg) {
-                    console.log(msg)
+                    
 
                     if (msg == 'User not exist') {
                         $('#alert-modal-error').css('display', 'flex');
@@ -79,13 +79,13 @@ $(document).ready(function () {
                             type: 'POST',
                             dataType: 'json',
                             success: function (msg) {
-                                console.log(msg)
+                                
                                 $('#btn-recuperar').text('Recuperar Senha');
                                 $('#btn-recuperar').prop('disabled', false);
                                 $('#alert-modal-success').css('display', 'flex');
                             },
                             error: function (err) {
-                                console.log(err);
+                                
                                 $('#btn-recuperar').text('Recuperar Senha');
                                 $('#btn-recuperar').prop('disabled', false);
                             }
@@ -93,7 +93,7 @@ $(document).ready(function () {
                     }
                 },
                 error: function (err) {
-                    console.log(err);
+                    
                     $('#btn-recuperar').text('Recuperar Senha');
                     $('#btn-recuperar').prop('disabled', false);
                 }
@@ -121,7 +121,6 @@ $(document).ready(function () {
             type: 'POST',
             dataType: 'json',
             success: function (msg) {
-                console.log(msg[0].idFunc)
                 $('#btn-login').text('Logar');
                 $('#btn-login').removeAttr('disabled');
 
@@ -136,7 +135,7 @@ $(document).ready(function () {
                 }
             },
             error: function (err) {
-                console.log(err);
+                
             }
 
         });
