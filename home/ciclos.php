@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <?php 
+    session_start();
     if($_SESSION['tipoLog']!='admin'){
         header('Location: alunos.php');
     }
