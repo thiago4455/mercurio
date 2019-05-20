@@ -222,7 +222,7 @@
     </div>
     <div class="custom-control custom-switch">
         <input type="checkbox" class="custom-control-input" id="mostrar-encaminhados">
-        <label class="custom-control-label" for="mostrar-encaminhados">Mostrar Somente Encaminhados</label>
+        <label class="custom-control-label" for="mostrar-encaminhados">Mostrar Encaminhados</label>
     </div>
 
     <div class="table-responsive">

@@ -142,8 +142,8 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
-            $encaminhar = $encaminhado==''?'NOT':'';
-            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE Semestre='".$ciclo."' AND Ra $encaminhar IN (Select Alunos_ra FROM Empregado);");
+            $encaminhar = $encaminhado==''?'AND Ra NOT IN (Select Alunos_ra FROM Empregado)':'';
+            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE Semestre='".$ciclo."' $encaminhar;");
 
             if($tableAlunos === "ERRO") {          
                 return 'Not found';             
@@ -189,9 +189,9 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');     
-        $encaminhar = $encaminhado==''?'NOT':'';
+            $encaminhar = $encaminhado==''?'AND Ra NOT IN (Select Alunos_ra FROM Empregado)':'';
         try {
-            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE ((Nome LIKE '%$busca%') OR (Ra LIKE '%$busca%') OR (Cpf LIKE '%$busca%') OR (Email LIKE '%$busca%') OR (Telefone1 LIKE '%$busca%') OR (Telefone2 LIKE '%$busca%')) AND Semestre='$semestre' AND Ra $encaminhar IN (Select Alunos_ra FROM Empregado)");
+            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE ((Nome LIKE '%$busca%') OR (Ra LIKE '%$busca%') OR (Cpf LIKE '%$busca%') OR (Email LIKE '%$busca%') OR (Telefone1 LIKE '%$busca%') OR (Telefone2 LIKE '%$busca%')) AND Semestre='$semestre' $encaminhar");
             if($tableAlunos === "ERRO") {          
                 return 'Not found';             
             }
@@ -238,8 +238,6 @@ class ClassAlunos {
              
             if($encaminhado==''){
                 $busca = $busca . "AND Ra NOT IN (Select Alunos_ra FROM Empregado)";
-            }else{
-                $busca = $busca . "AND Ra IN (Select Alunos_ra FROM Empregado)";
             }
             
 
