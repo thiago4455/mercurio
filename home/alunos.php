@@ -220,6 +220,10 @@
         </select>
         <button id="btn-encaminhar" type="button" class="btn btn-success" href="#" <?php echo $_SESSION['tipoLog']!='admin'?'disabled':'';?>>Encaminhar Selecionados</button>
     </div>
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="mostrar-encaminhados">
+        <label class="custom-control-label" for="mostrar-encaminhados">Mostrar Somente Encaminhados</label>
+    </div>
 
     <div class="table-responsive">
         <table id='tableBody' class="table">
@@ -242,7 +246,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-
     <script src="../js/alunos.js"></script>
 
     <script>

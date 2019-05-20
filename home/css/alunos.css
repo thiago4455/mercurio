@@ -99,6 +99,10 @@ body {
     background-color: #D85252;
 }
 
+.custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: none;
+}
+
 #btn-encaminhar {
     margin: 0 0 0 0;
     height: 50px;
@@ -114,6 +118,12 @@ body {
     border: none;
     font-size: 1rem;
     color: #fff;
+}
+
+.custom-switch {
+    align-self: flex-start;
+     padding: 0 6%;
+     margin: 20px 0;
 }
 
 #cbx-ciclos > option {
@@ -336,6 +346,10 @@ td button {
       #div-not-found i {
           font-size: 1.4rem;
           margin: 0 5px 0 0;
+      }
+
+      .custom-switch {
+          padding: 0 15%;
       }
     
 }

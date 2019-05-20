@@ -48,7 +48,7 @@ $(document).ready(() => {
                 'codTurma': $('#codTurma').val(),
                 'status': $('#status').val(),
                 'ciclo': $('#cbx-ciclos').val(),
-                'encaminhado': '',
+                'encaminhado': $('#mostrar-encaminhados').is(":checked")?'1':'',
             },
             type: 'POST',
             dataType: 'json',
@@ -73,37 +73,43 @@ $(document).ready(() => {
         })
     });
 
-    $.ajax({
-        url: '../controllers/listarCiclos.php',
-        dataType: 'json',
-        success: function (msg) {
-            if (msg == 'Not found') {
-                $('#fast-actions').css('display', 'none');
-                $('#tableBody').css('display', 'none');
-                $('#div-not-found').css('display', 'flex');
-                $('#msg-notFound').text('Nenhum aluno cadastrado');
+    function Listar(){
+        $.ajax({
+            url: '../controllers/listarCiclos.php',
+            dataType: 'json',
+            success: function (msg) {
+                if (msg == 'Not found') {
+                    $('#fast-actions').css('display', 'none');
+                    $('#tableBody').css('display', 'none');
+                    $('#div-not-found').css('display', 'flex');
+                    $('#msg-notFound').text('Nenhum aluno cadastrado');
+                }
+                else {
+                    msg.forEach((i) => {
+                        $('#cbx-ciclos').append('<option value="' + i.Semestre + '"> Ciclo - ' + i.Semestre + '</option>')
+                    })
+    
+                    $('#fast-actions').css('display', 'flex');
+                    $('#tableBody').css('display', 'table');
+                    $('#div-not-found').css('display', 'none');
+    
+                    ListarPorCiclo($('#cbx-ciclos').val())
+                }
+                $('#lds').css('display', 'none');
+            },
+            error: function (err) {
+                
             }
-            else {
-                msg.forEach((i) => {
-                    $('#cbx-ciclos').append('<option value="' + i.Semestre + '"> Ciclo - ' + i.Semestre + '</option>')
-                })
+        });
+    }
 
-                $('#fast-actions').css('display', 'flex');
-                $('#tableBody').css('display', 'table');
-                $('#div-not-found').css('display', 'none');
-
-                ListarPorCiclo($('#cbx-ciclos').val())
-            }
-            $('#lds').css('display', 'none');
-        },
-        error: function (err) {
-            
-        }
-    });
+    Listar();
 
     $('#cbx-ciclos').on('change', (() => {
         ListarPorCiclo($('#cbx-ciclos').val())
     }));
+
+    $('#mostrar-encaminhados').on('change', Listar)
 
     $(document).on('change', '#check-todos', function () {
         if (this.checked) {
@@ -170,7 +176,7 @@ $(document).ready(() => {
             dataType: 'json',
             data: {
                 'ciclo': ciclo,
-                'encaminhado': '',
+                'encaminhado': $('#mostrar-encaminhados').is(":checked")?'1':'',
             },
             type: 'POST',
             success: function (msg) {
@@ -203,7 +209,7 @@ $(document).ready(() => {
             data: {
                 'nome': $('#inputSearch').val(),
                 'ciclo': $('#cbx-ciclos').val(),
-                'encaminhado': '',
+                'encaminhado': $('#mostrar-encaminhados').is(":checked")?'1':'',
             },
             type: 'POST',
             success: function (msg) {
