@@ -48,6 +48,7 @@ $(document).ready(() => {
                 'codTurma': $('#codTurma').val(),
                 'status': $('#status').val(),
                 'ciclo': $('#cbx-ciclos').val(),
+                'encaminhado': '',
             },
             type: 'POST',
             dataType: 'json',
@@ -169,6 +170,7 @@ $(document).ready(() => {
             dataType: 'json',
             data: {
                 'ciclo': ciclo,
+                'encaminhado': '',
             },
             type: 'POST',
             success: function (msg) {
@@ -190,7 +192,8 @@ $(document).ready(() => {
             dataType: 'json',
             data: {
                 'nome': $('#inputSearch').val(),
-                'ciclo': $('#cbx-ciclos').val()
+                'ciclo': $('#cbx-ciclos').val(),
+                'encaminhado': '',
             },
             type: 'POST',
             success: function (msg) {
