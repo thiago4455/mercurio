@@ -65,7 +65,9 @@
         <div id="nav-lateral">
             <div id="title-navlat">Opções</div>
             <div id="nav-dashboard" class="item-nav item-nav-active"><i class="fas fa-home"></i><p class="item-text">Dashboard</p></div>
-            <div id="nav-ciclos" class="item-nav"><i class="fas fa-redo"></i><p class="item-text">Ciclos</p></div>
+            <?php 
+                echo $_SESSION['tipoLog']=='admin'?'<div id="nav-ciclos" class="item-nav"><i class="fas fa-redo"></i><p class="item-text">Ciclos</p></div>':'';
+            ?>
             <div id="nav-alunos" class="item-nav"><i class="fas fa-users"></i><p class="item-text">Alunos</p></div>
             <div id="nav-empresas" class="item-nav"><i class="fas fa-building"></i><p class="item-text">Empresas</p></div>
             <div id="nav-funcionarios" class="item-nav"><i class="fas fa-users-cog"></i><p class="item-text">Funcionários</p></div>

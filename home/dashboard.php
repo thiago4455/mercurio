@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
 
+<?php session_start(); ?>
 <head>
     <title>Senai - Sistema FIEMG</title>
     <meta charset="utf-8">
@@ -35,7 +36,7 @@
                         </div>
                         <img src="../assets/img/ciclos-min.png" alt="Ciclos Criados">
                     </div>
-                    <a style="background: #d85252a8" href="ciclos.php" class="card-bottom" data-value="nav-ciclos">VEJA MAIS</a>
+                    <a style="background: #d85252a8" href="ciclos.php" class="card-bottom" data-value="<?php echo $_SESSION['tipoLog']!='admin'?'nav-alunos':'nav-ciclos';?>">VEJA MAIS</a>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">

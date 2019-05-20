@@ -133,7 +133,7 @@ class ClassAlunos {
     }
 
 
-    public function RetAlunos($ciclo) {
+    public function RetAlunos($ciclo, $encaminhado) {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
                 # MySQL UTF-8
@@ -142,7 +142,8 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
-            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE Semestre='".$ciclo."';");
+            $encaminhar = $encaminhado==''?'NOT':'';
+            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE Semestre='".$ciclo."' AND Ra $encaminhar IN (Select Alunos_ra FROM Empregado);");
 
             if($tableAlunos === "ERRO") {          
                 return 'Not found';             
@@ -180,17 +181,17 @@ class ClassAlunos {
     }
 
 
-    public function BuscaAlunos($busca, $semestre) {
+    public function BuscaAlunos($busca, $semestre, $encaminhado) {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
-                $objConexao->executarComandoSQL('SET character_set_results=utf8');        
+                $objConexao->executarComandoSQL('SET character_set_results=utf8');     
+        $encaminhar = $encaminhado==''?'NOT':'';
         try {
-            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE ((Nome LIKE '%$busca%') OR (Ra LIKE '%$busca%') OR (Cpf LIKE '%$busca%') OR (Email LIKE '%$busca%') OR (Telefone1 LIKE '%$busca%') OR (Telefone2 LIKE '%$busca%')) AND Semestre='$semestre'");
-
+            $tableAlunos = $objConexao->selecionarDados("SELECT * FROM Alunos WHERE ((Nome LIKE '%$busca%') OR (Ra LIKE '%$busca%') OR (Cpf LIKE '%$busca%') OR (Email LIKE '%$busca%') OR (Telefone1 LIKE '%$busca%') OR (Telefone2 LIKE '%$busca%')) AND Semestre='$semestre' AND Ra $encaminhar IN (Select Alunos_ra FROM Empregado)");
             if($tableAlunos === "ERRO") {          
                 return 'Not found';             
             }
@@ -203,7 +204,7 @@ class ClassAlunos {
         }
     }
 
-    public function BuscaAvancada($objAlunos) {
+    public function BuscaAvancada($objAlunos, $encaminhado) {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
                 # MySQL UTF-8
@@ -233,6 +234,13 @@ class ClassAlunos {
             if($objAlunos->getNomeMae()!='') $busca = $busca . " AND (NomeMae LIKE '%".$objAlunos->getNomeMae()."%')"; 
             if($objAlunos->getCodTurma()!='') $busca = $busca . " AND (CodTurma LIKE '%".$objAlunos->getCodTurma()."%')"; 
             if($objAlunos->getStatus()!='') $busca = $busca . " AND (Status LIKE '%".$objAlunos->getStatus()."%')"; 
+
+             
+            if($encaminhado==''){
+                $busca = $busca . "AND Ra NOT IN (Select Alunos_ra FROM Empregado)";
+            }else{
+                $busca = $busca . "AND Ra IN (Select Alunos_ra FROM Empregado)";
+            }
             
 
 

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="pt-br">
-
+<?php session_start(); ?>
 <head>
     <title>Senai - Sistema FIEMG</title>
     <!-- Required meta tags -->
@@ -218,7 +218,7 @@
         </div>
         <select id="cbx-ciclos" class="form-control form-control-lg">
         </select>
-        <button id="btn-encaminhar" type="button" class="btn btn-success" href="#">Encaminhar Selecionados</button>
+        <button id="btn-encaminhar" type="button" class="btn btn-success" href="#" <?php echo $_SESSION['tipoLog']!='admin'?'disabled':'';?>>Encaminhar Selecionados</button>
     </div>
 
     <div class="table-responsive">

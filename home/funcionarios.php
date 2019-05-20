@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="pt-br">
-
+<?php session_start(); ?>
 <head>
     <title>Senai - Sistema FIEMG</title>
     <meta charset="utf-8">
@@ -129,7 +129,7 @@
     </div>
 
     <div id="fast-actions">
-        <button id="btn-modal-cadastrar" type="button" class="btn btn-success" data-toggle="modal" data-target=".modal-cadastrar">Cadastrar Novo Funcionário</button>
+        <button id="btn-modal-cadastrar" type="button" class="btn btn-success" data-toggle="modal" data-target=".modal-cadastrar" <?php echo $_SESSION['tipoLog']!='admin'?'disabled':'';?>>Cadastrar Novo Funcionário</button>
     </div>
 
     <div class="table-responsive">

@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="pt-br">
 
+<?php 
+    if($_SESSION['tipoLog']!='admin'){
+        header('Location: alunos.php');
+    }
+?>
+
 <head>
     <title>Senai - Sistema FIEMG</title>
     <meta charset="utf-8">

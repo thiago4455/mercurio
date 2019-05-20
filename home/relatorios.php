@@ -46,7 +46,7 @@
                     <?php
                         $arrayFiles = scandir('../relatorios/');
 
-                        if(sizeof($arrayFiles) > 2) {
+                        if(sizeof($arrayFiles) > 3) {
                             
                             for ($i = 2; $i < sizeof($arrayFiles); $i++) {
                                 if($arrayFiles[$i]!='README.md'){

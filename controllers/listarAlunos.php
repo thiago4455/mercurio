@@ -4,7 +4,8 @@
     require_once('../models/ClassAlunos.php');
     $ciclo = ($_POST['ciclo']);
     $objAlunos = new ClassAlunos();
-    $queryResp = $objAlunos->RetAlunos($ciclo);
+    $encaminhado = ($_POST['encaminhado']);
+    $queryResp = $objAlunos->RetAlunos($ciclo, $encaminhado);
 
     echo json_encode($queryResp);
 ?>
