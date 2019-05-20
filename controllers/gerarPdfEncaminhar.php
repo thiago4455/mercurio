@@ -34,19 +34,19 @@
 
 
         // Monta Query Update
-        $queryEmpregado = "INSERT INTO `Empregado` (`Alunos_ra`, `Empresas_codEmpresa`) VALUES";
+        $queryEncaminhados = "INSERT INTO `Encaminhados` (`Alunos_ra`, `Empresas_codEmpresa`, `Status`) VALUES";
         $i = 0;
         foreach($alunosSelecionados as $aluno) {
             $i = $i + 1;
             if($i != $length) {
-                $queryEmpregado = $queryEmpregado . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "') ,";
+                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "','Encaminhado') ,";
             } else {
-                $queryEmpregado = $queryEmpregado . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "') ;";
+                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "','Encaminhado') ;";
             }
         }
 
         $queryResp = $objConexao->selecionarDados($queryBusca);
-        $queryRespEmpregado = $objConexao->executarComandoSQL($queryEmpregado);
+        $queryRespEncaminhados = $objConexao->executarComandoSQL($queryEncaminhados);
 
         $dataRelatorio = date("d/m/Y");        
 

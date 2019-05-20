@@ -65,13 +65,14 @@ CREATE TABLE Empresas(
     estado CHAR(2) NOT NULL
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-CREATE TABLE Empregado(
+CREATE TABLE Encaminhados(
     Alunos_ra VARCHAR(10) NOT NULL,
     FOREIGN KEY Alunos_ra(Alunos_ra)
     REFERENCES Alunos(Ra),
     Empresas_codEmpresa VARCHAR(6) NOT NULL,
     FOREIGN KEY Empresas_codEmpresa(Empresas_codEmpresa)
-    REFERENCES Empresas(codEmpresa)
+    REFERENCES Empresas(codEmpresa),
+	Status VARCHAR(20)
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE Relatorio(
