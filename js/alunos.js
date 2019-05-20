@@ -174,11 +174,21 @@ $(document).ready(() => {
             },
             type: 'POST',
             success: function (msg) {
-                $('#lds').css('display', 'none');
-                $('#fast-actions').css('display', 'flex');
-                $('#tableBody').css('display', 'table');
-                $('#div-not-found').css('display', 'none');
-                ListarItens(msg);
+                console.log(msg)
+                if(msg == 'Not found') {
+                    $('#fast-actions').css('display', 'none');
+                    $('#tableBody').css('display', 'none');
+                    $('#div-not-found').css('display', 'flex');
+                    $('#msg-notFound').text('Nenhum aluno cadastrado');
+                }
+                else {
+                    $('#lds').css('display', 'none');
+                    $('#fast-actions').css('display', 'flex');
+                    $('#tableBody').css('display', 'table');
+                    $('#div-not-found').css('display', 'none');
+                    ListarItens(msg);
+                }
+                
             },
             error: function (err) {
                 
@@ -246,8 +256,11 @@ $(document).ready(() => {
                         type: 'GET',
                         dataType: 'json',
                         success: function (msg) {
+                        
                             if (msg == 'ERRO') {
-                                $('#modal-encaminhar').modal('hide')
+                                setTimeout(() => {
+                                    $('#modal-encaminhar').modal('hide')
+                                }, 250);
                                 $('#modal-erro-empresa').modal('show');
                             } else {
                                 $.each(msg, function (key, value) {

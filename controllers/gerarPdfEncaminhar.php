@@ -34,7 +34,7 @@
 
 
         // Monta Query Update
-        $queryEmpregado = "INSERT INTO `empregado` (`Alunos_ra`, `Empresas_codEmpresa`) VALUES";
+        $queryEmpregado = "INSERT INTO `Empregado` (`Alunos_ra`, `Empresas_codEmpresa`) VALUES";
         $i = 0;
         foreach($alunosSelecionados as $aluno) {
             $i = $i + 1;
