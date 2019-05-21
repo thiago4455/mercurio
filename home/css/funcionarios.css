@@ -180,7 +180,7 @@ td button {
 }
 
 .table td, .table th {
-  vertical-align: unset !important;
+  vertical-align: middle !important;
 }
 
 @media(max-width: 600px) {
