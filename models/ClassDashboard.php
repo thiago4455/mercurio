@@ -36,7 +36,7 @@ class ClassDashboard {
                 $dashEmp = 0;
             }
 
-            $dashEncaminhados = $objConexao->selecionarDados("SELECT Alunos_ra FROM Empregado");
+            $dashEncaminhados = $objConexao->selecionarDados("SELECT Alunos_ra FROM Encaminhados");
 
             if($dashEncaminhados == "ERRO") {
                 $dashEncaminhados = 0;

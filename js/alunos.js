@@ -85,6 +85,7 @@ $(document).ready(() => {
                     $('#msg-notFound').text('Nenhum aluno cadastrado');
                 }
                 else {
+                    $('#cbx-ciclos').text('');
                     msg.forEach((i) => {
                         $('#cbx-ciclos').append('<option value="' + i.Semestre + '"> Ciclo - ' + i.Semestre + '</option>')
                     })
