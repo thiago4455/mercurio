@@ -1,5 +1,4 @@
 <?php
-    session_start();
 
     $Nome = ($_POST['nome']);
     $Ra = ($_POST['ra']);

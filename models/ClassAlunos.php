@@ -267,6 +267,58 @@ class ClassAlunos {
         }
     }
 
+    public function BuscaAvancada($objAlunos, $encaminhado) {
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+                # MySQL UTF-8
+                $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+                $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+                $objConexao->executarComandoSQL('SET character_set_client=utf8');
+                $objConexao->executarComandoSQL('SET character_set_results=utf8');        
+        try {
+
+            $busca = "SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre, E.Empresas_codEmpresa AS codEmpresa, IFNULL(E.Status,'Em Espera') AS Status FROM Alunos AS A LEFT JOIN Encaminhados AS E ON (A.Ra = E.Alunos_ra) WHERE (A.Semestre = '".$objAlunos->getSemestre()."') ";
+
+            if($objAlunos->getNome()!='') $busca = $busca . " AND (A.Nome LIKE '%".$objAlunos->getNome()."%')";
+            if($objAlunos->getRa()!='') $busca = $busca . " AND (A.Ra LIKE '%".$objAlunos->getRa()."%')";
+            if($objAlunos->getIdade1()!='' && $objAlunos->getIdade2()!='') $busca = $busca . " AND (A.Idade BETWEEN ".$objAlunos->getIdade1()." AND ".$objAlunos->getIdade2().")";
+            else if($objAlunos->getIdade1()!='') $busca = $busca . " AND (A.Idade = ".$objAlunos->getIdade1().")";
+            if($objAlunos->getSexo()!='') $busca = $busca . " AND (A.Sexo LIKE '%".$objAlunos->getSexo()."%')";
+            if($objAlunos->getGrauInstrucao()!='') $busca = $busca . " AND (A.GrauInstrucao LIKE '%".$objAlunos->getGrauInstrucao()."%')";            
+            if($objAlunos->getBairro()!='') $busca = $busca . " AND (A.Bairro LIKE '%".$objAlunos->getBairro()."%')";   
+            if($objAlunos->getEstado()!='') $busca = $busca . " AND (A.Estado LIKE '%".$objAlunos->getEstado()."%')";   
+            if($objAlunos->getCidade()!='') $busca = $busca . " AND (A.Cidade LIKE '%".$objAlunos->getCidade()."%')";   
+            if($objAlunos->getTelefone()!='') $busca = $busca . " AND ((A.Telefone1 LIKE '%".$objAlunos->getTelefone()."%') OR (A.Telefone2 LIKE '%".$objAlunos->getTelefone()."%') OR (A.TelefonePai LIKE '%".$objAlunos->getTelefone()."%') OR (A.TelefoneMae LIKE '%".$objAlunos->getTelefone()."%'))";   
+            if($objAlunos->getIdentidade()!='') $busca = $busca . " AND (A.Identidade LIKE '%".$objAlunos->getIdentidade()."%')";   
+            if($objAlunos->getCpf()!='') $busca = $busca . " AND (A.Cpf LIKE '%".$objAlunos->getCpf()."%')";   
+            if($objAlunos->getEmail()!='') $busca = $busca . " AND (A.Email LIKE '%".$objAlunos->getEmail()."%\')";   
+            if($objAlunos->getCarteiraTrabalho()!='') $busca = $busca . " AND (A.CarteiraTrabalho LIKE \'%".$objAlunos->getCarteiraTrabalho()."%\') AND";   
+            if($objAlunos->getNomePai()!='') $busca = $busca . " AND (A.NomePai LIKE '%".$objAlunos->getNomePai()."%')";   
+            if($objAlunos->getNomeMae()!='') $busca = $busca . " AND (A.NomeMae LIKE '%".$objAlunos->getNomeMae()."%')"; 
+            if($objAlunos->getCodTurma()!='') $busca = $busca . " AND (A.CodTurma LIKE '%".$objAlunos->getCodTurma()."%')"; 
+            if($objAlunos->getStatus()!='') $busca = $busca . " AND (E.Status LIKE '%".$objAlunos->getStatus()."%')"; 
+
+           
+            if($encaminhado==''){
+                $busca = $busca . "AND A.Ra NOT IN (Select Alunos_ra FROM Encaminhados)";
+            }
+            
+
+
+            $tableAlunos = $objConexao->selecionarDados($busca);
+            //return $busca;
+            if($tableAlunos === "ERRO") {          
+                return 'Not found';             
+            }
+            else {
+                return $tableAlunos;
+            }
+        }
+        catch(Exception $err) {
+            return "Problem System";
+        }
+    }
+
     public function BuscaAvancadaEncaminhados($objAlunos) {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
