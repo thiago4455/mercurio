@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Sistema Mercurio</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="theme-color" content="#333">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
@@ -71,7 +72,7 @@
         </div>
   
         <div class="col-md-6 intro-img order-md-last order-first">
-          <img src="descubra/img/home.png" alt="" class="img-fluid">
+          <img src="descubra/img/home.png" id="img-logo" alt="" class="img-fluid" style="max-width: 110%;">
         </div>
       </div>
 
@@ -121,7 +122,7 @@
 
         <header class="section-header">
           <h3>Serviços</h3>
-          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+          <p>Facilitar a sua vida é a nossa missão. Conheça alguma das funcionalidades do Sistema Mercurio abaixo.</p>
         </header>
 
         <div class="row">
@@ -129,45 +130,45 @@
           <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
             <div class="box">
               <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <h4 class="title"><a href="">Gestão de Alunos</a></h4>
+              <p class="description">O software perfeito para ter o controle completo de todos os estudantes. Encaminhar alunos nunca foi tão fácil!</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
             <div class="box">
-              <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline" style="color: #e98e06;"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+              <div class="icon" style="background: #fff0da;"><i class="ion-ios-checkmark-outline" style="color: #e98e06;"></i></div>
+              <h4 class="title"><a href="">Leitor de Excel</a></h4>
+              <p class="description">Para cadastrar os alunos basta somente importar sua planilha do Excel, sem nenhuma complicação.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
             <div class="box">
               <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+              <h4 class="title"><a href="">Gerar Relatórios</a></h4>
+              <p class="description">Geramos automaticamente relatórios logo após encaminhar os alunos, tudo pronto para enviar às empresas.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
             <div class="box">
-              <div class="icon" style="background: #eafde7;"><i class="ion-ios-speedometer-outline" style="color:#41cf2e;"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <div class="icon" style="background: #eafde7;"><i class="ion-iphone" style="color:#41cf2e;"></i></div>
+              <h4 class="title"><a href="">Responsividade Mobile</a></h4>
+              <p class="description">A rotina não permite ficar parado? Sem problemas, o Mercurio está com você em qualquer lugar.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
             <div class="box">
               <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline" style="color: #2282ff;"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+              <h4 class="title"><a href="">Sistema Web</a></h4>
+              <p class="description">Sem instaladores, sem problemas. Rápido, fácil e sem ocupar rescursos de sua máquina.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
             <div class="box">
               <div class="icon" style="background: #ecebff;"><i class="ion-ios-clock-outline" style="color: #8660fe;"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+              <h4 class="title"><a href="">Economia de Tempo</a></h4>
+              <p class="description">Simplicidade é tudo. Teste e comprove, o Mercurio é o melhor sistema para sua empresa.</p>
             </div>
           </div>
 
@@ -231,49 +232,33 @@
 
       </div>
 
+    </section>
+
+    <section id="call-to-action" class="wow fadeInUp">
       <div class="container">
         <div class="row counters">
 
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">274</span>
-            <p>Clients</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">421</span>
-            <p>Projects</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">1,364</span>
-            <p>Hours Of Support</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">18</span>
-            <p>Hard Workers</p>
-          </div>
-  
+        <div class="col-lg-3 col-6 text-center">
+          <span data-toggle="counter-up" id="counter-cadastrados"></span>
+          <p>Alunos Cadastrados</p>
         </div>
 
-      </div>
-    </section>
-
-    <!--==========================
-      Call To Action Section
-    ============================-->
-    <section id="call-to-action" class="wow fadeInUp">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-left">
-            <h3 class="cta-title">Call To Action</h3>
-            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
-          </div>
+        <div class="col-lg-3 col-6 text-center">
+          <span data-toggle="counter-up" id="counter-encaminhados"></span>
+          <p>Alunos Encaminhados</p>
         </div>
 
+        <div class="col-lg-3 col-6 text-center">
+          <span data-toggle="counter-up" id="counter-empresas"></span>
+          <p>Empresas Parceiras</p>
+        </div>
+
+        <div class="col-lg-3 col-6 text-center">
+          <span data-toggle="counter-up" id="counter-ciclos"></span>
+          <p>Ciclos Criados</p>
+        </div>
+
+        </div>
       </div>
     </section><!-- #call-to-action -->
 
@@ -333,18 +318,17 @@
 
         <div class="row">
 
-          <div class="col-lg-4 col-md-6 wow fadeInUp">
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             <div class="member">
-              <img src="descubra/img/team-1.jpg" class="img-fluid" alt="">
+              <img src="descubra/img/team-3.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
+                  <h4>Thiago Mattos</h4>
+                  <span>Scrum Master - Developer Back-End</span>
                   <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  <a href="https://github.com/thiago4455" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="https://www.instagram.com/thiagobamattos/?hl=pt-br" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
                   </div>
                 </div>
               </div>
@@ -357,30 +341,28 @@
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Guilherme Reis</h4>
-                  <span>Desenvolvimento</span>
+                  <span>Product Owner - Developer Front-End</span>
                   <div class="social">
                     <a href="https://github.com/GuilhermeReis9876" target="_blank"><i class="fa fa-github"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/guilherme_reis.js/?hl=pt-br" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/guilherme-reis-526986146/" target="_blank"><i class="fa fa-linkedin"></i></a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="col-lg-4 col-md-6 wow fadeInUp">
             <div class="member">
-              <img src="descubra/img/team-3.jpg" class="img-fluid" alt="">
+              <img src="descubra/img/team-1.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
+                  <h4>Yuri Vitor</h4>
+                  <span>Scrum Team</span>
                   <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  <a href="https://github.com/GuilhermeReis9876" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="https://www.instagram.com/yurivitor_cf/?hl=pt-br" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://github.com/yurivitorcf" target="_blank"><i class="fa fa-linkedin"></i></a>
                   </div>
                 </div>
               </div>

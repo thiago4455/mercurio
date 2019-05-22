@@ -10,6 +10,23 @@
     }
   });
 
+  $(document).ready(() => {
+    $.ajax({
+      url: 'descubra/controllers/dadosCounters.php',
+      type: 'GET',
+      dataType: 'json',
+      success: function (msg) {
+          $('#counter-ciclos').text(msg[0].length)
+          $('#counter-cadastrados').text(msg[1].length)
+          $('#counter-empresas').text(msg[3].length)
+          $('#counter-encaminhados').text(msg[4].length)
+      },
+      error: function (err) {
+          console.log(err)
+      }
+    })
+  })
+
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {

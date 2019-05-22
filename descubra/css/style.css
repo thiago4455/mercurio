@@ -281,7 +281,7 @@ h6 {
   color: #fff;
   padding: 10px 15px;
   transition: 0.3s;
-  font-size: 14px;
+  font-size: 12px;
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
@@ -674,6 +674,7 @@ h6 {
   padding-top: 40px;
 }
 
+
 #why-us .counters span {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
@@ -690,11 +691,28 @@ h6 {
   color: #8a87b6;
 }
 
+#call-to-action .counters span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  display: block;
+  color: #fff;
+}
+
+#call-to-action .counters p {
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #fff;
+} 
+
+
 /* Call To Action Section
 --------------------------------*/
 
 #call-to-action {
-  background: #2d2b46;
+  background: #D85252;
   background-size: cover;
   padding: 40px 0;
 }
@@ -1527,12 +1545,21 @@ h6 {
     padding: 80px 0 60px 0;
   }
 
+  #header {
+    background: transparent;
+  }
+
   #intro .container {
     height: auto !important;
   }
 
   #intro .intro-img {
-    width: 80%;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  #img-logo {
+    width: 100%;
   }
 
   #intro .intro-info {
@@ -1541,7 +1568,7 @@ h6 {
   }
 
   #intro .intro-info h2 {
-    font-size: 34px;
+    font-size: 30px;
     margin-bottom: 30px;
   }
 
