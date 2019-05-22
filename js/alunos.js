@@ -131,6 +131,8 @@ $(document).ready(() => {
         } else {
             $('#btn-encaminhar').text('Encaminhar Selecionados');
         }
+
+        VerificarEncaminhar();
     });
 
     $(document).on('click', '.td-check', function (e) {
@@ -149,14 +151,37 @@ $(document).ready(() => {
             $('#check-todos').prop('checked', false);
             $(this).prop('checked', false);
             $(this).parent().parent().css('background', '#fff');
-            alunosSelecionados.pop($(this).attr('id'));
+            Pop($(this).attr('id'));
         }
-        if ($(":checkbox:checked").length > 0) {
-            $('#btn-encaminhar').text('Encaminhar Selecionados (' + $(":checkbox:checked").length + ')');
+        if ($(".td-check :checkbox:checked").length > 0) {
+            $('#btn-encaminhar').text('Encaminhar Selecionados (' + $(".td-check :checkbox:checked").length + ')');
         } else {
             $('#btn-encaminhar').text('Encaminhar Selecionados');
         }
+
+        VerificarEncaminhar();
+        console.log(alunosSelecionados);
     })
+
+    function Pop(search_term){
+        for (var i=alunosSelecionados.length-1; i>=0; i--) {
+            if (alunosSelecionados[i] === search_term) {
+                alunosSelecionados.splice(i, 1);
+                break;
+            }
+        }
+    }
+
+    function VerificarEncaminhar(){
+        let desativar = false;
+        alunosSelecionados.forEach((id) => {
+            if(($("#"+id+" td:nth-child(10)").text() != ' Em Espera ') && ($("#"+id+" td:nth-child(10)").text() != ' Reprovado ')){
+                desativar = true;
+            }
+        })
+
+        $('#btn-encaminhar').attr("disabled", desativar);
+    }
 
     function ListarItens(msg) {
         table.innerHTML = "";

@@ -147,7 +147,7 @@ $(document).ready(() => {
             $('#check-todos').prop('checked', false);
             $(this).prop('checked', false);
             $(this).parent().parent().css('background', '#fff');
-            alunosSelecionados.pop($(this).attr('id'));
+            Pop($(this).attr('id'));
         }
         if ($(":checkbox:checked").length > 0) {
             $('#btn-encaminhar').text('Encaminhar Selecionados (' + $(":checkbox:checked").length + ')');
@@ -155,6 +155,14 @@ $(document).ready(() => {
             $('#btn-encaminhar').text('Encaminhar Selecionados');
         }
     })
+    function Pop(search_term){
+        for (var i=alunosSelecionados.length-1; i>=0; i--) {
+            if (alunosSelecionados[i] === search_term) {
+                alunosSelecionados.splice(i, 1);
+                break;
+            }
+        }
+    }
 
     function ListarItens(msg) {
         table.innerHTML = "";
