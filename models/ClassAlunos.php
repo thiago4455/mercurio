@@ -142,7 +142,7 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
-            $encaminhar = $encaminhado==''?'AND A.Ra NOT IN (Select Alunos_ra FROM Encaminhados)':'';
+            $encaminhar = $encaminhado==''?'AND A.Ra NOT IN (Select Alunos_ra FROM Encaminhados WHERE Status != "Reprovado")':'';
             $tableAlunos = $objConexao->selecionarDados("SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre, IFNULL(E.Status,'Em Espera') AS Status FROM Alunos AS A LEFT JOIN Encaminhados AS E ON (A.Ra = E.Alunos_ra) WHERE A.Semestre='".$ciclo."' $encaminhar;");
 
             if($tableAlunos === "ERRO") {
@@ -213,7 +213,7 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');     
-            $encaminhar = $encaminhado==''?'AND Ra NOT IN (Select Alunos_ra FROM Encaminhados)':'';
+            $encaminhar = $encaminhado==''?'AND Ra NOT IN (Select Alunos_ra FROM Encaminhados WHERE Status != "Reprovado")':'';
         try {
             $tableAlunos = $objConexao->selecionarDados("SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre, IFNULL(E.Status,'Em Espera') AS Status FROM Alunos AS A LEFT JOIN Encaminhados AS E ON (A.Ra = E.Alunos_ra) WHERE ((A.Nome LIKE '%$busca%') OR (A.Ra LIKE '%$busca%') OR (A.Cpf LIKE '%$busca%') OR (A.Email LIKE '%$busca%') OR (A.Telefone1 LIKE '%$busca%') OR (A.Telefone2 LIKE '%$busca%')) AND A.Semestre='$semestre' $encaminhar");
             if($tableAlunos === "ERRO") {          
@@ -300,7 +300,7 @@ class ClassAlunos {
 
            
             if($encaminhado==''){
-                $busca = $busca . "AND A.Ra NOT IN (Select Alunos_ra FROM Encaminhados)";
+                $busca = $busca . "AND A.Ra NOT IN (Select Alunos_ra FROM Encaminhados WHERE Status != 'Reprovado')";
             }
             
 
