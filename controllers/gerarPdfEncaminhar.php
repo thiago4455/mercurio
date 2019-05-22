@@ -39,9 +39,9 @@
         foreach($alunosSelecionados as $aluno) {
             $i = $i + 1;
             if($i != $length) {
-                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "','Encaminhado') ,";
+                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "','Aguardando Aprovação') ,";
             } else {
-                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "','Encaminhado') ;";
+                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "','Aguardando Aprovação') ;";
             }
         }
 

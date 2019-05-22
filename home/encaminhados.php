@@ -84,8 +84,8 @@
                         <div class="form-group col-12">
                             <label for="ipt-statusSelecionado">Selecione um Status</label>
                             <select class="form-control" id="ipt-statusSelecionado">
-                                <option>Efetivado</option>
                                 <option>Aguardando Aprovação</option>
+                                <option>Efetivado</option>
                                 <option>Reprovado</option>
                             </select>
                         </div>
