@@ -131,6 +131,8 @@ $(document).ready(() => {
         } else {
             $('#btn-encaminhar').text('Encaminhar Selecionados');
         }
+
+        VerificarEncaminhar();
     });
 
     $(document).on('click', '.td-check', function (e) {
@@ -151,12 +153,26 @@ $(document).ready(() => {
             $(this).parent().parent().css('background', '#fff');
             alunosSelecionados.pop($(this).attr('id'));
         }
-        if ($(":checkbox:checked").length > 0) {
-            $('#btn-encaminhar').text('Encaminhar Selecionados (' + $(":checkbox:checked").length + ')');
+        if ($(".td-check :checkbox:checked").length > 0) {
+            $('#btn-encaminhar').text('Encaminhar Selecionados (' + $(".td-check :checkbox:checked").length + ')');
         } else {
             $('#btn-encaminhar').text('Encaminhar Selecionados');
         }
+
+        VerificarEncaminhar();
+        console.log(alunosSelecionados);
     })
+
+    function VerificarEncaminhar(){
+        let desativar = false;
+        alunosSelecionados.forEach((id) => {
+            if($("#"+id+" td:nth-child(10)").text() != ' Em Espera '){
+                desativar = true;
+            }
+        })
+
+        $('#btn-encaminhar').attr("disabled", desativar);
+    }
 
     function ListarItens(msg) {
         table.innerHTML = "";
