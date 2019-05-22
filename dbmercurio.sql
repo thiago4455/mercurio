@@ -72,19 +72,18 @@ CREATE TABLE Encaminhados(
     Empresas_codEmpresa VARCHAR(6) NOT NULL,
     FOREIGN KEY Empresas_codEmpresa(Empresas_codEmpresa)
     REFERENCES Empresas(codEmpresa),
-	Status VARCHAR(20)
+	Status VARCHAR(20),
+    tipoContrato VARCHAR(30)
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-CREATE TABLE Relatorio(
-    idRelatorio VARCHAR(10) NOT NULL,
-    dia VARCHAR(10) NOT NULL,
-    Ra VARCHAR(10) NOT NULL,
-    FOREIGN KEY Ra(Ra)
-    REFERENCES Alunos(Ra),
-    CodEmpresa VARCHAR(6) NOT NULL,
-    FOREIGN KEY CodEmpresa(CodEmpresa)
-    REFERENCES Empresas(codEmpresa)
-)CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+CREATE TABLE Necessidade(
+    codEmpresa VARCHAR(6) NOT NULL,
+    FOREIGN KEY (codEmpresa)
+    REFERENCES Empresas(codEmpresa),
+    tipoContrato VARCHAR(30),
+    quantidade INT,
+    ciclo CHAR(5)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 SELECT R.*, A.Nome, A.Cpf, A.Email, E.cnpj, E.razaoSocial, E.responsavel FROM Relatorio AS R INNER JOIN Alunos AS A ON (R.Ra = A.Ra) INNER JOIN Empresas AS E ON (E.codEmpresa = R.CodEmpresa);
 
