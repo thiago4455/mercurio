@@ -56,7 +56,7 @@ $(document).ready(() => {
                     $('#fast-actions').css('display', 'none');
                     $('#tableBody').css('display', 'none');
                     $('#div-not-found').css('display', 'flex');
-                    $('#msg-notFound').text('Nenhum aluno cadastrado');
+                    $('#msg-notFound').text('Nenhum aluno Encaminhado');
                 }
                 else {
                     $('#fast-actions').css('display', 'flex');
@@ -80,7 +80,7 @@ $(document).ready(() => {
                     $('#fast-actions').css('display', 'none');
                     $('#tableBody').css('display', 'none');
                     $('#div-not-found').css('display', 'flex');
-                    $('#msg-notFound').text('Nenhum aluno cadastrado');
+                    $('#msg-notFound').text('Nenhum aluno Encaminhado');
                 }
                 else {
                     $('#cbx-ciclos').text('');
@@ -178,11 +178,13 @@ $(document).ready(() => {
             },
             type: 'POST',
             success: function (msg) {
+            console.log(msg)
+
                 if(msg == 'Not found') {
                     $('#fast-actions').css('display', 'none');
                     $('#tableBody').css('display', 'none');
                     $('#div-not-found').css('display', 'flex');
-                    $('#msg-notFound').text('Nenhum aluno cadastrado');
+                    $('#msg-notFound').text('Nenhum aluno Encaminhado');
                 }
                 else {
                     $('#lds').css('display', 'none');
