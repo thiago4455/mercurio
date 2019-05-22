@@ -84,7 +84,7 @@
                         </div>
                         <img src="../assets/img/encaminhados-min.png" alt="Alunos Encaminhados">
                     </div>
-                    <a style="background: #009688a8"  href="alunos.php" class="card-bottom" data-value="nav-alunos">VEJA MAIS</a>
+                    <a style="background: #009688a8"  href="encaminhados.php" class="card-bottom" data-value="nav-encaminhados">VEJA MAIS</a>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">

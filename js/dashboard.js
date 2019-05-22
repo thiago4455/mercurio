@@ -9,7 +9,6 @@ $(document).ready(function () {
         type: 'GET',
         dataType: 'json',
         success: function (msg) {
-            console.log(msg)
             $('#info-ciclos').text(msg[0].length)
             $('#info-alunosCadastrados').text(msg[1].length)
             $('#info-funcCadastrados').text(msg[2].length)

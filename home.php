@@ -69,7 +69,7 @@
                 echo $_SESSION['tipoLog']=='admin'?'<div id="nav-ciclos" class="item-nav"><i class="fas fa-redo"></i><p class="item-text">Ciclos</p></div>':'';
             ?>
             <div id="nav-alunos" class="item-nav"><i class="fas fa-users"></i><p class="item-text">Alunos</p></div>
-            <div id="nav-encaminhados" class="item-nav"><i class="fas fa-users"></i><p class="item-text">Encaminhados</p></div>
+            <div id="nav-encaminhados" class="item-nav"><i class="fas fa-address-card"></i><p class="item-text">Encaminhados</p></div>
             <div id="nav-empresas" class="item-nav"><i class="fas fa-building"></i><p class="item-text">Empresas</p></div>
             <div id="nav-funcionarios" class="item-nav"><i class="fas fa-users-cog"></i><p class="item-text">Funcionários</p></div>
             <div id="nav-relatorios" class="item-nav"><i class="fas fa-list-alt"></i><p class="item-text">Relatórios</p></div>
