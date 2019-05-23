@@ -50,12 +50,6 @@
                     <label for="ipt-email">Email de Acesso</label>
                     <input type="email" class="form-control" id="ipt-email" placeholder="Digite o email do funcionário" maxlength="60" autocomplete="off" required>
                 </div>
-                <div class="form-group col-12 col-md-6">
-                    <label for="ipt-senha">Senha de Acesso</label>
-                    <input type="text" class="form-control" id="ipt-senha" placeholder="Digite a senha do funcionário" maxlength="20" autocomplete="off" required>
-                </div>
-            </div>
-            <div class="form-row">
                 <div class="form-group col-12 col-md-12">
                     <label for="ipt-telefone">Telefone</label>
                     <input type="text" class="form-control" id="ipt-telefone" placeholder="Digite o telefone do funcionário" maxlength="15" autocomplete="off" required>
@@ -104,8 +98,24 @@
                 <button type="button" id="btn-editar" class="btn btn-success">Salvar alterações</button>
             </div>
         </div>
-        
-
+        <hr>
+        <h1>Mudar senha</h1>
+        <div class="form">
+        <div class="form-row">
+                <div class="form-group col-12 col-md-6">
+                    <label for="ipt-senha">Digite a nova senha</label>
+                    <input type="password" class="form-control" id="ipt-senha" placeholder="Digite a nova senha" maxlength="20" autocomplete="off" required>
+                </div>
+        </div>
+        <div class="form-row" style>
+            <div id="alert-error-mudar-senha" style="align-items: center; padding: 10px 30px; display: none" class="alert alert-modal alert-danger col-12" role="alert">
+                <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg-mudar-senha"></h6>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="btn-mudar-senha" class="btn btn-success">Mudar Senha</button>
+        </div>
+        </div>
     </div>
 
     <script
@@ -135,7 +145,6 @@
                     $('#ipt-nome').val(msg[0].nomeFunc);
                     $('#ipt-cpf').val(msg[0].cpfFunc);
                     $('#ipt-email').val(msg[0].emailFunc);
-                    $('#ipt-senha').val(msg[0].senhaFunc);
                     $('#ipt-telefone').val(msg[0].telefoneFunc);
                     $('#ipt-cep').val(msg[0].cepFunc);
                     $('#ipt-endereco').val(msg[0].ruaFunc);

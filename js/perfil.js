@@ -65,7 +65,6 @@ $(document).ready(() => {
         var nome = $('#ipt-nome').val();
         var cpf = $('#ipt-cpf').val();
         var email = $('#ipt-email').val();
-        var senha = $('#ipt-senha').val();
         var telefone = $('#ipt-telefone').val();
         var cep = $('#ipt-cep').val();
         var endereco = $('#ipt-endereco').val();
@@ -73,16 +72,16 @@ $(document).ready(() => {
         var bairro = $('#ipt-bairro').val();
         var cidade = $('#ipt-cidade').val();
         var estado = $('#ipt-estado').val();
-        var tipoFunc = $('#ipt-tipoFunc').val();
-
         $('#btn-editar').text('Editando...');
         $('#btn-editar').prop('disabled', true);
-        if (!nome || !cpf || !email || !senha || !telefone || !cep || !endereco || !numero || !bairro || !cidade || !estado) {
+        if (!nome || !cpf || !email || !telefone || !cep || !endereco || !numero || !bairro || !cidade || !estado) {
+            console.log('erro');
             $('#alert-error').css('display', 'flex');
             $('#error-msg').text('Preencha todos os campos e tente novamente');
             $('#btn-editar').text('Salvar alterações');
             $('#btn-editar').prop('disabled', false);
         }else{
+            console.log('nao');
             $('#alert-error').css('display', 'none');
             $('#error-msg').text('');
 
@@ -93,7 +92,6 @@ $(document).ready(() => {
                     'nome': nome,
                     'cpf': cpf,
                     'email': email,
-                    'senha': senha,
                     'telefone': telefone,
                     'cep': cep,
                     'endereco': endereco,
@@ -111,6 +109,36 @@ $(document).ready(() => {
                 }
         })
     }
-    })
+    });
+
+    $('#btn-mudar-senha').click(function () {
+        console.log('teste'); 
+        var senha = $('#ipt-senha').val();
+        $('#btn-mudar-senha').text('Alterando...');
+        $('#btn-mudar-senha').prop('disabled', true);
+        if (!senha) {
+            $('#alert-error-mudar-senha').css('display', 'flex');
+            $('#error-msg-mudar-senha').text('Preencha todos os campos e tente novamente');
+            $('#btn-mudar-senha').text('Mudar Senha');
+            $('#btn-mudar-senha').prop('disabled', false);
+        }else{
+            $('#alert-error-mudar-senha').css('display', 'none');
+            $('#error-msg-mudar-senha').text('');
+
+            $.ajax({
+                url: '../controllers/mudarSenha.php',
+                dataType: 'json',
+                data: {
+                    'senha': senha
+                },
+                type: 'POST',success: function (msg) {
+                    parent.location.reload()
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+        })
+    }
+    });
 })
 
