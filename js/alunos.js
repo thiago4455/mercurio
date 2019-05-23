@@ -48,7 +48,6 @@ $(document).ready(() => {
                 'codTurma': $('#codTurma').val(),
                 'status': $('#status').val(),
                 'ciclo': $('#cbx-ciclos').val(),
-                'encaminhado': $('#mostrar-encaminhados').is(":checked")?'1':'',
             },
             type: 'POST',
             dataType: 'json',
@@ -109,8 +108,6 @@ $(document).ready(() => {
     $('#cbx-ciclos').on('change', (() => {
         ListarPorCiclo($('#cbx-ciclos').val())
     }));
-
-    $('#mostrar-encaminhados').on('change', Listar)
 
     $(document).on('change', '#check-todos', function () {
         if (this.checked) {
@@ -202,7 +199,6 @@ $(document).ready(() => {
             dataType: 'json',
             data: {
                 'ciclo': ciclo,
-                'encaminhado': $('#mostrar-encaminhados').is(":checked")?'1':'',
             },
             type: 'POST',
             success: function (msg) {
@@ -234,7 +230,6 @@ $(document).ready(() => {
             data: {
                 'nome': $('#inputSearch').val(),
                 'ciclo': $('#cbx-ciclos').val(),
-                'encaminhado': $('#mostrar-encaminhados').is(":checked")?'1':'',
             },
             type: 'POST',
             success: function (msg) {

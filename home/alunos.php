@@ -220,10 +220,6 @@
         </select>
         <button id="btn-encaminhar" type="button" class="btn btn-success" href="#" <?php echo $_SESSION['tipoLog']!='admin'?'disabled':'';?>>Encaminhar Selecionados</button>
     </div>
-    <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="mostrar-encaminhados">
-        <label class="custom-control-label" for="mostrar-encaminhados">Mostrar Encaminhados</label>
-    </div>
 
     <div class="table-responsive">
         <table id='tableBody' class="table">
