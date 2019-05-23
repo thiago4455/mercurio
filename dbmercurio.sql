@@ -76,6 +76,11 @@ CREATE TABLE Encaminhados(
     tipoContrato VARCHAR(30)
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
+CREATE TABLE Recuperar(
+    email VARCHAR(60) UNIQUE,
+    codigo VARCHAR(6)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
 CREATE TABLE Necessidade(
     codEmpresa VARCHAR(6) NOT NULL,
     FOREIGN KEY (codEmpresa)

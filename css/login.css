@@ -80,7 +80,7 @@ body {
     margin: 10px 0;
 }
 
-#btn-recuperar {
+#btn-recuperar,#btn-alterar-senha {
     background: #D85252;
 }
 
