@@ -68,41 +68,6 @@ body {
         font-size: 1.1rem;
     }
 
-    .drop-menu {
-        background: #D85252d7;
-        border-radius: 5px;
-        margin: 5px 20px;
-        color: #fff;
-    }
-
-    .item-nav-drop {
-        width: 100%;
-        min-height: 48px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        cursor: pointer;
-        font-family: 'Google-Bold';
-        font-size: .9rem;
-        color: #fff;
-    }
-
-    .item-nav-drop i {
-        width: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-        height: 100%;
-    }
-
-    .item-nav-drop p {
-        display: flex;
-        padding-left: 20px;
-        flex: 1;
-        margin-bottom: 0;
-    }
-
     #nav-menu-cel {
         display: none
     }
