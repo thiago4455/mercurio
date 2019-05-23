@@ -315,7 +315,7 @@
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Pedro Bernardes</h4>
-                  <span>Scrum Team - DBA/span>
+                  <span>Scrum Team - DBA</span>
                   <div class="social">
                   <a href="https://github.com/vidisummann" target="_blank"><i class="fa fa-github"></i></a>
                   </div>
