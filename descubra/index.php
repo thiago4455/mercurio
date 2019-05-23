@@ -91,7 +91,7 @@
 
           <div class="col-lg-5 col-md-6">
             <div class="about-img">
-              <img src="descubra/img/about-img.jpg" alt="">
+              <img src="descubra/img/home2.svg" alt="">
             </div>
           </div>
 
@@ -283,7 +283,7 @@
                   <h4>Yuri Vitor</h4>
                   <span>Scrum Team</span>
                   <div class="social">
-                  <a href="https://github.com/GuilhermeReis9876" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="https://github.com/GuilhermeReis9876" target="_blank"><i class="fa fa-github"></i></a>
                     <a href="https://www.instagram.com/yurivitor_cf/?hl=pt-br" target="_blank"><i class="fa fa-instagram"></i></a>
                     <a href="https://github.com/yurivitorcf" target="_blank"><i class="fa fa-linkedin"></i></a>
                   </div>
@@ -315,8 +315,8 @@
               <img src="descubra/img/team-4.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
+                  <h4>Pedro Bernardes</h4>
+                  <span>Scrum Team - DBA</span>
                   <div class="social">
                     <a href=""><i class="fa fa-twitter"></i></a>
                     <a href=""><i class="fa fa-facebook"></i></a>
