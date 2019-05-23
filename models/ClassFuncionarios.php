@@ -123,7 +123,7 @@ class ClassFuncionarios {
 
     public function VerificarDuplicidade($objCadastro) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
 
         $cpf = $objCadastro->getCpf();
         $email = $objCadastro->getEmail();
@@ -155,7 +155,7 @@ class ClassFuncionarios {
 
     public function EditarFuncionario($objCadastro){
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
 
         # MySQL UTF-8
         $objConexao->executarComandoSQL("SET NAMES 'utf8'");
@@ -189,7 +189,7 @@ class ClassFuncionarios {
 
     public function CadastrarFuncionario($objCadastro) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
 
        # MySQL UTF-8
        $objConexao->executarComandoSQL("SET NAMES 'utf8'");
@@ -222,7 +222,7 @@ class ClassFuncionarios {
 
     public function RetFuncionarios() {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
         # MySQL UTF-8
         $objConexao->executarComandoSQL("SET NAMES 'utf8'");
         $objConexao->executarComandoSQL('SET character_set_connection=utf8');
@@ -245,7 +245,7 @@ class ClassFuncionarios {
 
     public function RetornarPerfil($objPerfil) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
         # MySQL UTF-8
         $objConexao->executarComandoSQL("SET NAMES 'utf8'");
         $objConexao->executarComandoSQL('SET character_set_connection=utf8');
@@ -271,7 +271,7 @@ class ClassFuncionarios {
 
     public function BuscaFuncionarios($busca) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');

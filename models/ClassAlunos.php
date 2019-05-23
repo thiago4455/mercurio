@@ -135,7 +135,7 @@ class ClassAlunos {
 
     public function RetAlunos($ciclo, $encaminhado) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
@@ -160,7 +160,7 @@ class ClassAlunos {
     public function RetEncaminhados($ciclo){
 
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
@@ -183,7 +183,7 @@ class ClassAlunos {
 
     public function RetCiclos() {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
@@ -207,7 +207,7 @@ class ClassAlunos {
 
     public function BuscaAlunos($busca, $semestre, $encaminhado) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
@@ -230,7 +230,7 @@ class ClassAlunos {
     
     public function BuscaEncaminhados($busca, $semestre) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
@@ -251,7 +251,7 @@ class ClassAlunos {
     }
     public function MudarStatus($ra, $status){
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
@@ -269,7 +269,7 @@ class ClassAlunos {
 
     public function BuscaAvancada($objAlunos, $encaminhado) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');
@@ -321,7 +321,7 @@ class ClassAlunos {
 
     public function BuscaAvancadaEncaminhados($objAlunos) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
                 # MySQL UTF-8
                 $objConexao->executarComandoSQL("SET NAMES 'utf8'");
                 $objConexao->executarComandoSQL('SET character_set_connection=utf8');

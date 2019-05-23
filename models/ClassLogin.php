@@ -22,7 +22,7 @@ class ClassLogin {
 
     public function Login($objLogin) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
 
         # MySQL UTF-8
         $objConexao->executarComandoSQL("SET NAMES 'utf8'");
@@ -49,7 +49,7 @@ class ClassLogin {
 
     public function RecuperarSenha($objRecuperar) {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
 
         # MySQL UTF-8
         $objConexao->executarComandoSQL("SET NAMES 'utf8'");

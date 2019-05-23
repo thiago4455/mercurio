@@ -40,7 +40,7 @@ class ClassCadastro {
 
     public function VerificarEmailOrCpf($objCadastro) {
         require_once('class/ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "", "dbwifi");
+        $objConexao = new ConexaoClass();
 
         $email = $objCadastro->getEmail();
         $cpf = $objCadastro->getCpf();
@@ -57,7 +57,7 @@ class ClassCadastro {
 
     public function Cadastrar($objCadastro) {
         require_once('class/ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "", "dbwifi");
+        $objConexao = new ConexaoClass();
 
         $nome = $objCadastro->getNome();
         $email = $objCadastro->getEmail();

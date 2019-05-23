@@ -3,7 +3,7 @@ class ClassDashboard {
 
     public function ListarItens() {
         require_once('ConexaoClass.php');
-        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+        $objConexao = new ConexaoClass();
 
         # MySQL UTF-8
         $objConexao->executarComandoSQL("SET NAMES 'utf8'");
