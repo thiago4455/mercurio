@@ -13,7 +13,8 @@ body {
     background: #fff;
     margin-left: 0;
     margin-bottom: 30px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
 }
 
 .card-body {
@@ -52,6 +53,8 @@ body {
     height: 50px;
     color: #fff;
     padding: 0 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .card-bottom:hover {
@@ -132,6 +135,9 @@ body {
         background: #333;
         color: #fff;
         padding: 0;
+        border-radius: 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
         writing-mode: vertical-rl;
     }
 }
