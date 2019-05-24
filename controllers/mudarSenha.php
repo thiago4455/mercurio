@@ -3,7 +3,7 @@
     session_start();
 
     $idLog = ($_SESSION['idLog']);
-    $senha = ($_SESSION['senha']);
+    $senha = ($_POST['senha']);
 
     require_once('../models/ClassFuncionarios.php');
     $objFuncionarios = new ClassFuncionarios();

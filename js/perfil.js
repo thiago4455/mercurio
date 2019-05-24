@@ -112,7 +112,6 @@ $(document).ready(() => {
     });
 
     $('#btn-mudar-senha').click(function () {
-        console.log('teste'); 
         var senha = $('#ipt-senha').val();
         $('#btn-mudar-senha').text('Alterando...');
         $('#btn-mudar-senha').prop('disabled', true);
@@ -129,7 +128,7 @@ $(document).ready(() => {
                 url: '../controllers/mudarSenha.php',
                 dataType: 'json',
                 data: {
-                    'senha': senha
+                    'senha': senha,
                 },
                 type: 'POST',success: function (msg) {
                     parent.location.reload()
