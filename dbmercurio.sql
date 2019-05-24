@@ -91,4 +91,17 @@ CREATE TABLE Necessidade(
     descricao TEXT
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
+CREATE TABLE Historico(
+    alunoRa VARCHAR(10),
+    FOREIGN KEY (alunoRa)
+    REFERENCES Alunos(Ra),
+    empresaCod VARCHAR(6),
+    FOREIGN KEY (empresaCod)
+    REFERENCES Empresas(codEmpresa),
+    funcionarioId INT,
+    FOREIGN KEY (funcionarioCod)
+    REFERENCES Funcionarios(idFunc),
+    descricao VARCHAR(100)
+)CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
 INSERT INTO `Funcionarios` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`, `telefoneFunc`, `cepFunc`, `ruaFunc`, `numeroFunc`, `bairroFunc`, `cidadeFunc`, `estadoFunc`, `tipoFunc`) VALUES ('1', 'Admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', '000.000.000-00', '(00) 00000-0000', '00000-000', 'Rua X', '0', 'Bairro X', 'Cidade X', '00', 'admin');

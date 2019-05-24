@@ -238,6 +238,15 @@ $(document).ready(() => {
         });
     })
 
+    $('#ipt-statusSelecionado').change(function(){
+        if($('#ipt-statusSelecionado').prop('selectedIndex') == 2){
+            $('#motivo-reprovado').css('display','flex')
+        }
+        else{
+            $('#motivo-reprovado').css('display','none')
+        }
+    })
+
     $('#btn-mudar-status').click(function () {
         if (alunosSelecionados == "") {
             $('#modal-erro').modal('show');
@@ -247,6 +256,10 @@ $(document).ready(() => {
             $('#modal-mudar-status').modal('show')
             $('#btn-mudar-status-model').text('Buscando Alunos...')
             $('#btn-mudar-status-model').prop('disabled', true)
+            $('#ipt-statusSelecionado').prop('selectedIndex', 0);
+            $('#motivo-reprovado').css('display','none')
+            $('#alert-error-motivo-reprovado').css('display','none')
+            $('#alert-modal-success-alterar').css('display','none');
             $.ajax({
                 url: '../controllers/listarSelecionados.php',
                 data: {
@@ -275,26 +288,34 @@ $(document).ready(() => {
 
     $('#btn-mudar-status-model').click(function () {
         var status = $('#ipt-statusSelecionado').val();
-
-        $('#btn-mudar-status-model').text('Mudando status...')
-        $('#btn-mudar-status-model').prop('disabled', true)
-        $.ajax({
-            url: '../controllers/mudarStatus.php',
-            dataType: 'json',
-            data: {
-                'ra': alunosSelecionados.join(),
-                'status': $('#ipt-statusSelecionado').val(),
-            },
-            type: 'POST',
-            success: function (msg) {
-                console.log(msg)
-                //Mensagem de sucesso
-            },
-            error: function (err) { 
-                console.log(msg)
-                //Mensagem de erro
-            }
-        });
+        var reprovado = ($('#ipt-statusSelecionado').prop('selectedIndex') == 2)?$('#ipt-reprovacao').val():'';
+        $('#alert-error-motivo-reprovado').css('display','none')
+        $('#alert-modal-success-alterar').css('display','none');
+        if(reprovado == '' && ($('#ipt-statusSelecionado').prop('selectedIndex') == 2)){
+            $('#alert-error-motivo-reprovado').css('display','block')
+        }
+        else{
+            $('#btn-mudar-status-model').text('Mudando status...')
+            $('#btn-mudar-status-model').prop('disabled', true)
+            $.ajax({
+                url: '../controllers/mudarStatus.php',
+                dataType: 'json',
+                data: {
+                    'ra': alunosSelecionados.join(),
+                    'status': $('#ipt-statusSelecionado').val(),
+                    'reprovado': reprovado,
+                },
+                type: 'POST',
+                success: function (msg) {
+                    $('#btn-mudar-status-model').text('Mudar Status');
+                    $('#alert-modal-success-alterar').css('display','block');
+                    Listar();
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
     })
 
     $('#btn-erro-cadastarEmpresa').click(() => {

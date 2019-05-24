@@ -90,6 +90,20 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-row" id="motivo-reprovado">
+                        <div class="form-group col-12">
+                            <label for="ipt-reprovacao">Escreva o motivo da reprovação</label>
+                            <input type="text" class="input-login form-control" id="ipt-reprovacao" placeholder="Motivo da reprovação" autocomplete="off" maxlength="100"/>
+                        </div>
+                        <div class="form-row" style>
+                            <div id="alert-error-motivo-reprovado" style="align-items: center; padding: 10px 30px; display: none" class="alert alert-modal alert-danger col-12" role="alert">
+                                <span style="font-weight: 600">Preencha todos os campos!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg-mudar-senha"></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="alert-modal-success-alterar" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-success col-12" role="alert">
+                        <span style="font-weight: 600">Sucesso!</span>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

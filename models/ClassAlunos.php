@@ -247,7 +247,7 @@ class ClassAlunos {
             return "Problem System";
         }
     }
-    public function MudarStatus($ra, $status){
+    public function MudarStatus($ra, $status, $reprovado, $idFunc){
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass();
                 # MySQL UTF-8
@@ -258,6 +258,14 @@ class ClassAlunos {
         try {
 
             $query = "UPDATE Encaminhados SET `Status` = '$status' WHERE Alunos_ra IN ($ra)";
+            $ras = explode(',',$ra);
+            if($reprovado != ''){
+                $query2 = "INSERT INTO Historico(alunoRa,empresaCod,funcionarioId,descricao) VALUES ";
+                for ($i = 0; $i < count($ras); $i++){
+                    $query2 .= ("('" . $ras[$i] . "',(SELECT Empresas_codEmpresa FROM Encaminhados WHERE Alunos_ra = '" . $ras[$i] . "'),$idFunc,'$reprovado')". (($i < (count($ras)-1))?",":";"));
+                }
+                $objConexao->executarComandoSQL($query2);
+            }
             return $objConexao->executarComandoSQL($query);
         }
         catch(Exception $err) {
