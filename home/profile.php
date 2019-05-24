@@ -31,6 +31,20 @@
     <div id="main">
         <h1 id="title-main">Meu Perfil</h1>
         <div class="form">
+            <h1>Alterar Senha</h1>
+            <hr>
+            <div class="form-row">
+                <div class="form-group col-12 col-md-6">
+                    <label for="ipt-senha">Digite a nova senha</label>
+                    <input type="text" class="form-control" id="ipt-senha" placeholder="Digite a nova senha" maxlength="20" autocomplete="off" required>
+                    <button type="button" id="btn-mudar-senha" class="btn btn-success" style="margin: 15px 0 0; display: flex">Alterar Senha</button>
+                </div>
+            </div>
+            <div class="form-row" style>
+                <div id="alert-error-mudar-senha" style="align-items: center; padding: 10px 30px; display: none" class="alert alert-modal alert-danger col-12" role="alert">
+                    <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg-mudar-senha"></h6>
+                </div>
+            </div>
             <h1>Dados Pessoais</h1>
             <hr>
             <div class="form-row">
@@ -50,7 +64,7 @@
                     <label for="ipt-email">Email de Acesso</label>
                     <input type="email" class="form-control" id="ipt-email" placeholder="Digite o email do funcionário" maxlength="60" autocomplete="off" required>
                 </div>
-                <div class="form-group col-12 col-md-12">
+                <div class="form-group col-12 col-md-6">
                     <label for="ipt-telefone">Telefone</label>
                     <input type="text" class="form-control" id="ipt-telefone" placeholder="Digite o telefone do funcionário" maxlength="15" autocomplete="off" required>
                 </div>
@@ -97,25 +111,7 @@
             <div class="modal-footer">
                 <button type="button" id="btn-editar" class="btn btn-success">Salvar alterações</button>
             </div>
-        </div>
-        <hr>
-        <h1>Mudar senha</h1>
-        <div class="form">
-        <div class="form-row">
-                <div class="form-group col-12 col-md-6">
-                    <label for="ipt-senha">Digite a nova senha</label>
-                    <input type="password" class="form-control" id="ipt-senha" placeholder="Digite a nova senha" maxlength="20" autocomplete="off" required>
-                </div>
-        </div>
-        <div class="form-row" style>
-            <div id="alert-error-mudar-senha" style="align-items: center; padding: 10px 30px; display: none" class="alert alert-modal alert-danger col-12" role="alert">
-                <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg-mudar-senha"></h6>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" id="btn-mudar-senha" class="btn btn-success">Mudar Senha</button>
-        </div>
-        </div>
+        </div>        
     </div>
 
     <script

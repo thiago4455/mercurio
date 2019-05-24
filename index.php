@@ -32,7 +32,6 @@
         if(isset($_SESSION['idLog'])) {
             header('Location: home.php');
         }
-        
     ?>
 
 

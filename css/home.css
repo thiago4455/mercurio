@@ -119,6 +119,7 @@ body {
         flex-direction: column;
         background: #fff;
         transition: .5s ease-in;
+        padding: 0 0 100px 0;
     }
 
     .nav-lat-active {
