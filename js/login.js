@@ -215,7 +215,9 @@ $(document).ready(function () {
                 }
             },
             error: function (err) {
-                
+                    document.getElementById('alert-error').style.display = 'flex'; document.getElementById('error-msg').innerHTML = err;
+                    $('#btn-login').text('Logar');
+                    $('#btn-login').removeAttr('disabled');
             }
 
         });

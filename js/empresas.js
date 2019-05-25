@@ -310,6 +310,97 @@ $(document).ready(() => {
         })
     
     }
+
+    $('#ipt-cnpj').blur(function() {
+        if($('#ipt-cnpj').val() != "") {
+            cnpj = $("#ipt-cnpj").val().replace(/[^\d]+/g,'')
+
+            $('#ipt-nomeFantasia').val('Aguarde...')
+            $('#ipt-razaoSocial').val('Aguarde...')
+            $('#ipt-telefone').val('Aguarde...')
+            $.ajax({
+                url: 'https://www.receitaws.com.br/v1/cnpj/' + cnpj,
+                method: 'GET',
+                dataType: 'jsonp',
+                success: function(msg) {
+                    console.log(msg)
+                    if(msg.status != 'ERROR') {
+                        $('#ipt-nomeFantasia').val(msg.fantasia)
+                        $('#ipt-razaoSocial').val(msg.nome)
+                        $('#ipt-telefone').val(msg.telefone)
+                        $('#ipt-email').val(msg.email)
+                        $('#cnpj-error').text('');
+                        $('#cnpj-error').css('display', 'none');
+                    }
+                    else {
+                        $('#ipt-nomeFantasia').val('')
+                        $('#ipt-razaoSocial').val('')
+                        $('#ipt-telefone').val('')
+                        $('#ipt-email').val('')
+                        $('#cnpj-error').text('Cnpj não encontrado!');
+                        $('#cnpj-error').css('display', 'flex');
+                    }
+                    
+                },
+                error: function(err) {
+                    $('#ipt-nomeFantasia').val('')
+                    $('#ipt-razaoSocial').val('')
+                    $('#ipt-telefone').val('')
+                    $('#ipt-email').val('')
+                    $('#cnpj-error').text('Cnpj não encontrado!');
+                    $('#cnpj-error').css('display', 'flex');
+                }
+            })
+        }
+        else
+            return
+     })
+
+
+     $('#ipt-cnpj-editar').blur(function() {
+        if($('#ipt-cnpj-editar').val() != "") {
+            cnpj = $("#ipt-cnpj-editar").val().replace(/[^\d]+/g,'')
+
+            $('#ipt-nomeFantasia-editar').val('Aguarde...')
+            $('#ipt-razaoSocial-editar').val('Aguarde...')
+            $('#ipt-telefone-editar').val('Aguarde...')
+            $.ajax({
+                url: 'https://www.receitaws.com.br/v1/cnpj/' + cnpj,
+                method: 'GET',
+                dataType: 'jsonp',
+                success: function(msg) {
+                    console.log(msg)
+                    if(msg.status != 'ERROR') {
+                        $('#ipt-nomeFantasia-editar').val(msg.fantasia)
+                        $('#ipt-razaoSocial-editar').val(msg.nome)
+                        $('#ipt-telefone-editar').val(msg.telefone)
+                        $('#ipt-email').val(msg.email)
+                        $('#cnpj-error-editar').text('');
+                        $('#cnpj-error-editar').css('display', 'none');
+                    }
+                    else {
+                        $('#ipt-nomeFantasia-editar').val('')
+                        $('#ipt-razaoSocial-editar').val('')
+                        $('#ipt-telefone-editar').val('')
+                        $('#ipt-email').val('')
+                        $('#cnpj-error-editar').text('Cnpj não encontrado!');
+                        $('#cnpj-error-editar').css('display', 'flex');
+                    }
+                    
+                },
+                error: function(err) {
+                    $('#ipt-nomeFantasia-editar').val('')
+                    $('#ipt-razaoSocial-editar').val('')
+                    $('#ipt-telefone-editar').val('')
+                    $('#ipt-email').val('')
+                    $('#cnpj-error-editar').text('Cnpj não encontrado!');
+                    $('#cnpj-error-editar').css('display', 'flex');
+                }
+            })
+        }
+        else
+            return
+     })
   
     $("#ipt-cep").keyup(function () {
 

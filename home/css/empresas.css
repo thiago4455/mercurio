@@ -65,7 +65,7 @@ body {
 
 .form-control {
     height: 45px;
-    background: #eee;
+    background: #fdfdfd;
 }
 
 #alert-error {
@@ -173,6 +173,20 @@ td button {
 
 .table td, .table th {
   vertical-align: middle !important;
+}
+
+#cnpj-error {
+  padding: 0 5px;
+  color: red;
+  margin: 5px 0 0;
+  display: none;
+}
+
+#cnpj-error-editar {
+  padding: 0 5px;
+  color: red;
+  margin: 5px 0 0;
+  display: none;
 }
 
 
