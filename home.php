@@ -43,7 +43,7 @@
             <i class="fas fa-bars"></i>
         </div>
         <div id="nav-logo">
-            <img src="assets/img/logo_grande.jpg" alt="Logo Senai">
+            <h1>MERCURIO</h1>
         </div>
         <div id="nav-log-info">
             <h1>Logado como: </h1>

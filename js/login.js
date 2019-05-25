@@ -8,7 +8,7 @@ $(window).on('load', () => {
 })
 $(document).ready(function () {
     $('#nav-logo').click(() => {
-        window.location.href = 'index.php'
+        window.location.href = '../mercurio'
     })
 
     document.onkeydown = function (evt) {

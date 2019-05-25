@@ -34,9 +34,11 @@
     cursor: pointer;
 }
 
-#nav-logo img {
-    width: 160px;
-    height: 45px;
+#nav-logo h1 {
+    color: #D85252;
+    margin: 0;
+    font-size: 2rem;
+    font-family: 'Mont-Reg';
 }
 
 #nav-list {

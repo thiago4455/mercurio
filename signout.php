@@ -37,7 +37,7 @@
     <!-- Navbars -->
     <div id="nav">
         <div id="nav-logo">
-            <img src="assets/img/logo_grande.jpg" alt="Logo Senai">
+            <h1>MERCURIO</h1>
         </div>
     </div>
 

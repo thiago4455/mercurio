@@ -37,7 +37,7 @@
 
     <!-- Loading Page -->
     <div id="page-load">
-		<h1>Senai</h1>
+		<h1>MERCURIO</h1>
 		<div class="lds-ellipsis">
 			<div></div>
 			<div></div>
@@ -50,7 +50,7 @@
     <!-- Navbars -->
     <div id="nav">
         <div id="nav-logo">
-            <img src="assets/img/logo_grande.jpg" alt="Logo Senai">
+            <h1>MERCURIO</h1>
         </div>
     </div>
 
