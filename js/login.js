@@ -198,15 +198,18 @@ $(document).ready(function () {
             type: 'POST',
             dataType: 'json',
             success: function (msg) {
-                $('#btn-login').text('Logar');
-                $('#btn-login').removeAttr('disabled');
-
                 if (msg == 'Fill all inputs') {
                     document.getElementById('alert-error').style.display = 'flex'; document.getElementById('error-msg').innerHTML = 'Preencha todos os campos'
+                    $('#btn-login').text('Logar');
+                    $('#btn-login').removeAttr('disabled');
                 } else if (msg == 'Incorrect login') {
                     document.getElementById('alert-error').style.display = 'flex'; document.getElementById('error-msg').innerHTML = 'Usuário ou senha incorretos'
+                    $('#btn-login').text('Logar');
+                    $('#btn-login').removeAttr('disabled');
                 } else if (msg == 'Problem System') {
                     document.getElementById('alert-error').style.display = 'flex'; document.getElementById('error-msg').innerHTML = 'Problema no servidor. Contate o administrador'
+                    $('#btn-login').text('Logar');
+                    $('#btn-login').removeAttr('disabled');
                 } else if (msg == 'Success') {
                     window.location.href = 'home.php'
                 }
