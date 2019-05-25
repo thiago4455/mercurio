@@ -53,7 +53,7 @@ hr {
 
 .form-control {
     height: 42px;
-    background: #eee;
+    background: #fdfdfd;
 }
 
 @media(max-width: 600px) {

@@ -37,6 +37,13 @@
                     <div class="modal-body" style="padding: 15px 20px">
                         <div class="form-row">
                             <div class="form-group col-12">
+                                <label for="ipt-cnpj">CNPJ</label>
+                                <input type="text" class="form-control" id="ipt-cnpj" placeholder="Digite o cnpj da empresa" maxlength="18" autocomplete="off" required>
+                                <span id="cnpj-error"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12">
                                 <label for="ipt-nomeFantasia">Nome Fantasia</label>
                                 <input type="text" class="form-control" id="ipt-nomeFantasia" placeholder="Digite o nome Fantasia da Empresa" maxlength="100" autocomplete="off" required>
                             </div>
@@ -45,12 +52,6 @@
                             <div class="form-group col-12">
                                 <label for="ipt-razaoSocial">Razão Social</label>
                                 <input type="text" class="form-control" id="ipt-razaoSocial" placeholder="Digite a Razão Social da Empresa" maxlength="100" autocomplete="off" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="ipt-cnpj">CNPJ</label>
-                                <input type="text" class="form-control" id="ipt-cnpj" placeholder="Digite o cnpj da empresa" maxlength="18" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="form-row">
@@ -135,6 +136,13 @@
                     <div class="modal-body" style="padding: 15px 20px">
                         <div class="form-row">
                             <div class="form-group col-12">
+                                <label for="ipt-cnpj">CNPJ</label>
+                                <input type="text" class="form-control" id="ipt-cnpj-editar" placeholder="Digite o cnpj da empresa" maxlength="18" autocomplete="off" required>
+                                <span id="cnpj-error-editar"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12">
                                 <label for="ipt-nomeFantasia">Nome Fantasia</label>
                                 <input type="text" class="form-control" id="ipt-nomeFantasia-editar" placeholder="Digite o nome Fantasia da Empresa" maxlength="100" autocomplete="off" required>
                             </div>
@@ -145,12 +153,7 @@
                                 <input type="text" class="form-control" id="ipt-razaoSocial-editar" placeholder="Digite a Razão Social da Empresa" maxlength="100" autocomplete="off" required>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-12">
-                                <label for="ipt-cnpj">CNPJ</label>
-                                <input type="text" class="form-control" id="ipt-cnpj-editar" placeholder="Digite o cnpj da empresa" maxlength="18" autocomplete="off" required>
-                            </div>
-                        </div>
+                        
                         <div class="form-row">
                             <div class="form-group col-12 col-md-6">
                                 <label for="ipt-nomeResponsavel">Nome do Responsável</label>
