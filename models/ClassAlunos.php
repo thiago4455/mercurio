@@ -260,9 +260,9 @@ class ClassAlunos {
             $query = "UPDATE Encaminhados SET `Status` = '$status' WHERE Alunos_ra IN ($ra)";
             $ras = explode(',',$ra);
             if($reprovado != ''){
-                $query2 = "INSERT INTO Historico(alunoRa,empresaCod,funcionarioId,descricao) VALUES ";
+                $query2 = "INSERT INTO Historico(alunoRa,empresaCod,funcionarioId,descricao, ciclo) VALUES ";
                 for ($i = 0; $i < count($ras); $i++){
-                    $query2 .= ("('" . $ras[$i] . "',(SELECT Empresas_codEmpresa FROM Encaminhados WHERE Alunos_ra = '" . $ras[$i] . "'),$idFunc,'$reprovado')". (($i < (count($ras)-1))?",":";"));
+                    $query2 .= ("('" . $ras[$i] . "',(SELECT Empresas_codEmpresa FROM Encaminhados WHERE Alunos_ra = '" . $ras[$i] . "'),$idFunc,'$reprovado',(SELECT Semestre FROM Alunos WHERE Ra = '" . $ras[$i] . "'))". (($i < (count($ras)-1))?",":";"));
                 }
                 $objConexao->executarComandoSQL($query2);
             }
