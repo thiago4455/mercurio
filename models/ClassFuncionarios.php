@@ -242,6 +242,7 @@ class ClassFuncionarios {
 
         try {
             $query = $objConexao->executarComandoSQL("UPDATE Funcionarios SET `senhaFunc` = '$senha' WHERE `emailFunc` = '$email';");
+            $queryDeletCode = $objConexao->executarComandoSQL("DELETE FROM `Recuperar` WHERE `email` = '$email';");
             return $query;
         }
         catch(Exception $err) {
@@ -262,9 +263,10 @@ class ClassFuncionarios {
 
         $senha = $objFuncionario->getSenha();
         $idFunc = $objFuncionario->getIdFunc();
+        $email = $objFuncionario->getEmail();
 
         try {
-            $query = $objConexao->executarComandoSQL("UPDATE `Funcionarios` SET `senhaFunc` ='$senha' WHERE `idFUnc` = $idFunc;");
+            $query = $objConexao->executarComandoSQL("UPDATE `Funcionarios` SET `senhaFunc` ='$senha' WHERE `idFunc` = $idFunc;");
             return $query;
             
         }
