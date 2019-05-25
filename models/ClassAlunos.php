@@ -155,6 +155,52 @@ class ClassAlunos {
             return "Problem System";
         }
     }
+    
+    public function RetHistoricos($ciclo) {
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass();
+                # MySQL UTF-8
+                $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+                $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+                $objConexao->executarComandoSQL('SET character_set_client=utf8');
+                $objConexao->executarComandoSQL('SET character_set_results=utf8');        
+        try {
+            $tableAlunos = $objConexao->selecionarDados("SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre AS Status, COUNT(H.alunoRa) AS Reprovacoes FROM Alunos AS A RIGHT JOIN Historico AS H ON (A.Ra = H.alunoRa) WHERE H.ciclo='".$ciclo."' GROUP BY H.alunoRa;");
+
+            if($tableAlunos === "ERRO") {
+                return 'Not found';             
+            }
+            else {
+                return $tableAlunos;
+            }
+        }
+        catch(Exception $err) {
+            return "Problem System";
+        }
+    }
+
+    public function BuscaHistoricoRa($ra){
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass();
+                # MySQL UTF-8
+                $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+                $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+                $objConexao->executarComandoSQL('SET character_set_client=utf8');
+                $objConexao->executarComandoSQL('SET character_set_results=utf8');        
+        try {
+            $tableAlunos = $objConexao->selecionarDados("SELECT A.Ra, A.Nome, H.descricao FROM Alunos AS A RIGHT JOIN Historico AS H ON (A.Ra = H.alunoRa) WHERE H.alunoRa='$ra';");
+
+            if($tableAlunos === "ERRO") {
+                return 'Not found';             
+            }
+            else {
+                return $tableAlunos;
+            }
+        }
+        catch(Exception $err) {
+            return "Problem System";
+        }
+    }
 
     public function RetEncaminhados($ciclo){
 
@@ -203,6 +249,28 @@ class ClassAlunos {
         }
     }
 
+    public function RetCiclosHistorico() {
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass();
+                # MySQL UTF-8
+                $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+                $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+                $objConexao->executarComandoSQL('SET character_set_client=utf8');
+                $objConexao->executarComandoSQL('SET character_set_results=utf8');        
+        try {
+            $tableAlunos = $objConexao->selecionarDados("SELECT DISTINCT(ciclo) FROM Historico");
+
+            if($tableAlunos === "ERRO") {          
+                return 'Not found';             
+            }
+            else {
+                return $tableAlunos;
+            }
+        }
+        catch(Exception $err) {
+            return "Problem System";
+        }
+    }
 
     public function BuscaAlunos($busca, $semestre) {
         require_once('ConexaoClass.php');
