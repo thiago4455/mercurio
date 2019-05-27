@@ -286,7 +286,7 @@ $(document).ready(() => {
                             if (msg == 'ERRO') {
                                 setTimeout(() => {
                                     $('#modal-encaminhar').modal('hide')
-                                }, 250);
+                                }, 500);
                                 $('#modal-erro-empresa').modal('show');
                             } else {
                                 $.each(msg, function (key, value) {
