@@ -365,8 +365,8 @@ class ClassAlunos {
             if($objAlunos->getTelefone()!='') $busca = $busca . " AND ((A.Telefone1 LIKE '%".$objAlunos->getTelefone()."%') OR (A.Telefone2 LIKE '%".$objAlunos->getTelefone()."%') OR (A.TelefonePai LIKE '%".$objAlunos->getTelefone()."%') OR (A.TelefoneMae LIKE '%".$objAlunos->getTelefone()."%'))";   
             if($objAlunos->getIdentidade()!='') $busca = $busca . " AND (A.Identidade LIKE '%".$objAlunos->getIdentidade()."%')";   
             if($objAlunos->getCpf()!='') $busca = $busca . " AND (A.Cpf LIKE '%".$objAlunos->getCpf()."%')";   
-            if($objAlunos->getEmail()!='') $busca = $busca . " AND (A.Email LIKE '%".$objAlunos->getEmail()."%\')";   
-            if($objAlunos->getCarteiraTrabalho()!='') $busca = $busca . " AND (A.CarteiraTrabalho LIKE \'%".$objAlunos->getCarteiraTrabalho()."%\') AND";   
+            if($objAlunos->getEmail()!='') $busca = $busca . " AND (A.Email LIKE '%".$objAlunos->getEmail()."%')";   
+            if($objAlunos->getCarteiraTrabalho()!='') $busca = $busca . " AND (A.CarteiraTrabalho LIKE '%".$objAlunos->getCarteiraTrabalho()."%') AND";   
             if($objAlunos->getNomePai()!='') $busca = $busca . " AND (A.NomePai LIKE '%".$objAlunos->getNomePai()."%')";   
             if($objAlunos->getNomeMae()!='') $busca = $busca . " AND (A.NomeMae LIKE '%".$objAlunos->getNomeMae()."%')"; 
             if($objAlunos->getCodTurma()!='') $busca = $busca . " AND (A.CodTurma LIKE '%".$objAlunos->getCodTurma()."%')"; 
@@ -414,8 +414,8 @@ class ClassAlunos {
             if($objAlunos->getTelefone()!='') $busca = $busca . " AND ((A.Telefone1 LIKE '%".$objAlunos->getTelefone()."%') OR (A.Telefone2 LIKE '%".$objAlunos->getTelefone()."%') OR (A.TelefonePai LIKE '%".$objAlunos->getTelefone()."%') OR (A.TelefoneMae LIKE '%".$objAlunos->getTelefone()."%'))";   
             if($objAlunos->getIdentidade()!='') $busca = $busca . " AND (A.Identidade LIKE '%".$objAlunos->getIdentidade()."%')";   
             if($objAlunos->getCpf()!='') $busca = $busca . " AND (A.Cpf LIKE '%".$objAlunos->getCpf()."%')";   
-            if($objAlunos->getEmail()!='') $busca = $busca . " AND (A.Email LIKE '%".$objAlunos->getEmail()."%\')";   
-            if($objAlunos->getCarteiraTrabalho()!='') $busca = $busca . " AND (A.CarteiraTrabalho LIKE \'%".$objAlunos->getCarteiraTrabalho()."%\') AND";   
+            if($objAlunos->getEmail()!='') $busca = $busca . " AND (A.Email LIKE '%".$objAlunos->getEmail()."%')";   
+            if($objAlunos->getCarteiraTrabalho()!='') $busca = $busca . " AND (A.CarteiraTrabalho LIKE '%".$objAlunos->getCarteiraTrabalho()."%') AND";   
             if($objAlunos->getNomePai()!='') $busca = $busca . " AND (A.NomePai LIKE '%".$objAlunos->getNomePai()."%')";   
             if($objAlunos->getNomeMae()!='') $busca = $busca . " AND (A.NomeMae LIKE '%".$objAlunos->getNomeMae()."%')"; 
             if($objAlunos->getCodTurma()!='') $busca = $busca . " AND (A.CodTurma LIKE '%".$objAlunos->getCodTurma()."%')"; 
