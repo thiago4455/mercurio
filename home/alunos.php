@@ -25,6 +25,128 @@
 
 <body>
 
+    <!-- Modal Editar -->
+    <div class="modal fade modal-visualizar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-family: 'Google-Bold'; font-size: 1.5rem">Editar Empresa</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 15px 20px">
+                        <div class="form-row">
+                            <div class="form-group col-8">
+                                <label for="ipt-nome">Nome</label>
+                                <input disabled type="text" class="form-control" id="ipt-nome" placeholder="Digite o nome Fantasia da Empresa" maxlength="100" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="ipt-ra">RA</label>
+                                <input disabled type="text" class="form-control" id="ipt-ra" placeholder="0000006587" maxlength="100" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-3">
+                                <label for="ipt-cpf">CPF</label>
+                                <input disabled type="text" class="form-control" id="ipt-sexo" placeholder="08744473648" maxlength="100" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-2">
+                                <label for="ipt-dataNasc">Data Nasc</label>
+                                <input disabled type="text" class="form-control" id="ipt-dataNasc" placeholder="13/11/1998" maxlength="100" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-1">
+                                <label for="ipt-idade">Idade</label>
+                                <input disabled type="text" class="form-control" id="ipt-idade" placeholder="18" maxlength="100" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-2">
+                                <label for="ipt-sexo">Sexo</label>
+                                <input disabled type="text" class="form-control" id="ipt-sexo" placeholder="Feminino" maxlength="100" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <label for="ipt-escolaridade">Escolaridade</label>
+                                <input disabled type="text" class="form-control" id="ipt-escolaridade" placeholder="Ensino médio incompleto" maxlength="100" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-4">
+                                <label for="ipt-rua">Rua</label>
+                                <input disabled type="text" class="form-control" id="ipt-rua" placeholder="Vicente Lopes da Rocha" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-2">
+                                <label for="ipt-num">Número</label>
+                                <input disabled type="text" class="form-control" id="ipt-num" placeholder="123" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-3">
+                                <label for="ipt-complemento">Complemento</label>
+                                <input disabled type="text" class="form-control" id="ipt-complemento" placeholder="APT 201 BL 6" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-3">
+                                <label for="ipt-estado">Estado</label>
+                                <input disabled type="text" class="form-control" id="ipt-estado" placeholder="MG" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-4">
+                                <label for="ipt-bairro">Bairro</label>
+                                <input disabled type="text" class="form-control" id="ipt-bairro" placeholder="Vicente Lopes da Rocha" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="ipt-cidade">Cidade</label>
+                                <input disabled type="text" class="form-control" id="ipt-cidade" placeholder="Contagem" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="ipt-cidade">CEP</label>
+                                <input disabled type="text" class="form-control" id="ipt-cidade" placeholder="32371360" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-telefone">Telefone</label>
+                                <input disabled type="text" class="form-control" id="ipt-telefone-editar" placeholder="Digite o telefone da empresa ou responsável" maxlength="15" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-cep">Cep</label>
+                                <input disabled type="text" class="form-control" id="ipt-cep-editar" placeholder="Digite o cep da empresa" maxlength="9" autocomplete="off" required>
+                            </div>  
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-8">
+                                <label for="ipt-endereco">Endereço</label>
+                                <input disabled type="text" class="form-control" id="ipt-endereco-editar" placeholder="Digite o endereço da empresa" maxlength="50" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <label for="ipt-numero">Número</label>
+                                <input disabled type="text" class="form-control" id="ipt-numero-editar" placeholder="Digite o numero da empresa" maxlength="5" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-bairro">Bairro</label>
+                                <input disabled type="text" class="form-control" id="ipt-bairro-editar" placeholder="Digite o bairro da empresa" maxlength="30" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-cidade">Cidade</label>
+                                <input disabled type="text" class="form-control" id="ipt-cidade-editar" placeholder="Digite a cidade da empresa" maxlength="30" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-estado">Estado</label>
+                                <input disabled type="text" class="form-control" id="ipt-estado-editar" placeholder="Digite o estado da empresa" maxlength="2" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-6" style="display:none">
+                                <input disabled style="margin-bottom: 10px" type="text" class="form-control" id="ipt-apelido-editar" placeholder="Digite um apelido para a empresa" maxlength="6" minlength="6" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
     <div id="modal-erro-empresa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog ">
             <div class="modal-content">
