@@ -45,7 +45,7 @@
     $objAlunos->setCodTurma($CodTurma);
     $objAlunos->setStatus($Status);
     $objAlunos->setSemestre($Ciclo);
-    $queryResp = $objAlunos->BuscaAvancada($objAlunos, $encaminhado);
+    $queryResp = $objAlunos->BuscaAvancada($objAlunos);
 
     echo json_encode($queryResp);
 ?>

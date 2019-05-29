@@ -9,6 +9,10 @@ body {
     font-family: 'Google-Reg';
 }
 
+.fa-eye{
+    color:white;
+}
+
 #fast-search {
     width: 95%;
     height: unset;
@@ -103,7 +107,7 @@ body {
     box-shadow: none;
 }
 
-#btn-mudar-status {
+#btn-encaminhar {
     margin: 0 0 0 0;
     height: 50px;
 }
@@ -286,7 +290,7 @@ td button {
         font-size: .9rem;
     }
     
-    #btn-mudar-status {
+    #btn-encaminhar {
         margin: 0;
         height: 45px;
         font-size: .7rem;

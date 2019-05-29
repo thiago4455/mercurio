@@ -9,7 +9,7 @@
         require_once('../models/ClassLogin.php');
         $objLogin = new ClassLogin();
         $objLogin->setEmail($email);
-        $objLogin->setSenha($senha);
+        $objLogin->setSenha(md5($senha));
         $queryResp = $objLogin->Login($objLogin);
 
         if ($queryResp == "Incorrect login") {

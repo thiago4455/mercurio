@@ -167,7 +167,6 @@ class ClassFuncionarios {
         $nome = $objCadastro->getNome();
         $cpf = $objCadastro->getCpf();
         $email = $objCadastro->getEmail();
-        $senha = $objCadastro->getSenha();
         $telefone = $objCadastro->getTelefone();
         $cep = $objCadastro->getCep();
         $endereco = $objCadastro->getEndereco();
@@ -177,10 +176,99 @@ class ClassFuncionarios {
         $estado = $objCadastro->getEstado();
 
         try {
-            $query = $objConexao->executarComandoSQL("UPDATE `Funcionarios` SET `nomeFunc` = '$nome', `cpfFunc` = '$cpf', `emailFunc` = '$email', `senhaFunc` = '$senha', `telefoneFunc` = '$telefone', `cepFunc` = '$cep', `ruaFunc` = '$endereco', `numeroFunc` = '$numero', `bairroFunc` = '$bairro', `cidadeFunc` = '$cidade', `estadoFunc` = '$estado' WHERE `idFunc` = '$idFunc'");
+            $query = $objConexao->executarComandoSQL("UPDATE `Funcionarios` SET `nomeFunc` = '$nome', `cpfFunc` = '$cpf', `emailFunc` = '$email', `telefoneFunc` = '$telefone', `cepFunc` = '$cep', `ruaFunc` = '$endereco', `numeroFunc` = '$numero', `bairroFunc` = '$bairro', `cidadeFunc` = '$cidade', `estadoFunc` = '$estado' WHERE `idFunc` = '$idFunc'");
             if($query){
                 return $query;
             }
+        }
+        catch(Exception $err) {
+            return $err;
+        }
+    }
+
+    public function SalvarCodigo($email,$codigo){
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass();
+
+        # MySQL UTF-8
+        $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+        $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+        $objConexao->executarComandoSQL('SET character_set_client=utf8');
+        $objConexao->executarComandoSQL('SET character_set_results=utf8');
+
+        try {
+            $query = $objConexao->executarComandoSQL("INSERT INTO Recuperar (email, codigo) VALUES ('$email', '$codigo') ON DUPLICATE KEY UPDATE codigo = '$codigo';");
+            return $query;
+        }
+        catch(Exception $err) {
+            return $err;
+        }
+    }
+
+    public function ConferirCodigo($email,$codigo){
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass();
+
+        # MySQL UTF-8
+        $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+        $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+        $objConexao->executarComandoSQL('SET character_set_client=utf8');
+        $objConexao->executarComandoSQL('SET character_set_results=utf8');   
+
+        try {
+            $queryRecuperar = $objConexao->selecionarDados("SELECT * FROM Recuperar WHERE email = '$email' AND codigo = '$codigo'");
+
+            if($queryRecuperar === "ERRO") {          
+                return 'User not exist';             
+            }
+            else {
+                return $queryRecuperar;
+            }
+        }
+        catch(Exception $err) {
+            return "Problem System";
+        }
+    }
+
+    public function RecuperarSenha($email, $senha){
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass();
+
+        # MySQL UTF-8
+        $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+        $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+        $objConexao->executarComandoSQL('SET character_set_client=utf8');
+        $objConexao->executarComandoSQL('SET character_set_results=utf8');
+
+        try {
+            $query = $objConexao->executarComandoSQL("UPDATE Funcionarios SET `senhaFunc` = '$senha' WHERE `emailFunc` = '$email';");
+            $queryDeletCode = $objConexao->executarComandoSQL("DELETE FROM `Recuperar` WHERE `email` = '$email';");
+            return $query;
+        }
+        catch(Exception $err) {
+            return $err;
+        }
+    }
+
+    public function AlterarSenha($objFuncionario){
+
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass();
+
+        # MySQL UTF-8
+        $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+        $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+        $objConexao->executarComandoSQL('SET character_set_client=utf8');
+        $objConexao->executarComandoSQL('SET character_set_results=utf8');
+
+        $senha = $objFuncionario->getSenha();
+        $idFunc = $objFuncionario->getIdFunc();
+        $email = $objFuncionario->getEmail();
+
+        try {
+            $query = $objConexao->executarComandoSQL("UPDATE `Funcionarios` SET `senhaFunc` ='$senha' WHERE `idFunc` = $idFunc;");
+            return $query;
+            
         }
         catch(Exception $err) {
             return $err;
@@ -200,7 +288,7 @@ class ClassFuncionarios {
         $nome = $objCadastro->getNome();
         $cpf = $objCadastro->getCpf();
         $email = $objCadastro->getEmail();
-        $senha = $objCadastro->getSenha();
+        $senha = md5($objCadastro->getSenha());
         $telefone = $objCadastro->getTelefone();
         $cep = $objCadastro->getCep();
         $endereco = $objCadastro->getEndereco();

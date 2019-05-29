@@ -32,13 +32,12 @@
         if(isset($_SESSION['idLog'])) {
             header('Location: home.php');
         }
-        
     ?>
 
 
     <!-- Loading Page -->
     <div id="page-load">
-		<h1>Senai</h1>
+		<h1>MERCURIO</h1>
 		<div class="lds-ellipsis">
 			<div></div>
 			<div></div>
@@ -51,7 +50,7 @@
     <!-- Navbars -->
     <div id="nav">
         <div id="nav-logo">
-            <img src="assets/img/logo_grande.jpg" alt="Logo Senai">
+            <h1>MERCURIO</h1>
         </div>
     </div>
 
@@ -86,21 +85,41 @@
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <p>Para recuperar sua senha, digite o seu endereço de email abaixo:</p>
-                        <input type="email" class="input-login form-control" id="ipt-emailRecuperar" placeholder="Digite seu email" autocomplete="off"/>
-                        <!-- Mensagens -->
-                        <div id="alert-modal-error" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-danger col-12" role="alert">
-                            <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg-modal"></h6>
+                    <div id="recuperar-part-1">
+                        <div class="modal-body">
+                            <p>Para recuperar sua senha, digite o seu endereço de email abaixo:</p>
+                            <input type="email" class="input-login form-control" id="ipt-emailRecuperar" placeholder="Digite seu email" autocomplete="off"/>
+                            <!-- Mensagens -->
+                            <div id="alert-modal-error" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-danger col-12" role="alert">
+                                <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg-modal"></h6>
+                            </div>
+                            <div id="alert-modal-success" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-success col-12" role="alert">
+                                <span style="font-weight: 600">Sucesso!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="success-msg-modal">Um email com o código de recuperação foi enviado para você</h6>
+                            </div>
                         </div>
-                        <div id="alert-modal-success" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-success col-12" role="alert">
-                            <span style="font-weight: 600">Sucesso!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="success-msg-modal">Um email com sua senha foi enviado para você</h6>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-danger" id="btn-recuperar">Enviar código</button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-danger" id="btn-recuperar">Recuperar Senha</button>
-                    </div>
+                    <div id="recuperar-part-2">
+                        <div class="modal-body">
+                            <p>Digite abaixo o código enviado para o seu email e a nova senha</p>
+                            <input type="email" class="input-login form-control" id="email-recuperar" disabled/>
+                            <input type="text" class="input-login form-control" id="ipt-codigo" placeholder="Digite o código" autocomplete="off"/>
+                            <input type="password" class="input-login form-control" id="ipt-novaSenha" placeholder="Digite a nova senha" maxlength="20" autocomplete="off"/>
+                            <div id="alert-modal-error-alterar" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-danger col-12" role="alert">
+                                <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg-modal-alterar"></h6>
+                            </div>
+                            <div id="alert-modal-success-alterar" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-success col-12" role="alert">
+                                <span style="font-weight: 600">Sucesso!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="success-msg-modal-alterar">Senha alterada com sucesso!</h6>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <button type="button" class="btn btn-danger" id="btn-alterar-senha">Alterar Senha</button>
+                            </div>
+                        </div>
+                    </div>    
                 </div>
             </div>
         </div>

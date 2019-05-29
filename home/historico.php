@@ -18,28 +18,27 @@
     <!-- Fontes -->
     <link rel="stylesheet" href="../fonts/fontes.css">
 
-    <!-- Alunos.css -->
-    <link rel="stylesheet" href="css/encaminhados.css"> 
+    <!-- Historico.css -->
+    <link rel="stylesheet" href="css/historico.css"> 
 
 </head>
 
 <body>
 
-    <div id="modal-erro-empresa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div id="modal-visualizar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog ">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Erro</h5>
+                    <h5 class="modal-title">Visualizar Histórico</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body" style="padding: 15px 20px">
-                    <p>Não existe nenhuma empresa cadastrada. Cadastre uma empresa primeiro!</p>
+                    <p id="dados-historico"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" id="btn-erro-cadastarEmpresa">Cadastrar uma Empresa</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
@@ -64,11 +63,11 @@
         </div>
     </div>
 
-    <div id="modal-mudar-status" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div id="modal-encaminhar" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Mudar Status</h5>
+                    <h5 class="modal-title">Encaminhar Alunos</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -82,39 +81,23 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-12">
-                            <label for="ipt-statusSelecionado">Selecione um Status</label>
-                            <select class="form-control" id="ipt-statusSelecionado">
-                                <option>Aguardando Aprovação</option>
-                                <option>Efetivado</option>
-                                <option>Reprovado</option>
+                            <label for="ipt-empresaSelecionada">Selecione uma Empresa</label>
+                            <select class="form-control" id="ipt-empresaSelecionada">
+                                
                             </select>
                         </div>
-                    </div>
-                    <div class="form-row" id="motivo-reprovado">
-                        <div class="form-group col-12">
-                            <label for="ipt-reprovacao">Escreva o motivo da reprovação</label>
-                            <input type="text" class="input-login form-control" id="ipt-reprovacao" placeholder="Motivo da reprovação" autocomplete="off" maxlength="100"/>
-                        </div>
-                        <div class="form-row" style>
-                            <div id="alert-error-motivo-reprovado" style="align-items: center; padding: 10px 30px; display: none" class="alert alert-modal alert-danger col-12" role="alert">
-                                <span style="font-weight: 600">Preencha todos os campos!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg-mudar-senha"></h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="alert-modal-success-alterar" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-success col-12" role="alert">
-                        <span style="font-weight: 600">Sucesso!</span>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success" id="btn-mudar-status-model">Mudar Status</button>
+                    <button type="button" class="btn btn-success" id="btn-encaminhar-model">Encaminhar Alunos</button>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="fast-search">
-        <h1>Buscar Alunos Encaminhados</h1>
+        <h1>Buscar Alunos</h1>
         <div id="busca">
             <input type="text" id="inputSearch" placeholder="Pesquise por RA, Nome, Email, CPF ou Telefone" autocomplete="off">
             <div id="search-avanced" class="btn">Busca Avançada</div>
@@ -234,7 +217,7 @@
         </div>
         <select id="cbx-ciclos" class="form-control form-control-lg">
         </select>
-        <button id="btn-mudar-status" type="button" class="btn btn-success" href="#" <?php echo $_SESSION['tipoLog']!='admin'?'disabled':'';?>>Mudar Status dos Selecionados</button>
+        <button id="btn-encaminhar" type="button" class="btn btn-success" href="#" <?php echo $_SESSION['tipoLog']!='admin'?'disabled':'';?>>Encaminhar Selecionados</button>
     </div>
 
     <div class="table-responsive">
@@ -245,7 +228,7 @@
 
     <div id="div-not-found">
         <i class="fas fa-exclamation-triangle"></i>
-        <h1 id="msg-notFound">Aluno não Encontrado</h1>
+        <h1 id="msg-notFound">Nenhum histórico encontrado</h1>
     </div>
 
 
@@ -258,7 +241,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script src="../js/encaminhados.js"></script>
+    <script src="../js/historico.js"></script>
 
     <script>
         

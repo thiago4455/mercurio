@@ -43,7 +43,7 @@
             <i class="fas fa-bars"></i>
         </div>
         <div id="nav-logo">
-            <img src="assets/img/logo_grande.jpg" alt="Logo Senai">
+            <h1>MERCURIO</h1>
         </div>
         <div id="nav-log-info">
             <h1>Logado como: </h1>
@@ -70,13 +70,15 @@
             ?>
             <div id="nav-alunos" class="item-nav"><i class="fas fa-users"></i><p class="item-text">Alunos</p></div>
             <div id="nav-encaminhados" class="item-nav"><i class="fas fa-address-card"></i><p class="item-text">Encaminhados</p></div>
+            <div id="nav-necessidades" class="item-nav"><i class="fas fa-share-square"></i><p class="item-text">Necessidades</p></div>
             <div id="nav-empresas" class="item-nav"><i class="fas fa-building"></i><p class="item-text">Empresas</p></div>
             <div id="nav-funcionarios" class="item-nav"><i class="fas fa-users-cog"></i><p class="item-text">Funcionários</p></div>
             <div id="nav-relatorios" class="item-nav"><i class="fas fa-list-alt"></i><p class="item-text">Relatórios</p></div>
+            <div id="nav-historico" class="item-nav"><i class="fas fa-history"></i><p class="item-text">Histórico</p></div>
         </div>
 
         <div id="center">
-            <iframe src="home/dashboard.php" frameborder="0" id="iframe-home"></iframe>
+            <iframe src="home/necessidades.php" frameborder="0" id="iframe-home"></iframe>
         </div>
 
     </div>
@@ -107,7 +109,7 @@
         $('#'+id).addClass('item-nav-active')
     }
 
-    $(document).ready(() => {
+    $(document).ready(function() { 
 
         $('.item-nav').click(function() {
             $('#nav-lateral').removeClass('nav-lat-active');
@@ -117,18 +119,28 @@
 
             if(id == 'nav-ciclos') {
                 $('#iframe-home').attr('src', 'home/ciclos.php'); 
+                $('.drop-menu').css('display','none')
             } else if (id == 'nav-dashboard') {
                 $('#iframe-home').attr('src', 'home/dashboard.php'); 
+                $('.drop-menu').css('display','none')
             } else if (id == 'nav-alunos') {
                 $('#iframe-home').attr('src', 'home/alunos.php'); 
             } else if (id == 'nav-encaminhados') {
                 $('#iframe-home').attr('src', 'home/encaminhados.php'); 
+            }else if (id == 'nav-necessidades') {
+                $('#iframe-home').attr('src', 'home/necessidades.php'); 
             } else if (id == 'nav-empresas') {
                 $('#iframe-home').attr('src', 'home/empresas.php'); 
+                $('.drop-menu').css('display','none')
             } else if(id == 'nav-funcionarios') {
                 $('#iframe-home').attr('src', 'home/funcionarios.php'); 
+                $('.drop-menu').css('display','none')
             } else if(id == 'nav-relatorios') {
                 $('#iframe-home').attr('src', 'home/relatorios.php'); 
+                $('.drop-menu').css('display','none')
+            } else if(id == 'nav-historico') {
+                $('#iframe-home').attr('src', 'home/historico.php'); 
+                $('.drop-menu').css('display','none')
             }
         })
 
@@ -145,7 +157,7 @@
         });
 
         $('#nav-menu').click(function() {
-            if($('#nav-lateral').css('width') == '300px') {
+            if($('#nav-lateral').css('width') == '280px') {
                 $('.item-text').css('display', 'none');
                 $('#title-navlat').css('display', 'none');
                 $('#nav-lateral').css('width', '84px');
@@ -153,7 +165,7 @@
                 
             }
             else {
-                $('#nav-lateral').css('width', '300px');
+                $('#nav-lateral').css('width', '280px');
                 $('#title-navlat').css('display', 'flex');
                 $('.item-text').css('display', 'flex');
                 $('#nav-menu').css('transform','rotate(-360deg)');
