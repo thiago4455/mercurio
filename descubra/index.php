@@ -386,26 +386,26 @@
               <p>A sua opinião é muito importante para nós. Além disse, se tiver alguma dúvida, sugestão ou reclamação, envie-nos uma mensagem abaixo.</p>
               <form action="" method="post" role="form" class="contactForm">
                 <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" data-rule="minlen:4" data-msg="Por favor digite no mínino 4 caracteres" />
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Seu Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Seu Email" data-rule="email" data-msg="Digite um email válido"/>
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" data-rule="minlen:4" data-msg="O assunto deve ter no mínimo 8 caracteres" />
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Digite sua mensagem..."></textarea>
+                  <textarea class="form-control" name="message" id="message" rows="5" data-rule="required" data-msg="Por favor digite algo no corpo do email" placeholder="Digite sua mensagem..."></textarea>
                   <div class="validation"></div>
                 </div>
 
                 <div id="sendmessage">Sua mensagem foi enviada. Obrigado!</div>
                 <div id="errormessage"></div>
 
-                <div class="text-right"><button type="submit" title="Send Message">Enviar Mensagem</button></div>
+                <div class="text-right"><button type="submit" id="btn-send-mail" title="Send Message">Enviar Mensagem</button></div>
               </form>
             </div>
 
@@ -452,7 +452,35 @@
   <script src="descubra/lib/lightbox/js/lightbox.min.js"></script>
   <!-- Contact Form JavaScript File -->
   <script src="descubra/contactform/contactform.js"></script>
-
+  <script>
+    $('#btn-send-mail').click(function() {
+      var name = $('#name').val();
+      var email = $('#email').val();
+      var subject = $('#subject').val();
+      var message = $('#message').val();
+      if(!name || !email || !subject || !message){
+      }
+      else{
+        $.ajax({
+          url: 'controllers/sendMail.php',
+          data: {
+            'assunto':subject,
+            'destinatario':'senaimercurio@gmail.com',
+            'corpo':'Email enviado por: '+name+' ('+email+')<br>'+message,
+          },
+          type: "POST",
+          dataType: 'json',
+          success: function(msg) {
+            
+          },
+          error: function(err){
+            
+          }
+        
+        });
+      }
+    })
+  </script>
   <!-- Template Main Javascript File -->
   <script src="descubra/js/main.js"></script>
 
