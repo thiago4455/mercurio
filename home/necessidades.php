@@ -63,10 +63,21 @@
                                 </select>
                             </div>
                             <div class="form-group col-12 col-md-6">
+                                <label for="ipt-ciclo">Ciclo</label>
+                                <select class="form-control" id="ipt-ciclo">
+                                
+                                </select>
+                            </div>
+                            <div class="form-group col-12">
                                 <label for="ipt-tipoContrato">Tipo de Contrato</label>
                                 <select class="form-control" id="ipt-tipoContrato">
                                 
                                 </select>
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="ipt-descricao">Descrição</label>
+                                <textarea class="form-control" id="ipt-descricao" rows="4" maxlength="500"></textarea>
+                                <span id="span-descricao"></span>
                             </div>
                         </div>
                         <div class="form-row" style>
