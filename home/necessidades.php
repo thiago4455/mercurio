@@ -75,7 +75,7 @@
                                 </select>
                             </div>
                             <div class="form-group col-12 col-md-6">
-                                <label for="ipt-quantidade">Quantidade</label>
+                                <label for="ipt-quantidade">Quantidade de Alunos</label>
                                 <input type="number" id="ipt-quantidade" class="form-control">
                             </div>
                             <div class="form-group col-12">
