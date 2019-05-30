@@ -68,11 +68,15 @@
                                 
                                 </select>
                             </div>
-                            <div class="form-group col-12">
+                            <div class="form-group col-12 col-md-6">
                                 <label for="ipt-tipoContrato">Tipo de Contrato</label>
                                 <select class="form-control" id="ipt-tipoContrato">
                                 
                                 </select>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-quantidade">Quantidade</label>
+                                <input type="number" id="ipt-quantidade" class="form-control">
                             </div>
                             <div class="form-group col-12">
                                 <label for="ipt-descricao">Descrição</label>

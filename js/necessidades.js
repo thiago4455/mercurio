@@ -32,7 +32,8 @@ $(document).ready(function() {
             $('#ipt-ciclos').html('');
             $('#btn-cadastrar').text('Buscando Informações...')
             $('#btn-cadastrar').prop('disabled', true)
-
+            $('#alert-success').css('display','none')
+            $('#alert-error').css('display','none')
         $.ajax({
             url: '../controllers/listarEmpresasSelecionadas.php',
             type: 'GET',
@@ -55,7 +56,7 @@ $(document).ready(function() {
                         dataType: 'json',
                         success: function (data) {
                             $.each(data, function (key, value) {
-                                $('#ipt-tipoContrato').append('<option value=' + value.nomeContrato + '>' + value.nomeContrato + '</option>')
+                                $('#ipt-tipoContrato').append('<option value=' + value.nomeContrato + '>' + (value.nomeContrato).replace("_"," ") + '</option>')
                             });
 
                             $('#btn-cadastrar').text('Cadastrar Necessidade')
@@ -102,5 +103,40 @@ $(document).ready(function() {
     $('#btn-erro-cadastarEmpresa').click(() => {
         window.location.href = 'empresas.php';
     })
+
+    $('#btn-cadastrar').click(function(){
+        var codEmpresa = $('#ipt-codEmpresa').val();
+        var ciclo = $('#ipt-ciclo').val();
+        var tipoContrato = $('#ipt-tipoContrato').val();
+        var quantidade = $('#ipt-quantidade').val();
+        var descricao = $('#ipt-descricao').val();
+        $('#alert-success').css('display','none')
+        $('#alert-error').css('display','none')
+        if(!codEmpresa || !ciclo || !tipoContrato || !quantidade || !descricao){
+            $('#alert-error').css('display','block')
+            $('#error-msg').html('Preencha todos os campos corretamente!')
+        }
+        else{
+            $.ajax({
+                url: '../controllers/inserirNecessidade.php',
+                dataType: 'json',
+                data: {
+                    'codEmpresa':codEmpresa,
+                    'tipoContrato':tipoContrato,
+                    'quantidade':quantidade,
+                    'ciclo':ciclo,
+                    'descricao':descricao,
+                },
+                type: 'POST',
+                success: function (msg) {
+                    $('#alert-success').css('display','block')
+                },
+                error: function (err) {
+                    $('#alert-error').css('display','block')
+                    $('#error-msg').html(err)
+                }
+            })
+        }
+    });
 })
 
