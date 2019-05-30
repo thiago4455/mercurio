@@ -110,8 +110,8 @@ CREATE TABLE Contratos (
     nomeContrato VARCHAR(60) NOT NULL
 );
 
-INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Fase Escolar');
-INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Prática Sequencial');
+INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Fase_Escolar');
+INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Prática_Sequencial');
 INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Concomitante');
 INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Sequencial');
 INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Dual');
