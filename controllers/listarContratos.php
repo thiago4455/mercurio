@@ -3,7 +3,11 @@
 
     require_once('../models/ConexaoClass.php');
     $objConexao = new ConexaoClass();
-    $queryResp = $objConexao->selecionarDados('SELECT * FROM `Contratos`;');
+    $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+    $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+    $objConexao->executarComandoSQL('SET character_set_client=utf8');
+    $objConexao->executarComandoSQL('SET character_set_results=utf8');     
+    $queryResp = $objConexao->selecionarDados('SELECT nomeContrato FROM `Contratos`;');
 
     echo json_encode($queryResp);
 ?>
