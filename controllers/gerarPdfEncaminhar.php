@@ -61,7 +61,7 @@
         $data = date("d-m-y H.i.s");
         $time = time();
 
-        $nomeArquivo = "Relatório de Encaminhamento para ". $queryRespNomeEmpresa[0]['nomeFantasia'] ." (" . $data . ")";
+        $nomeArquivo = "Relatorio de Encaminhamento para ". $queryRespNomeEmpresa[0]['nomeFantasia'] ." (" . $data . ")";
 
         use Dompdf\Dompdf;
         require_once 'dompdf/autoload.inc.php';
