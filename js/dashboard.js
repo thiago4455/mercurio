@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+    $('.card-dash').click(function (e){
+        window.parent.colorActive($(this).children('.card-bottom').attr('data-value'));
+        document.location.href = $(this).children('.card-bottom').attr('href');
+    })
+
     $('.card-bottom').click(function () {
         window.parent.colorActive($(this).attr('data-value'))
     })
