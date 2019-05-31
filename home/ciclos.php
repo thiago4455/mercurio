@@ -41,7 +41,22 @@
             </button>
         </div>
         <div class="modal-body">
-            <p id="text-modal-ciclos">Deseja realmente criar um novo ciclo com a tabela: </p>
+            <div class="row">
+                <div class="form-group col-12 col-md-6">
+                    <label for="ipt-semestre">Selecione um Semestre</label>
+                    <select class="form-control" name="" id="ipt-semestre">
+                    <option value="1">1° Semestre</option>
+                    <option value="2">2° Semestre</option>
+                    </select>
+                </div>
+                <div class="form-group col-12 col-md-6">
+                    <label for="ipt-ano">Selecione um Ano</label>
+                    <select class="form-control" name="" id="ipt-ano">
+                    
+                    </select>
+                </div>
+            </div>
+            <p id="text-modal-ciclos">Tabela: </p>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
@@ -169,6 +184,12 @@
                 reader.readAsArrayBuffer(f);
             } 
         }) 
+
+        $('#ipt-ano').append(function() {
+            d = new Date();
+            anoAtual = d.getFullYear();
+            return '<option> ' + anoAtual + '</option> <option> ' + (parseInt(anoAtual) + 1) + '</option>';
+        })
         
     </script>
 
