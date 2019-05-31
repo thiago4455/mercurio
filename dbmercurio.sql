@@ -82,6 +82,7 @@ CREATE TABLE Recuperar(
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE Necessidade(
+    id INT AUTO_INCREMENT PRIMARY KEY,
     codEmpresa VARCHAR(6) NOT NULL,
     FOREIGN KEY (codEmpresa)
     REFERENCES Empresas(codEmpresa),
