@@ -65,22 +65,6 @@ CREATE TABLE Empresas(
     estado CHAR(2) NOT NULL
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
-CREATE TABLE Encaminhados(
-    Alunos_ra VARCHAR(10) NOT NULL,
-    FOREIGN KEY Alunos_ra(Alunos_ra)
-    REFERENCES Alunos(Ra),
-    Empresas_codEmpresa VARCHAR(6) NOT NULL,
-    FOREIGN KEY Empresas_codEmpresa(Empresas_codEmpresa)
-    REFERENCES Empresas(codEmpresa),
-	Status VARCHAR(20),
-    tipoContrato VARCHAR(30)
-) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-
-CREATE TABLE Recuperar(
-    email VARCHAR(60) UNIQUE,
-    codigo VARCHAR(6)
-) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-
 CREATE TABLE Necessidade(
     id INT AUTO_INCREMENT PRIMARY KEY,
     codEmpresa VARCHAR(6) NOT NULL,
@@ -90,6 +74,22 @@ CREATE TABLE Necessidade(
     quantidade INT,
     ciclo CHAR(5),
     descricao TEXT
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+CREATE TABLE Encaminhados(
+    Alunos_ra VARCHAR(10) NOT NULL,
+    FOREIGN KEY Alunos_ra(Alunos_ra)
+    REFERENCES Alunos(Ra),
+    idNecessidade INT NOT NULL,
+    FOREIGN KEY (idNecessidade)
+    REFERENCES Necessidade(id),
+	Status VARCHAR(20),
+    tipoContrato VARCHAR(30)
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+CREATE TABLE Recuperar(
+    email VARCHAR(60) UNIQUE,
+    codigo VARCHAR(6)
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE Historico(
