@@ -113,6 +113,46 @@
                         </button>
                     </div>
                     <div class="modal-body" style="padding: 15px 20px">
+                    <div class="form-row">
+                            <input id="ipt-id-editar" style="display:none" disabled>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-codEmpresa-editar">Código da Empresa</label>
+                                <select class="form-control" id="ipt-codEmpresa-editar">
+                                
+                                </select>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-ciclo-editar">Ciclo</label>
+                                <select class="form-control" id="ipt-ciclo-editar">
+                                
+                                </select>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-tipoContrato-editar">Tipo de Contrato</label>
+                                <select class="form-control" id="ipt-tipoContrato-editar">
+                                
+                                </select>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-quantidade-editar">Quantidade de Alunos</label>
+                                <input type="number" id="ipt-quantidade-editar" class="form-control">
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="ipt-descricao-editar">Descrição</label>
+                                <textarea class="form-control" id="ipt-descricao-editar" rows="4" maxlength="500"></textarea>
+                                <span id="span-descricao-editar"></span>
+                            </div>
+                        </div>
+                        <div class="form-row" style>
+                            <div id="alert-error" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-danger col-12" role="alert">
+                                <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg"></h6>
+                            </div>
+                        </div>
+                        <div class="form-row" style>
+                            <div id="alert-success" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-success col-12" role="alert">
+                                <span style="font-weight: 600">Sucesso!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="">Necessidade cadastrada com sucesso</h6>
+                            </div>
+                        </div>
                         <div class="form-row" style>
                             <div id="alert-error-editar" style="align-items: center; padding: 10px 30px" class="alert alert-modal alert-danger col-12" role="alert">
                                 <span style="font-weight: 600">Erro!</span><h6 style="margin: 0 0 0 7px; line-height: 0" id="error-msg-editar"></h6>
@@ -126,6 +166,47 @@
                         <div class="modal-footer">
                             <button type="button" id="btn-editar"  class="btn btn-success">Concluir Edição</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- Modal Visualizar -->
+    <div class="modal fade modal-visualizar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-family: 'Google-Bold'; font-size: 1.5rem">Visualizar Necessidade</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 15px 20px">
+                    <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-codEmpresa-visualizar">Código da Empresa</label>
+                                <input type="text" id="ipt-codEmpresa-visualizar" class="form-control" disabled>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-ciclo-visualizar">Ciclo</label>
+                                <input type="text" id="ipt-ciclo-visualizar" class="form-control" disabled>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-tipoContrato-visualizar">Tipo de Contrato</label>
+                                <input type="text" id="ipt-tipoContrato-visualizar" class="form-control" disabled>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-quantidade-visualizar">Quantidade de Alunos</label>
+                                <input type="number" id="ipt-quantidade-visualizar" class="form-control" disabled>
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="ipt-descricao-visualizar">Descrição</label>
+                                <textarea class="form-control" id="ipt-descricao-visualizar" rows="4" maxlength="500" disabled></textarea>
+                                <span id="span-descricao-visualizar"></span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                         </div>
                     </div>
                 </div>
