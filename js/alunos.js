@@ -339,7 +339,7 @@ $(document).ready(() => {
                                 $('#modal-erro-necessidade').modal('show');
                             } else {
                                 $.each(msg, function (key, value) {
-                                    $('#ipt-necessidadeSelecionada').append('<option value=' + value.id + '>' + value.codEmpresa + ' - ' + (value.tipoContrato).replace("_"," ") + '</option>')
+                                    $('#ipt-necessidadeSelecionada').append('<option value=' + value.id + ' title="'+value.descricao+'">' + value.codEmpresa + ' - ' + (value.tipoContrato).replace("_"," ") + ' Restantes: ' + value.quantidade + '</option>')
                                 });
 
                             }
