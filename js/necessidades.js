@@ -55,8 +55,8 @@ $(document).ready(function() {
 
                 if (msg == 'ERRO') {
                     setTimeout(() => {
-                        $('.modal-cadastrar').modal('hide')
-                    }, 250);
+                        $('#modal-cadastrar').modal('hide')
+                    }, 500);
                     $('#modal-erro-empresa').modal('show');
                 } else {
                     $.each(msg, function(key, value) {
