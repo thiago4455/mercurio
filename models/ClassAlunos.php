@@ -212,7 +212,7 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
-            $tableAlunos = $objConexao->selecionarDados("SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre, E.Empresas_codEmpresa AS codEmpresa, IFNULL(E.Status,'Em Espera') AS Status FROM Alunos AS A LEFT JOIN Encaminhados AS E ON (A.Ra = E.Alunos_ra) WHERE A.Semestre='".$ciclo."' AND A.Ra IN (Select Alunos_ra FROM Encaminhados);");
+            $tableAlunos = $objConexao->selecionarDados("SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre, N.codEmpresa, IFNULL(E.Status,'Em Espera') AS Status FROM Alunos AS A LEFT JOIN Encaminhados AS E ON (A.Ra = E.Alunos_ra) LEFT JOIN Necessidade AS N ON(N.id = E.idNecessidade) WHERE A.Semestre='".$ciclo."' AND A.Ra IN (Select Alunos_ra FROM Encaminhados);");
 
             if($tableAlunos === "ERRO") {
                 return 'Not found';             
@@ -303,7 +303,7 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');     
         try {
-            $tableAlunos = $objConexao->selecionarDados("SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre, E.Empresas_codEmpresa AS codEmpresa, IFNULL(E.Status,'Em Espera') AS Status FROM Alunos AS A LEFT JOIN Encaminhados AS E ON (A.Ra = E.Alunos_ra) WHERE ((A.Nome LIKE '%$busca%') OR (A.Ra LIKE '%$busca%') OR (A.Cpf LIKE '%$busca%') OR (A.Email LIKE '%$busca%') OR (A.Telefone1 LIKE '%$busca%') OR (A.Telefone2 LIKE '%$busca%')) AND A.Semestre='$semestre' AND Ra IN (Select Alunos_ra FROM Encaminhados)");
+            $tableAlunos = $objConexao->selecionarDados("SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre, N.codEmpresa, IFNULL(E.Status,'Em Espera') AS Status FROM Alunos AS A LEFT JOIN Encaminhados AS E ON (A.Ra = E.Alunos_ra) LEFT JOIN Necessidade AS N ON(N.id = E.idNecessidade) WHERE ((A.Nome LIKE '%$busca%') OR (A.Ra LIKE '%$busca%') OR (A.Cpf LIKE '%$busca%') OR (A.Email LIKE '%$busca%') OR (A.Telefone1 LIKE '%$busca%') OR (A.Telefone2 LIKE '%$busca%')) AND A.Semestre='$semestre' AND Ra IN (Select Alunos_ra FROM Encaminhados)");
             if($tableAlunos === "ERRO") {          
                 return 'Not found';             
             }
@@ -330,7 +330,7 @@ class ClassAlunos {
             if($reprovado != ''){
                 $query2 = "INSERT INTO Historico(alunoRa,empresaCod,funcionarioId,descricao, ciclo) VALUES ";
                 for ($i = 0; $i < count($ras); $i++){
-                    $query2 .= ("('" . $ras[$i] . "',(SELECT Empresas_codEmpresa FROM Encaminhados WHERE Alunos_ra = '" . $ras[$i] . "'),$idFunc,'$reprovado',(SELECT Semestre FROM Alunos WHERE Ra = '" . $ras[$i] . "'))". (($i < (count($ras)-1))?",":";"));
+                    $query2 .= ("('" . $ras[$i] . "',(SELECT N.codEmpresa FROM Encaminhados AS E LEFT JOIN Necessidade AS N ON (N.id = E.idNecessidade) WHERE Alunos_ra = '" . $ras[$i] . "'),$idFunc,'$reprovado',(SELECT Semestre FROM Alunos WHERE Ra = '" . $ras[$i] . "'))". (($i < (count($ras)-1))?",":";"));
                 }
                 $objConexao->executarComandoSQL($query2);
             }
@@ -351,7 +351,7 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
 
-            $busca = "SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre, E.Empresas_codEmpresa AS codEmpresa, IFNULL(E.Status,'Em Espera') AS Status FROM Alunos AS A LEFT JOIN Encaminhados AS E ON (A.Ra = E.Alunos_ra) WHERE (A.Semestre = '".$objAlunos->getSemestre()."') ";
+            $busca = "SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre, N.codEmpresa, IFNULL(E.Status,'Em Espera') AS Status FROM Alunos AS A LEFT JOIN Encaminhados AS E ON (A.Ra = E.Alunos_ra) LEFT JOIN Necessidade AS N ON (N.id = E.idNecessidade) WHERE (A.Semestre = '".$objAlunos->getSemestre()."') ";
 
             if($objAlunos->getNome()!='') $busca = $busca . " AND (A.Nome LIKE '%".$objAlunos->getNome()."%')";
             if($objAlunos->getRa()!='') $busca = $busca . " AND (A.Ra LIKE '%".$objAlunos->getRa()."%')";
@@ -400,7 +400,7 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
 
-            $busca = "SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre, E.Empresas_codEmpresa AS codEmpresa, IFNULL(E.Status,'Em Espera') AS Status FROM Alunos AS A LEFT JOIN Encaminhados AS E ON (A.Ra = E.Alunos_ra) WHERE (A.Semestre = '".$objAlunos->getSemestre()."') ";
+            $busca = "SELECT A.Ra, A.Nome, A.DataNasc, A.Idade, A.Sexo, A.GrauInstrucao, A.Rua, A.Numero, A.Complemento, A.Bairro, A.Estado, A.Cidade, A.Cep,A.Telefone1, A.Telefone2, A.Identidade, A.Cpf, A.Email, A.CarteiraTrabalho, A.NomePai, A.TelefonePai, A.NomeMae, A.TelefoneMae, A.NomeCurso, A.CodTurma, A.Semestre, N.codEmpresa, IFNULL(E.Status,'Em Espera') AS Status FROM Alunos AS A LEFT JOIN Encaminhados AS E ON (A.Ra = E.Alunos_ra) LEFT JOIN Necessidade AS N ON(N.id = E.idNecessidade) WHERE (A.Semestre = '".$objAlunos->getSemestre()."') ";
 
             if($objAlunos->getNome()!='') $busca = $busca . " AND (A.Nome LIKE '%".$objAlunos->getNome()."%')";
             if($objAlunos->getRa()!='') $busca = $busca . " AND (A.Ra LIKE '%".$objAlunos->getRa()."%')";

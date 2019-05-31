@@ -2,7 +2,7 @@
     session_start();
 
     $alunosSelecionados = $_GET['alunosSelecionados'];
-    $empresa = $_GET['empresa'];
+    $id = $_GET['necessidade'];
 
     $alunosSelecionados = explode("," , $alunosSelecionados);
 
@@ -29,19 +29,19 @@
             }
         }
 
-        $queryBuscaEmpresa = "SELECT * From Empresas WHERE codEmpresa LIKE '" . $empresa . "';";
+        $queryBuscaEmpresa = "SELECT E.*, N.id, N.tipoContrato From Empresas AS E RIGHT JOIN Necessidade AS N ON (N.codEmpresa = E.codEmpresa) WHERE N.id = '" . $id . "';";
         $queryRespNomeEmpresa = $objConexao->selecionarDados($queryBuscaEmpresa);
 
 
         // Monta Query Update
-        $queryEncaminhados = "INSERT INTO `Encaminhados` (`Alunos_ra`, `Empresas_codEmpresa`, `Status`) VALUES";
+        $queryEncaminhados = "INSERT INTO `Encaminhados` (`Alunos_ra`, `idNecessidade`, `Status`, `tipoContrato`) VALUES";
         $i = 0;
         foreach($alunosSelecionados as $aluno) {
             $i = $i + 1;
             if($i != $length) {
-                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "','Aguardando Aprovação') ,";
+                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  ". $queryRespNomeEmpresa[0]['id'] . ",'Aguardando Aprovação', '".$queryRespNomeEmpresa[0]['tipoContrato']."') ,";
             } else {
-                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  '". $queryRespNomeEmpresa[0]['codEmpresa'] . "','Aguardando Aprovação') ;";
+                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  ". $queryRespNomeEmpresa[0]['id'] . ",'Aguardando Aprovação', '".$queryRespNomeEmpresa[0]['tipoContrato']."') ;";
             }
         }
 

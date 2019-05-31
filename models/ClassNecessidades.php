@@ -61,6 +61,24 @@ class ClassNecessidades {
             return "Problem System";
         }
     }
+    
+    public function RetNecessidadesValidas($quantAlunos) {
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass();
+                # MySQL UTF-8
+                $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+                $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+                $objConexao->executarComandoSQL('SET character_set_client=utf8');
+                $objConexao->executarComandoSQL('SET character_set_results=utf8');        
+        try {
+            $tableNecessidades = $objConexao->selecionarDados("SELECT * FROM `Necessidade` WHERE `quantidade` >= $quantAlunos;");
+
+            return $tableNecessidades;
+        }
+        catch(Exception $err) {
+            return "Problem System";
+        }
+    }
 
     public function RetNecessidadeCod($id) {
         require_once('ConexaoClass.php');

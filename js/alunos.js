@@ -304,9 +304,9 @@ $(document).ready(() => {
         }
         else {
             $('#ipt-alunosSelecionados').html('');
-            $('#ipt-empresaSelecionada').html('');
+            $('#ipt-necessidadeSelecionada').html('');
             $('#modal-encaminhar').modal('show')
-            $('#btn-encaminhar-model').text('Buscando Empresas...')
+            $('#btn-encaminhar-model').text('Buscando Necessidades...')
             $('#btn-encaminhar-model').prop('disabled', true)
             $.ajax({
                 url: '../controllers/listarSelecionados.php',
@@ -324,25 +324,28 @@ $(document).ready(() => {
                     $('#label-alunosSelecionados').text('Alunos Selecionados - (' + i + ')')
 
                     $.ajax({
-                        url: '../controllers/listarEmpresasSelecionadas.php',
-                        type: 'GET',
+                        url: '../controllers/listarNecessidadesValidas.php',
+                        type: 'POST',
+                        data: {
+                            'quantidade':i,
+                        },
                         dataType: 'json',
                         success: function (msg) {
-                        
+                            console.log(msg);
                             if (msg == 'ERRO') {
                                 setTimeout(() => {
                                     $('#modal-encaminhar').modal('hide')
                                 }, 500);
-                                $('#modal-erro-empresa').modal('show');
+                                $('#modal-erro-necessidade').modal('show');
                             } else {
                                 $.each(msg, function (key, value) {
-                                    $('#ipt-empresaSelecionada').append('<option value=' + value.codEmpresa + '>' + value.codEmpresa + '</option>')
+                                    $('#ipt-necessidadeSelecionada').append('<option value=' + value.id + '>' + value.codEmpresa + ' - ' + (value.tipoContrato).replace("_"," ") + '</option>')
                                 });
 
                             }
                         },
                         error: function (err) {
-                            
+                            console.log(err);
                         }
                         
                     })
@@ -358,17 +361,17 @@ $(document).ready(() => {
     })
 
     $('#btn-encaminhar-model').click(function () {
-        var empresa = $('#ipt-empresaSelecionada').val();
+        var id = $('#ipt-necessidadeSelecionada').val();
 
         $('#btn-encaminhar-model').text('Gerando PDF...')
         $('#btn-encaminhar-model').prop('disabled', true)
 
-        window.location.href = "../controllers/gerarPdfEncaminhar.php?alunosSelecionados=" + alunosSelecionados + "&empresa=" + empresa;
+        window.location.href = "../controllers/gerarPdfEncaminhar.php?alunosSelecionados=" + alunosSelecionados + "&necessidade=" + id;
 
     })
 
-    $('#btn-erro-cadastarEmpresa').click(() => {
-        window.location.href = 'empresas.php';
+    $('#btn-erro-cadastarNecessidade').click(() => {
+        window.location.href = 'necessidades.php';
     })
 })
 

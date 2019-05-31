@@ -170,7 +170,7 @@
         </div>
     </div>
 
-    <div id="modal-erro-empresa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div id="modal-erro-necessidade" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog ">
             <div class="modal-content">
                 <div class="modal-header">
@@ -180,11 +180,11 @@
                     </button>
                 </div>
                 <div class="modal-body" style="padding: 15px 20px">
-                    <p>Não existe nenhuma empresa cadastrada. Cadastre uma empresa primeiro!</p>
+                    <p>Não existe nenhuma necessidade cadastrada. Cadastre uma necessidade primeiro!</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" id="btn-erro-cadastarEmpresa">Cadastrar uma Empresa</button>
+                    <button type="button" class="btn btn-primary" id="btn-erro-cadastarNecessidade">Cadastrar uma Necessidade</button>
                 </div>
             </div>
         </div>
@@ -227,8 +227,8 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-12">
-                            <label for="ipt-empresaSelecionada">Selecione uma Empresa</label>
-                            <select class="form-control" id="ipt-empresaSelecionada">
+                            <label for="ipt-necessidadeSelecionada">Selecione uma Necessidade</label>
+                            <select class="form-control" id="ipt-necessidadeSelecionada">
                                 
                             </select>
                         </div>
