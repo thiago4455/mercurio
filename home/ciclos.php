@@ -122,26 +122,10 @@
         var files;
 
         inputFile.addEventListener('input', function(e){
-        var cicloExiste;
         $('#title-modal').text('Cadastrar novo ciclo')
-        $('#text-modal-ciclos').text('Deseja realmente criar um novo ciclo com a tabela: ' + inputFile.files[0].name)
-            
-            $.ajax({
-                url: '../controllers/verificarCiclo.php',
-                type: 'GET',
-                success: function(data) {
-                    cicloExiste = data;
-                    if(cicloExiste == "true"){
-                        $('#title-modal').text('Atualizar ciclo')
-                        $('#text-modal-ciclos').text('Já existe um ciclo cadastrado nesse mês. Deseja realmente substituí-lo pelo da tabela: ' + inputFile.files[0].name)
-                    }
-                },
-                error: function(err) {
-                }
-            });
-            
-            $('#modal-ciclos').modal('show')
-            files = e.target.files, f = files[0];
+        $('#text-modal-ciclos').text('Deseja realmente adicionar os alunos com a tabela: ' + inputFile.files[0].name + ' ?')
+        $('#modal-ciclos').modal('show')
+        files = e.target.files, f = files[0];
         });
 
         $('#btn-add-ciclo').click(function(){
@@ -161,9 +145,11 @@
                         url: '../controllers/importarExcel.php',
                         type: 'POST',
                         data: {
-                            'csv': csvTable
+                            'csv': csvTable,
+                            'semestre': $('#ipt-semestre').val()+'.'+$('#ipt-ano').val()
                         },
                         success: function(data) {
+                            console.log(data)
                             $('#modal-ciclos').modal('hide')
                             $('.custom-file-label').text('Escolha o arquivo');   
                             $('#alert-error').css('display', 'none');
@@ -187,8 +173,9 @@
 
         $('#ipt-ano').append(function() {
             d = new Date();
-            anoAtual = d.getFullYear();
-            return '<option> ' + anoAtual + '</option> <option> ' + (parseInt(anoAtual) + 1) + '</option>';
+            anoAtual = (d.getFullYear()).toString();
+            proximoAno = (parseInt(anoAtual) + 1).toString();
+            return '<option value="'+anoAtual[2]+anoAtual[3]+'"> ' + anoAtual + '</option> <option value="'+proximoAno[2]+proximoAno[3]+'"> ' +proximoAno+ '</option>';
         })
         
     </script>

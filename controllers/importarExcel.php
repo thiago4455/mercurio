@@ -18,9 +18,10 @@
 
         mysqli_options($objConexao, MYSQLI_OPT_LOCAL_INFILE, true);
 
-        if($semestre!='')
+        if($semestre=='')
             $semestre = (intdiv(intval(date('m')), 6)+1).'.'.date('y');
 
+        $semestre = '0'.$semestre;
         $query = "LOAD DATA LOCAL INFILE '".str_replace("\\",'/',__DIR__)."/".$filename."' REPLACE INTO TABLE Alunos FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' IGNORE 1 LINES (Ra,Nome,DataNasc,Idade,Sexo,GrauInstrucao,Rua,Numero,Complemento,Bairro,Estado,Cidade,Cep,Telefone1,Identidade,Cpf,Email,CarteiraTrabalho,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,NomePai,TelefonePai,@dummy,@dummy,@dummy,@dummy,NomeMae,TelefoneMae,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,NomeCurso,@dummy,CodTurma,@dummy,Status,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,Telefone2,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy,@dummy) SET Semestre = '".$semestre ."';";
         $query2 = "DELETE FROM Alunos WHERE Ra = ''";
         echo $query;
