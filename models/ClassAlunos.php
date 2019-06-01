@@ -188,7 +188,7 @@ class ClassAlunos {
                 $objConexao->executarComandoSQL('SET character_set_client=utf8');
                 $objConexao->executarComandoSQL('SET character_set_results=utf8');        
         try {
-            $tableAlunos = $objConexao->selecionarDados("SELECT A.Ra, A.Nome, H.descricao FROM Alunos AS A RIGHT JOIN Historico AS H ON (A.Ra = H.alunoRa) WHERE H.alunoRa='$ra';");
+            $tableAlunos = $objConexao->selecionarDados("SELECT A.Ra, A.Nome, H.empresaCod as codEmpresa, H.descricao FROM Alunos AS A RIGHT JOIN Historico AS H ON (A.Ra = H.alunoRa) WHERE H.alunoRa='$ra';");
 
             if($tableAlunos === "ERRO") {
                 return 'Not found';             

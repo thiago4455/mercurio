@@ -309,6 +309,7 @@ $(document).ready(() => {
                 success: function (msg) {
                     $('#btn-mudar-status-model').text('Mudar Status');
                     $('#alert-modal-success-alterar').css('display','block');
+                    alunosSelecionados = []
                     Listar();
                 },
                 error: function (err) {
