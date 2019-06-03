@@ -24,7 +24,150 @@
 </head>
 
 <body>
-
+<!-- Modal Visualizar -->
+<div class="modal fade modal-visualizar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-family: 'Google-Bold'; font-size: 1.5rem">Nome</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 15px 20px">
+                        <div class="form-row">
+                            <div class="form-group col-8">
+                                <label for="ipt-nome">Nome</label>
+                                <input disabled type="text" class="form-control" id="ipt-nome" placeholder="Digite o nome Fantasia da Empresa" maxlength="100" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="ipt-ra">RA</label>
+                                <input disabled type="text" class="form-control" id="ipt-ra" placeholder="0000006587" maxlength="100" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-3">
+                                <label for="ipt-cpf">CPF</label>
+                                <input disabled type="text" class="form-control" id="ipt-cpf" placeholder="08744473648" maxlength="100" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-2">
+                                <label for="ipt-dataNasc">Data Nasc</label>
+                                <input disabled type="text" class="form-control" id="ipt-dataNasc" placeholder="13/11/1998" maxlength="100" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-1">
+                                <label for="ipt-idade">Idade</label>
+                                <input disabled type="text" class="form-control" id="ipt-idade" placeholder="18" maxlength="100" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-2">
+                                <label for="ipt-sexo">Sexo</label>
+                                <input disabled type="text" class="form-control" id="ipt-sexo" placeholder="Feminino" maxlength="100" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <label for="ipt-escolaridade">Escolaridade</label>
+                                <input disabled type="text" class="form-control" id="ipt-escolaridade" placeholder="Ensino médio incompleto" maxlength="100" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-4">
+                                <label for="ipt-rua">Rua</label>
+                                <input disabled type="text" class="form-control" id="ipt-rua" placeholder="Vicente Lopes da Rocha" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-2">
+                                <label for="ipt-num">Número</label>
+                                <input disabled type="text" class="form-control" id="ipt-num" placeholder="123" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-3">
+                                <label for="ipt-complemento">Complemento</label>
+                                <input disabled type="text" class="form-control" id="ipt-complemento" placeholder="APT 201 BL 6" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-3">
+                                <label for="ipt-estado">Estado</label>
+                                <input disabled type="text" class="form-control" id="ipt-estado" placeholder="MG" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-4">
+                                <label for="ipt-bairro">Bairro</label>
+                                <input disabled type="text" class="form-control" id="ipt-bairro" placeholder="Vicente Lopes da Rocha" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="ipt-cidade">Cidade</label>
+                                <input disabled type="text" class="form-control" id="ipt-cidade" placeholder="Contagem" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="ipt-cep">CEP</label>
+                                <input disabled type="text" class="form-control" id="ipt-cep" placeholder="32371360" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-4">
+                                <label for="ipt-telefone1">Telefone 1</label>
+                                <input disabled type="text" class="form-control" id="ipt-telefone1" placeholder="975478581" maxlength="15" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <label for="ipt-telefone2">Telefone 2</label>
+                                <input disabled type="text" class="form-control" id="ipt-telefone2" placeholder="973493537" maxlength="9" autocomplete="off" required>
+                            </div>  
+                            <div class="form-group col-12 col-md-4">
+                                <label for="ipt-identidade">Identidade</label>
+                                <input disabled type="text" class="form-control" id="ipt-identidade" placeholder="MG-20.962.921" maxlength="9" autocomplete="off" required>
+                            </div>  
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-8">
+                                <label for="ipt-email">Email</label>
+                                <input disabled type="text" class="form-control" id="ipt-email" placeholder="shayene_thug@hotmail.com" maxlength="50" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <label for="ipt-carteiraTrabalho">Carteira de trabalho</label>
+                                <input disabled type="text" class="form-control" id="ipt-carteiraTrabalho" placeholder="6639934" maxlength="5" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-nomePai">Nome do Pai</label>
+                                <input disabled type="text" class="form-control" id="ipt-nomePai" placeholder="MOISÉS CLAUDIONOR BENEDITO" maxlength="30" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-nomeMae">Nome da Mãe</label>
+                                <input disabled type="text" class="form-control" id="ipt-nomeMae" placeholder="MARIA JUNIA CARNEIRO DE FREITAS BENEDITO" maxlength="30" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-telefonePai">Telefone do Pai</label>
+                                <input disabled type="text" class="form-control" id="ipt-telefonePai" placeholder="3130441526" maxlength="30" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="ipt-telefoneMae">Telefone da Mãe</label>
+                                <input disabled type="text" class="form-control" id="ipt-telefoneMae" placeholder="973493537" maxlength="30" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-5">
+                                <label for="ipt-nomeCurso">Nome do curso</label>
+                                <input disabled type="text" class="form-control" id="ipt-nomeCurso" placeholder="PROCESSOS ADMINISTRATIVOS" maxlength="30" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-2">
+                                <label for="ipt-codTurma">Cód Turma</label>
+                                <input disabled type="text" class="form-control" id="ipt-codTurma" placeholder="AIPA201T-01" maxlength="30" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-3">
+                                <label for="ipt-status">Status</label>
+                                <input disabled type="text" class="form-control" id="ipt-status" placeholder="MATRICULADO" maxlength="30" autocomplete="off" required>
+                            </div>
+                            <div class="form-group col-12 col-md-2">
+                                <label for="ipt-semestre">Semestre</label>
+                                <input disabled type="text" class="form-control" id="ipt-semestre" placeholder="05.19" maxlength="30" autocomplete="off" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
     <div id="modal-erro-empresa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog ">
             <div class="modal-content">

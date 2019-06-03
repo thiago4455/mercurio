@@ -109,7 +109,54 @@ $(document).ready(() => {
     }));
 
     $('#mostrar-encaminhados').on('change', Listar)
-
+    $(document).on('click', '.btn-visualizar', function() {
+        ra = (($(this).attr('id')).split('-'))[1];
+        $.ajax({
+            url: '../controllers/buscarEncaminhados.php',
+            dataType: 'json',
+            data: {
+                'nome': ra,
+                'ciclo': $('#cbx-ciclos').val(),
+            },
+            type: 'POST',
+            success: function (msg) {
+                if (msg != 'Not found') {
+                    let aluno = msg[0];
+                    $('#ipt-nome').val(aluno.Nome);
+                    $('#ipt-ra').val(aluno.Ra);
+                    $('#ipt-cpf').val(aluno.Cpf);
+                    $('#ipt-dataNasc').val(aluno.DataNasc);
+                    $('#ipt-idade').val(aluno.Idade);
+                    $('#ipt-sexo').val(aluno.Sexo=='F'?'Feminino':'Masculino');
+                    $('#ipt-escolaridade').val(aluno.GrauInstrucao);
+                    $('#ipt-rua').val(aluno.Rua);
+                    $('#ipt-num').val(aluno.Numero);
+                    $('#ipt-complemento').val(aluno.Complemento);
+                    $('#ipt-estado').val(aluno.Estado);
+                    $('#ipt-bairro').val(aluno.Bairro);
+                    $('#ipt-cidade').val(aluno.Cidade);
+                    $('#ipt-cep').val(aluno.Cep);
+                    $('#ipt-telefone1').val(aluno.Telefone1);
+                    $('#ipt-telefone2').val(aluno.Telefone2);
+                    $('#ipt-identidade').val(aluno.Identidade);
+                    $('#ipt-email').val(aluno.Email);
+                    $('#ipt-carteiraTrabalho').val(aluno.CarteiraTrabalho);
+                    $('#ipt-nomePai').val(aluno.NomePai);
+                    $('#ipt-nomeMae').val(aluno.NomeMae);
+                    $('#ipt-telefonePai').val(aluno.TelefonePai);
+                    $('#ipt-telefoneMae').val(aluno.TelefoneMae);
+                    $('#ipt-nomeCurso').val(aluno.NomeCurso);
+                    $('#ipt-codTurma').val(aluno.CodTurma);
+                    $('#ipt-status').val(aluno.Status);
+                    $('#ipt-semestre').val(aluno.Semestre);
+                    $('.modal-visualizar').modal('show');
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    });
     $(document).on('change', '#check-todos', function () {
         if (this.checked) {
             alunosSelecionados = []
@@ -166,9 +213,9 @@ $(document).ready(() => {
 
     function ListarItens(msg) {
         table.innerHTML = "";
-        table.innerHTML = '<tr id="tr-title"><td></td><td>RA</td><td>Nome</td><td>Idade</td><td>Sexo</td><td>Email</td><td>Empresa</td><td>CPF</td><td>Telefone</td><td>Status</td><td>Editar</td></tr>';
+        table.innerHTML = '<tr id="tr-title"><td></td><td>RA</td><td>Nome</td><td>Idade</td><td>Sexo</td><td>Email</td><td>Empresa</td><td>CPF</td><td>Telefone</td><td>Status</td><td>Visualizar</td></tr>';
         for (i = 0; i < msg.length; i++) {
-            $('#tableBody').append('<tr id="' + msg[i].Ra + '" class="table-row"> <td class="td-check"> <input class="form-check-input check-alunos" type="checkbox" value="" id="' + msg[i].Ra + '"> </td> <td> ' + msg[i].Ra + ' </td> <td style="min-width: 300px"> ' + msg[i].Nome + ' </td> <td> ' + msg[i].Idade + ' </td> <td> ' + msg[i].Sexo + ' </td> <td> ' + msg[i].Email + ' </td> <td> ' + msg[i].codEmpresa + ' </td> <td> ' + msg[i].Cpf + ' </td> <td> ' + msg[i].Telefone1 + ' </td> <td> ' + msg[i].Status + ' </td><td class="btnR" id="btn-' + msg[i].Ra + '" class="btn-editar"><button><i class="fas fa-eye"></i></td> </tr>')
+            $('#tableBody').append('<tr id="' + msg[i].Ra + '" class="table-row"> <td class="td-check"> <input class="form-check-input check-alunos" type="checkbox" value="" id="' + msg[i].Ra + '"> </td> <td> ' + msg[i].Ra + ' </td> <td style="min-width: 300px"> ' + msg[i].Nome + ' </td> <td> ' + msg[i].Idade + ' </td> <td> ' + msg[i].Sexo + ' </td> <td> ' + msg[i].Email + ' </td> <td> ' + msg[i].codEmpresa + ' </td> <td> ' + msg[i].Cpf + ' </td> <td> ' + msg[i].Telefone1 + ' </td> <td> ' + msg[i].Status + ' </td><td><button id="btn-' + msg[i].Ra + '" class="btn-visualizar"><i class="fas fa-eye"></i></button></td> </tr>')
         }
     }
 
