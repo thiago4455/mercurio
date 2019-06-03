@@ -77,7 +77,7 @@ CREATE TABLE Necessidade(
 ) CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 CREATE TABLE Encaminhados(
-    Alunos_ra VARCHAR(10) NOT NULL,
+    Alunos_ra VARCHAR(10) NOT NULL UNIQUE,
     FOREIGN KEY Alunos_ra(Alunos_ra)
     REFERENCES Alunos(Ra),
     idNecessidade INT NOT NULL,
