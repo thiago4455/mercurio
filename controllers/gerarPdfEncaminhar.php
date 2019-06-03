@@ -41,7 +41,7 @@
             if($i != $length) {
                 $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  ". $queryRespNomeEmpresa[0]['id'] . ",'Aguardando Aprovação', '".$queryRespNomeEmpresa[0]['tipoContrato']."') ,";
             } else {
-                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  ". $queryRespNomeEmpresa[0]['id'] . ",'Aguardando Aprovação', '".$queryRespNomeEmpresa[0]['tipoContrato']."') ;";
+                $queryEncaminhados = $queryEncaminhados . " ('". $aluno ."',  ". $queryRespNomeEmpresa[0]['id'] . ",'Aguardando Aprovação', '".$queryRespNomeEmpresa[0]['tipoContrato']."') ON DUPLICATE KEY UPDATE tipoContrato = VALUES(tipoContrato), idNecessidade = VALUES(idNecessidade), Status = 'Aguardando Aprovação';";
             }
         }
 
