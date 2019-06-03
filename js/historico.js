@@ -53,9 +53,9 @@ $(document).ready(() => {
             success: function (msg) {
                 $('#dados-historico').text("");
                 $('#modal-visualizar').modal('show');
-                var texto = "Histórico de reprovações <br/> Nome: "+msg[0].Nome+" Ra: "+msg[0].Ra;
+                var texto = "<h5 style='font-weight: bold; margin-bottom: 20px'>Histórico de reprovações</h5> <p> <b>Nome:</b> "+msg[0].Nome+" </p> <p> <b>Ra:</b> "+msg[0].Ra + "</p>";
                 for (let i = 0; i < msg.length; i++) {
-                    texto += "<br/>"+msg[i].descricao;
+                    texto += "<p> <b>Motivo:</b>"+msg[i].descricao+"</p>";
                 }
                 console.log(texto)
                 $('#dados-historico').append(texto);

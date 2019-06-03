@@ -217,7 +217,6 @@
         </div>
         <select id="cbx-ciclos" class="form-control form-control-lg">
         </select>
-        <button id="btn-encaminhar" type="button" class="btn btn-success" href="#" <?php echo $_SESSION['tipoLog']!='admin'?'disabled':'';?>>Encaminhar Selecionados</button>
     </div>
 
     <div class="table-responsive">
