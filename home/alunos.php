@@ -180,7 +180,7 @@
                     </button>
                 </div>
                 <div class="modal-body" style="padding: 15px 20px">
-                    <p>Não existe nenhuma necessidade cadastrada. Cadastre uma necessidade primeiro!</p>
+                    <p>Não existe nenhuma necessidade cadastrada para esta quantidade de alunos. Cadastre uma nova necessidade ou altere a quantidade de alunos.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
