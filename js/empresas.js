@@ -158,9 +158,9 @@ $(document).ready(() => {
 
     function ListarItens(msg) {
         table.innerHTML = "";
-        table.innerHTML = '<tr id="tr-title"><td>Código (Apelido)</td><td>Nome Fantasia</td><td>Razão Social</td><td>CNPJ</td><td>Telefone</td><td>Email</td><td>Cidade</td><td>Editar</td></tr>';
+        table.innerHTML = '<tr id="tr-title"><td>Código (Apelido)</td><td>Nome Fantasia</td><td>Razão Social</td><td>CNPJ</td><td>Telefone</td><td>Email</td><td>Cidade</td><td class="td-editar">Editar</td></tr>';
         for (i = 0; i < msg.length; i++) {
-            $('#tableBody').append('<tr id="' + msg[i].codEmpresa + '" class="table-row"> </td> <td> ' + msg[i].codEmpresa + ' </td> <td style="min-width: 150px"> ' + msg[i].nomeFantasia + ' </td> <td style="min-width: 150px"> ' + msg[i].razaoSocial + ' </td> <td> ' + msg[i].cnpj + ' </td> <td style="min-width: 150px"> ' + msg[i].telefone + ' </td> <td> ' + msg[i].email + ' </td> <td> ' + msg[i].cidade + ' </td> <td class="btnR" id="btnRow' + i + '"><button id="btn-'+ msg[i].codEmpresa +'" class="btn-editar"><i class="fas fa-edit"></i></td> </tr>')
+            $('#tableBody').append('<tr id="' + msg[i].codEmpresa + '" class="table-row"> </td> <td> ' + msg[i].codEmpresa + ' </td> <td style="min-width: 150px"> ' + msg[i].nomeFantasia + ' </td> <td style="min-width: 150px"> ' + msg[i].razaoSocial + ' </td> <td> ' + msg[i].cnpj + ' </td> <td style="min-width: 150px"> ' + msg[i].telefone + ' </td> <td> ' + msg[i].email + ' </td> <td> ' + msg[i].cidade + ' </td> <td class="btnR td-editar" id="btnRow' + i + '"><button id="btn-'+ msg[i].codEmpresa +'" class="btn-editar"><i class="fas fa-edit"></i></td> </tr>')
         }
     }
 

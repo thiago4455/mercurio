@@ -6,9 +6,9 @@ $(document).ready(function() {
 
     function ListarItens(msg) {
         table.innerHTML = "";
-        table.innerHTML = '<tr id="tr-title"><td>Código da Empresa (Apelido)</td><td>Tipo de Contrato</td><td>Ciclo</td><td style="text-align: center">Quantidade de Alunos</td><td>Descrição</td><td>Editar</td><td>Visualizar</td></tr>';
+        table.innerHTML = '<tr id="tr-title"><td>Código da Empresa (Apelido)</td><td>Tipo de Contrato</td><td>Ciclo</td><td style="text-align: center">Quantidade de Alunos</td><td>Descrição</td><td class="td-editar">Editar</td><td>Visualizar</td></tr>';
         for (i = 0; i < msg.length; i++) {
-            $('#tableBody').append('<tr id="' + msg[i].codEmpresa + '" class="table-row"> </td> <td> ' + msg[i].codEmpresa + ' </td> <td style="min-width: 150px"> ' + msg[i].tipoContrato + ' </td> <td> ' + msg[i].ciclo + ' </td> <td style="text-align: center"> ' + msg[i].quantidade + ' </td> <td style="min-width: 150px"> ' + (msg[i].descricao).substring(0,20) + ' </td> <td class="btnR" id="btnRow' + i + '"><button id="btnedit-' + msg[i].id + '" class="btn-editar"><i class="fas fa-edit"></i></td><td class="btnR" id="btnRow' + i + '"><button id="btnview-' + msg[i].id + '" class="btn-visualizar"><i class="fas fa-eye"></i></td> </tr>')
+            $('#tableBody').append('<tr id="' + msg[i].codEmpresa + '" class="table-row"> </td> <td> ' + msg[i].codEmpresa + ' </td> <td style="min-width: 150px"> ' + msg[i].tipoContrato + ' </td> <td> ' + msg[i].ciclo + ' </td> <td style="text-align: center"> ' + msg[i].quantidade + ' </td> <td style="min-width: 150px"> ' + (msg[i].descricao).substring(0,20) + ' </td> <td class="btnR td-editar" id="btnRow' + i + '"><button id="btnedit-' + msg[i].id + '" class="btn-editar"><i class="fas fa-edit"></i></td><td class="btnR" id="btnRow' + i + '"><button id="btnview-' + msg[i].id + '" class="btn-visualizar"><i class="fas fa-eye"></i></td> </tr>')
         }
     }
 
