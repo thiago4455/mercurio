@@ -122,4 +122,16 @@ ON Encaminhados
 FOR EACH ROW
 	UPDATE Necessidade SET quantidade = quantidade - 1 WHERE id = NEW.idNecessidade;
 
+DELIMITER $
+CREATE TRIGGER Tgr_UpdateEncaminhados AFTER UPDATE
+ON Encaminhados
+FOR EACH ROW
+BEGIN 
+	IF (NEW.Status = 'Reprovado' AND OLD.Status != 'Reprovado') THEN
+		UPDATE Necessidade SET quantidade = quantidade + 1 WHERE id = NEW.idNecessidade;
+    ELSEIF (NEW.Status != 'Reprovado' AND OLD.Status = 'Reprovado') THEN
+		UPDATE Necessidade SET quantidade = quantidade - 1 WHERE id = NEW.idNecessidade;
+    END IF;
+END $
+
 INSERT INTO `Funcionarios` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`, `telefoneFunc`, `cepFunc`, `ruaFunc`, `numeroFunc`, `bairroFunc`, `cidadeFunc`, `estadoFunc`, `tipoFunc`) VALUES ('1', 'Admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', '000.000.000-00', '(00) 00000-0000', '00000-000', 'Rua X', '0', 'Bairro X', 'Cidade X', '00', 'admin');
