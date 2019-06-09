@@ -111,11 +111,11 @@ CREATE TABLE Contratos (
     nomeContrato VARCHAR(60) NOT NULL
 );
 
-INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Fase_Escolar');
-INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Prática_Sequencial');
-INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Concomitante');
-INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Sequencial');
-INSERT INTO `dbmercurio`.`Contratos` (`nomeContrato`) VALUES ('Dual');
+INSERT INTO Contratos (nomeContrato) VALUES ('Fase_Escolar');
+INSERT INTO Contratos (nomeContrato) VALUES ('Prática_Sequencial');
+INSERT INTO Contratos (nomeContrato) VALUES ('Concomitante');
+INSERT INTO Contratos (nomeContrato) VALUES ('Sequencial');
+INSERT INTO Contratos (nomeContrato) VALUES ('Dual');
 
 CREATE TRIGGER Tgr_InsertEncaminhado AFTER INSERT
 ON Encaminhados
@@ -134,4 +134,4 @@ BEGIN
     END IF;
 END $
 
-INSERT INTO `Funcionarios` (`idFunc`, `nomeFunc`, `emailFunc`, `senhaFunc`, `cpfFunc`, `telefoneFunc`, `cepFunc`, `ruaFunc`, `numeroFunc`, `bairroFunc`, `cidadeFunc`, `estadoFunc`, `tipoFunc`) VALUES ('1', 'Admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', '000.000.000-00', '(00) 00000-0000', '00000-000', 'Rua X', '0', 'Bairro X', 'Cidade X', '00', 'admin');
+INSERT INTO Funcionarios (idFunc, nomeFunc, emailFunc, senhaFunc, cpfFunc, telefoneFunc, cepFunc, ruaFunc, numeroFunc, bairroFunc, cidadeFunc, estadoFunc, tipoFunc) VALUES ('1', 'Admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', '000.000.000-00', '(00) 00000-0000', '00000-000', 'Rua X', '0', 'Bairro X', 'Cidade X', '00', 'admin');

@@ -18,7 +18,7 @@ $(document).ready(() => {
                 else {
                     $('#cbx-ciclos').text('');
                     msg.forEach((i) => {
-                        $('#cbx-ciclos').append('<option value="' + i.ciclo + '"> Ciclo - ' + i.ciclo + '</option>')
+                        $('#cbx-ciclos').append(`<option value="${i.ciclo}"> Ciclo - ${i.ciclo}</option>`)
                     })
     
                     $('#fast-actions').css('display', 'flex');
@@ -85,7 +85,7 @@ $(document).ready(() => {
         table.innerHTML = "";
         table.innerHTML = '<tr id="tr-title"><td>RA</td><td>Nome</td><td>Email</td><td>Cidade</td><td>CPF</td><td>Telefone</td><td>Reprovações</td><td>Detalhes</td></tr>';
         for (i = 0; i < msg.length; i++) {
-            $('#tableBody').append('<tr id="' + msg[i].Ra + '" class="table-row"> <td> ' + msg[i].Ra + ' </td> <td style="min-width: 300px"> ' + msg[i].Nome + ' </td> <td> ' + msg[i].Email + ' </td> <td> ' + msg[i].Cidade + ' </td> <td> ' + msg[i].Cpf + ' </td> <td> ' + msg[i].Telefone1 + ' </td> <td> ' + msg[i].Reprovacoes + ' </td> <td><button id="btn-'+msg[i].Ra+'" class="btn-visualizar"><i class="fas fa-eye"></i></button></td> </tr>')
+            $('#tableBody').append(`<tr id="${msg[i].Ra}" class="table-row"> <td> ${msg[i].Ra} </td> <td style="min-width: 300px"> ${msg[i].Nome} </td> <td> ${msg[i].Email} </td> <td> ${msg[i].Cidade} </td> <td> ${msg[i].Cpf} </td> <td> ${msg[i].Telefone1} </td> <td> ${msg[i].Reprovacoes} </td> <td><button id="btn-${msg[i].Ra}" class="btn-visualizar"><i class="fas fa-eye"></i></button></td> </tr>`)
         }
     }
 

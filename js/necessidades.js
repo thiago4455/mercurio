@@ -8,7 +8,7 @@ $(document).ready(function() {
         table.innerHTML = "";
         table.innerHTML = '<tr id="tr-title"><td>Código da Empresa (Apelido)</td><td>Tipo de Contrato</td><td>Ciclo</td><td style="text-align: center">Quantidade de Alunos</td><td>Descrição</td><td class="td-editar">Editar</td><td>Visualizar</td></tr>';
         for (i = 0; i < msg.length; i++) {
-            $('#tableBody').append('<tr id="' + msg[i].codEmpresa + '" class="table-row"> </td> <td> ' + msg[i].codEmpresa + ' </td> <td style="min-width: 150px"> ' + msg[i].tipoContrato + ' </td> <td> ' + msg[i].ciclo + ' </td> <td style="text-align: center"> ' + msg[i].quantidade + ' </td> <td style="min-width: 150px"> ' + (msg[i].descricao).substring(0,20) + ' </td> <td class="btnR td-editar" id="btnRow' + i + '"><button id="btnedit-' + msg[i].id + '" class="btn-editar"><i class="fas fa-edit"></i></td><td class="btnR" id="btnRow' + i + '"><button id="btnview-' + msg[i].id + '" class="btn-visualizar"><i class="fas fa-eye"></i></td> </tr>')
+            $('#tableBody').append(`<tr id="${msg[i].codEmpresa}" class="table-row"> </td> <td> ${msg[i].codEmpresa} </td> <td style="min-width: 150px"> ${msg[i].tipoContrato} </td> <td> ${msg[i].ciclo} </td> <td style="text-align: center"> ${msg[i].quantidade} </td> <td style="min-width: 150px"> ${(msg[i].descricao).substring(0,20)} </td> <td class="btnR td-editar" id="btnRow${i}"><button id="btnedit-${msg[i].id}" class="btn-editar"><i class="fas fa-edit"></i></td><td class="btnR" id="btnRow${i}"><button id="btnview-${msg[i].id}" class="btn-visualizar"><i class="fas fa-eye"></i></td> </tr>`)
         }
     }
 
@@ -60,7 +60,7 @@ $(document).ready(function() {
                     $('#modal-erro-empresa').modal('show');
                 } else {
                     $.each(msg, function(key, value) {
-                        $('#ipt-codEmpresa').append('<option value=' + value.codEmpresa + '>' + value.codEmpresa + '</option>')
+                        $('#ipt-codEmpresa').append(`<option value=${value.codEmpresa}>${value.codEmpresa}</option>`)
                     });
 
                     $.ajax({
@@ -69,7 +69,7 @@ $(document).ready(function() {
                         dataType: 'json',
                         success: function(data) {
                             $.each(data, function(key, value) {
-                                $('#ipt-tipoContrato').append('<option value=' + value.nomeContrato + '>' + (value.nomeContrato).replace("_", " ") + '</option>')
+                                $('#ipt-tipoContrato').append(`<option value=${value.nomeContrato}>${(value.nomeContrato).replace("_", " ")}</option>`)
                             });
 
                             $('#btn-cadastrar').text('Cadastrar Necessidade')
@@ -88,7 +88,7 @@ $(document).ready(function() {
                         success: function(data) {
                             console.log(data)
                             $.each(data, function(key, value) {
-                                $('#ipt-ciclo').append('<option value=' + value.Semestre + '>' + (value.Semestre).replace('.', '/') + '</option>')
+                                $('#ipt-ciclo').append(`<option value=${value.Semestre}>${(value.Semestre).replace('.', '/')}</option>`)
                             });
 
                             $('#btn-cadastrar').text('Cadastrar Necessidade')
@@ -110,7 +110,7 @@ $(document).ready(function() {
     })
 
     $('#ipt-descricao').keyup(function() {
-        $('#span-descricao').text('Faltam: ' + (500 - $(this).val().length) + ' caracteres.')
+        $('#span-descricao').text(`Faltam: ${500 - $(this).val().length} caracteres.`)
     })
 
     $('#btn-erro-cadastarEmpresa').click(() => {
@@ -211,7 +211,7 @@ $(document).ready(function() {
                     $('#modal-erro-empresa').modal('show');
                 } else {
                     $.each(msg, function(key, value) {
-                        $('#ipt-codEmpresa-editar').append('<option value=' + value.codEmpresa + '>' + value.codEmpresa + '</option>')
+                        $('#ipt-codEmpresa-editar').append(`<option value=${value.codEmpresa}>${value.codEmpresa}</option>`)
                     });
 
                     $.ajax({
@@ -220,7 +220,7 @@ $(document).ready(function() {
                         dataType: 'json',
                         success: function(data) {
                             $.each(data, function(key, value) {
-                                $('#ipt-tipoContrato-editar').append('<option value=' + value.nomeContrato + '>' + (value.nomeContrato).replace("_", " ") + '</option>')
+                                $('#ipt-tipoContrato-editar').append(`<option value=${value.nomeContrato}>${(value.nomeContrato).replace("_", " ")}</option>`)
                             });
 
                             $('#btn-editar').text('Concluir Edição')
@@ -238,7 +238,7 @@ $(document).ready(function() {
                         dataType: 'json',
                         success: function(data) {
                             $.each(data, function(key, value) {
-                                $('#ipt-ciclo-editar').append('<option value=' + value.Semestre + '>' + (value.Semestre).replace('.', '/') + '</option>')
+                                $('#ipt-ciclo-editar').append(`<option value=${value.Semestre}>${(value.Semestre).replace('.', '/')}</option>`)
                             });
                             $('#btn-editar').text('Concluir Edição')
                             $('#btn-editar').prop('disabled', false)
@@ -259,9 +259,9 @@ $(document).ready(function() {
                         success: function(msg) {
                             $('#ipt-quantidade-editar').val(msg[0].quantidade);
                             $('#ipt-descricao-editar').val(msg[0].descricao);
-                            $("#ipt-ciclo-editar option[value='" + msg[0].ciclo + "']").attr("selected", "selected");
-                            $("#ipt-codEmpresa-editar option[value='" + msg[0].codEmpresa + "']").attr("selected", "selected");
-                            $("#ipt-tipoContrato-editar option[value='" + msg[0].tipoContrato + "']").attr("selected", "selected");
+                            $(`#ipt-ciclo-editar option[value='${msg[0].ciclo}']`).attr("selected", "selected");
+                            $(`#ipt-codEmpresa-editar option[value='${msg[0].codEmpresa}']`).attr("selected", "selected");
+                            $(`#ipt-tipoContrato-editar option[value='${msg[0].tipoContrato}']`).attr("selected", "selected");
                         },
                         error: function(err) {
                             

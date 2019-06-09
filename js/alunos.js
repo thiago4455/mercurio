@@ -134,7 +134,7 @@ $(document).ready(() => {
                 else {
                     $('#cbx-ciclos').text('');
                     msg.forEach((i) => {
-                        $('#cbx-ciclos').append('<option value="' + i.Semestre + '"> Ciclo - ' + i.Semestre + '</option>')
+                        $('#cbx-ciclos').append(`<option value="${i.Semestre}"> Ciclo - ${i.Semestre}</option>`)
                     })
     
                     $('#fast-actions').css('display', 'flex');
@@ -172,7 +172,7 @@ $(document).ready(() => {
             alunosSelecionados = []
         }
         if ($(":checkbox:checked").length > 0) {
-            $('#btn-encaminhar').text('Encaminhar Selecionados (' + ($(":checkbox:checked").length - 1) + ')');
+            $('#btn-encaminhar').text(`Encaminhar Selecionados (${$(":checkbox:checked").length - 1})`);
         } else {
             $('#btn-encaminhar').text('Encaminhar Selecionados');
         }
@@ -199,7 +199,7 @@ $(document).ready(() => {
             Pop($(this).attr('id'));
         }
         if ($(".td-check :checkbox:checked").length > 0) {
-            $('#btn-encaminhar').text('Encaminhar Selecionados (' + $(".td-check :checkbox:checked").length + ')');
+            $('#btn-encaminhar').text(`Encaminhar Selecionados (${$(".td-check :checkbox:checked").length})`);
         } else {
             $('#btn-encaminhar').text('Encaminhar Selecionados');
         }
@@ -232,7 +232,7 @@ $(document).ready(() => {
         table.innerHTML = "";
         table.innerHTML = '<tr id="tr-title"><td></td><td>RA</td><td>Nome</td><td>Idade</td><td>Sexo</td><td>Email</td><td>Cidade</td><td>CPF</td><td>Telefone</td><td>Status</td><td></td></tr>';
         for (i = 0; i < msg.length; i++) {
-            $('#tableBody').append('<tr id="' + msg[i].Ra + '" class="table-row"> <td class="td-check"> <input class="form-check-input check-alunos" type="checkbox" value="" id="' + msg[i].Ra + '"> </td> <td> ' + msg[i].Ra + ' </td> <td style="min-width: 300px"> ' + msg[i].Nome + ' </td> <td> ' + msg[i].Idade + ' </td> <td> ' + msg[i].Sexo + ' </td> <td> ' + msg[i].Email + ' </td> <td> ' + msg[i].Cidade + ' </td> <td> ' + msg[i].Cpf + ' </td> <td> ' + msg[i].Telefone1 + ' </td> <td> ' + msg[i].Status + ' </td><td class="btnR" id="btn-' + msg[i].Ra + '" class="btn-editar" onclick="Visualizar(this.id)"><button><i class="fas fa-eye"></i></td></tr>')
+            $('#tableBody').append(`<tr id="${msg[i].Ra}" class="table-row"> <td class="td-check"> <input class="form-check-input check-alunos" type="checkbox" value="" id="${msg[i].Ra}"> </td> <td> ${msg[i].Ra} </td> <td style="min-width: 300px"> ${msg[i].Nome} </td> <td> ${msg[i].Idade} </td> <td> ${msg[i].Sexo} </td> <td> ${msg[i].Email} </td> <td> ${msg[i].Cidade} </td> <td> ${msg[i].Cpf} </td> <td> ${msg[i].Telefone1} </td> <td> ${msg[i].Status} </td><td class="btnR" id="btn-${msg[i].Ra}" class="btn-editar" onclick="Visualizar(this.id)"><button><i class="fas fa-eye"></i></td></tr>`)
         }
     }
 
@@ -321,7 +321,7 @@ $(document).ready(() => {
                         $('#ipt-alunosSelecionados').append(element + " - " + msg[i].Nome + "\n")
                         i++;
                     });
-                    $('#label-alunosSelecionados').text('Alunos Selecionados - (' + i + ')')
+                    $('#label-alunosSelecionados').text(`Alunos Selecionados - (${i})`)
 
                     $.ajax({
                         url: '../controllers/listarNecessidadesValidas.php',
@@ -339,7 +339,7 @@ $(document).ready(() => {
                                 $('#modal-erro-necessidade').modal('show');
                             } else {
                                 $.each(msg, function (key, value) {
-                                    $('#ipt-necessidadeSelecionada').append('<option value=' + value.id + ' title="'+value.descricao+'">' + value.codEmpresa + ' - ' + (value.tipoContrato).replace("_"," ") + ' Restantes: ' + value.quantidade + '</option>')
+                                    $('#ipt-necessidadeSelecionada').append(`<option value=${value.id} title="${value.descricao}">${value.codEmpresa} - ${(value.tipoContrato).replace("_"," ")} Restantes: ${value.quantidade}</option>`)
                                 });
 
                             }
@@ -366,7 +366,7 @@ $(document).ready(() => {
         $('#btn-encaminhar-model').text('Gerando PDF...')
         $('#btn-encaminhar-model').prop('disabled', true)
 
-        window.location.href = "../controllers/gerarPdfEncaminhar.php?alunosSelecionados=" + alunosSelecionados + "&necessidade=" + id;
+        window.location.href = `../controllers/gerarPdfEncaminhar.php?alunosSelecionados=${alunosSelecionados}&necessidade=${id}`;
 
     })
 
