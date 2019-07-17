@@ -148,6 +148,30 @@ class ClassAlunos {
         }
     }
 
+    public function RetCiclos() {
+        require_once('ConexaoClass.php');
+        $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
+                # MySQL UTF-8
+                $objConexao->executarComandoSQL("SET NAMES 'utf8'");
+                $objConexao->executarComandoSQL('SET character_set_connection=utf8');
+                $objConexao->executarComandoSQL('SET character_set_client=utf8');
+                $objConexao->executarComandoSQL('SET character_set_results=utf8');        
+        try {
+            $tableAlunos = $objConexao->selecionarDados("SELECT DISTINCT(Semestre) FROM Alunos");
+
+            if($tableAlunos === "ERRO") {          
+                return 'Not found';             
+            }
+            else {
+                return $tableAlunos;
+            }
+        }
+        catch(Exception $err) {
+            return "Problem System";
+        }
+    }
+
+
     public function BuscaAlunos($busca) {
         require_once('ConexaoClass.php');
         $objConexao = new ConexaoClass("localhost", "root", "root", "dbmercurio");
